@@ -1,0 +1,67 @@
+﻿Database
+Name,Version,Author,Description,Emphasis1,Emphasis2,Emphasis3,Emphasis4
+DevMachTest,,,,#ffffffff ---,#ff0000ff ---,#00ff00ff ---,#0000ffff ---
+Global User Script
+
+Actors
+ID,Portrait,AltPortraits,SpritePortrait,AltSpritePortraits,Name,Pictures,Description,IsPlayer
+Number,Special,Special,Special,Special,Text,Files,Text,Boolean
+1,,[],,[],We,[],,True
+2,,[],,[],DEV,[],,False
+Items
+ID
+Number
+Locations
+ID
+Number
+Variables
+ID,Name,Initial Value,Description,InitialValueType
+Number,Text,Text,Text,Text
+1,Alert,,,Text
+2,Trem,0,,Number
+3,Like,0,,Number
+Conversations
+ID,Title,Description,Actor,Conversant,Overrides
+Number,Text,Text,Actor,Actor,JSON
+1,DevMachTest,,1,2,"{""useOverrides"":false,""overrideSubtitleSettings"":false,""showNPCSubtitlesDuringLine"":true,""showNPCSubtitlesWithResponses"":true,""showPCSubtitlesDuringLine"":false,""skipPCSubtitleAfterResponseMenu"":false,""subtitleCharsPerSecond"":30.0,""minSubtitleSeconds"":2.0,""continueButton"":0,""overrideSequenceSettings"":false,""defaultSequence"":"""",""defaultPlayerSequence"":"""",""defaultResponseMenuSequence"":"""",""overrideInputSettings"":false,""alwaysForceResponseMenu"":true,""includeInvalidEntries"":false,""responseTimeout"":0.0,""emTagForOldResponses"":0,""emTagForInvalidResponses"":0,""cancelSubtitle"":{""key"":27,""buttonName"":""""},""cancelConversation"":{""key"":27,""buttonName"":""""}}"
+DialogueEntries
+entrytag,ConvID,ID,Actor,Conversant,Title,MenuText,DialogueText,IsGroup,FalseConditionAction,ConditionPriority,Conditions,Script,Sequence,Description,canvasRect
+Text,Number,Number,Number,Number,Text,Text,Text,Boolean,Special,Special,Text,Text,Text,Text,Text
+We_1_0,1,0,1,2,START,,,False,Block,Normal,,,None(),,1091.673;14.05452
+DEV_1_1,1,1,2,1,,,Hello,False,Block,Normal,,,,,1091.672;132.3923
+DEV_1_2,1,2,2,1,,,I am 01101011100111,False,Block,Normal,,,,,1096.228;216.5612
+DEV_1_3,1,3,2,1,,,Are you here ? Can you tell me who i am ?,False,Block,Normal,,,,,1098.506;291.6184
+We_1_4,1,4,1,2,,,yes,False,Block,Normal,,,,,1096.228;341.6184
+DEV_1_5,1,5,2,1,,,,False,Block,Normal,,,,,887.929;593.2813
+DEV_1_15,1,15,2,1,,,q1,False,Block,Normal,,,,,312.9467;780.3602
+We_1_28,1,28,1,2,,,a1,False,Block,Normal,,,,,132.9467;830.3602
+We_1_31,1,31,1,2,,,a2,False,Block,Normal,,,,,312.9467;830.3602
+We_1_32,1,32,1,2,,,a3,False,Block,Normal,,,,,490.5486;830.3602
+DEV_1_33,1,33,2,1,,,q2,False,Block,Normal,,,,,887.8037;789.9603
+We_1_34,1,34,1,2,,,a1,False,Block,Normal,,,,,707.8037;839.9603
+We_1_35,1,35,1,2,,,a2,False,Block,Normal,,,,,887.8037;839.9603
+We_1_36,1,36,1,2,,,a3,False,Block,Normal,,,,,1067.804;839.9603
+DEV_1_37,1,37,2,1,,,q3,False,Block,Normal,,,,,1451.247;745.1071
+We_1_38,1,38,1,2,,,a1,False,Block,Normal,,,,,1312.361;839.9603
+We_1_39,1,39,1,2,,,a2,False,Block,Normal,,,,,1492.361;839.9603
+We_1_40,1,40,1,2,,,a3,False,Block,Normal,,,,,1672.361;839.9603
+OutgoingLinks
+OriginConvID,OriginID,DestConvID,DestID,ConditionPriority
+Number,Number,Number,Number,Special
+1,0,1,1,Normal
+1,1,1,2,Normal
+1,2,1,3,Normal
+1,3,1,4,Normal
+1,4,1,5,Normal
+1,5,1,15,Normal
+1,5,1,33,Normal
+1,5,1,37,Normal
+1,15,1,28,Normal
+1,15,1,31,Normal
+1,15,1,32,Normal
+1,33,1,34,Normal
+1,33,1,35,Normal
+1,33,1,36,Normal
+1,37,1,38,Normal
+1,37,1,39,Normal
+1,37,1,40,Normal
