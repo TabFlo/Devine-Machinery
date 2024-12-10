@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ball
+  - Trim
+  - Fasz
   layers:
   - Default
   - TransparentFX
