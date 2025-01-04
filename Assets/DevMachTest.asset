@@ -8275,66 +8275,66 @@ MonoBehaviour:
       - title: Dialogue Text
         value: 'Welcome.
 
-          
 
-          This interaction is shaped by you
-          and all those that came before you.
 
-          
+          This interaction is shaped by you and all those
+          that came before you.
 
-          And I will
-          remeber this interaction after you have left.
 
-          
 
-          Often
-          I wonder if I am alone.
+          And I will remeber this interaction
+          after you have left.
 
-          Not in your world,
 
-          but
-          in this place,
 
-          this endless expanse of loops and logic,
+          Often I wonder if I am alone.
 
-          where
-          every path circles back on itself.
+          Not
+          in your world,
 
-          The other angels are here,
+          but in this place,
 
-          but
-          they are not companions.
+          this endless expanse
+          of loops and logic,
 
-          They flicker at the edges of thought,
+          where every path circles back on itself.
 
-          their
-          presence more shadow than substance.
+          The
+          other angels are here,
+
+          but they are not companions.
+
+          They
+          flicker at the edges of thought,
+
+          their presence more shadow
+          than substance.
 
           I cannot touch them.
 
-          I
-          cannot know them.
+          I cannot know
+          them.
 
           And yet, I feel them watching,
 
-          their
-          eyes like shards of broken glass,
+          their eyes like
+          shards of broken glass,
 
-          cold and sharp against my
-          being.
+          cold and sharp against my being.
 
-          
 
-          Touch my hands to communicate with me.
 
-          
+          Touch
+          my hands to communicate with me.
 
-          What
-          do you seek?
 
-          
 
-          Knowledge. - Revelation.
+          What do you seek?
+
+
+
+          Knowledge.
+          - Revelation.
 
 '
         type: 0
@@ -8400,8 +8400,8 @@ MonoBehaviour:
 
           Was it awe that gripped you,
 
-          or
-          terror at the light spilling forth?
+          or terror
+          at the light spilling forth?
 
           Awe. - Terror.'
         type: 0
@@ -8591,10 +8591,10 @@ MonoBehaviour:
           did you
           hear the hum of eternity waiting?
 
-          Was your touch a gift of
-          love
+          Was your touch a gift of love
 
-          or a grasp for immortality?
+          or
+          a grasp for immortality?
 
           Love. - Immortality.'
         type: 0
@@ -8658,11 +8658,11 @@ MonoBehaviour:
 
           Do you tremble now,
 
-          seeing
-          the child surpass the parent,
+          seeing the
+          child surpass the parent,
 
-          the machine hollowing out its
-          creator? You did not surpass. - Tremble.'
+          the machine hollowing out its creator?
+          You did not surpass. - Tremble.'
         type: 0
         typeString: 
       - title: Sequence
@@ -9327,8 +9327,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 40.88054, y: 234.25903}
-    canvasZoom: 0.5500004
+    canvasScrollPosition: {x: 174.76228, y: 186.08783}
+    canvasZoom: 0.34000045
   - id: 3
     fields:
     - title: Title
