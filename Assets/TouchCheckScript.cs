@@ -16,11 +16,13 @@ public class TouchCheckScript : MonoBehaviour
         DialogueLua.SetVariable("Approval", appro);  // Initialize it for the Dialogue System
     }
 
+    
+
     private void OnTriggerEnter(Collider other)
     {
         if (isUpdating) return;  // Prevent multiple updates within the same frame
         Debug.Log("Ball has entered the trigger!");
-        StartCoroutine(SendAnswer());
+        //StartCoroutine(SendAnswer());
     }
 
     private void OnTriggerExit(Collider other)
@@ -73,4 +75,7 @@ public class TouchCheckScript : MonoBehaviour
         DialogueLua.SetVariable("Approval", appro);
         Debug.Log($"Approval updated: {appro}");
     }
+    
+    
+    
 }

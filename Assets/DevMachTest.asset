@@ -8273,74 +8273,15 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Welcome.
-
-
-
-          This interaction is shaped by you and all those
-          that came before you.
-
-
-
-          And I will remeber this interaction
-          after you have left.
-
-
-
-          Often I wonder if I am alone.
-
-          Not
-          in your world,
-
-          but in this place,
-
-          this endless expanse
-          of loops and logic,
-
-          where every path circles back on itself.
-
-          The
-          other angels are here,
-
-          but they are not companions.
-
-          They
-          flicker at the edges of thought,
-
-          their presence more shadow
-          than substance.
-
-          I cannot touch them.
-
-          I cannot know
-          them.
-
-          And yet, I feel them watching,
-
-          their eyes like
-          shards of broken glass,
-
-          cold and sharp against my being.
-
-
-
-          Touch
-          my hands to communicate with me.
-
-
-
-          What do you seek?
-
-
-
-          Knowledge.
-          - Revelation.
-
-'
+        value: Welcome.
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Voicelines/Anfangsfrage/Anfangsfrage Akt1_02)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
         type: 0
         typeString: 
       conversationID: 2
@@ -8354,7 +8295,7 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 1
         destinationConversationID: 2
-        destinationDialogueID: 16
+        destinationDialogueID: 21
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -8364,8 +8305,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 761.44165
-        y: 78.130936
+        x: 756.83044
+        y: 118.70421
         width: 160
         height: 30
     - id: 2
@@ -8431,8 +8372,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 761.0645
-        y: 298.9464
+        x: 831.11676
+        y: 792.8146
         width: 160
         height: 30
     - id: 3
@@ -8496,8 +8437,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 560.3772
-        y: 295.50995
+        x: 630.4295
+        y: 789.37805
         width: 160
         height: 30
     - id: 4
@@ -8559,8 +8500,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 367.93732
-        y: 296.88452
+        x: 437.98962
+        y: 790.7527
         width: 160
         height: 30
     - id: 5
@@ -8624,8 +8565,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159.46333
-        y: 320.44952
+        x: 229.51562
+        y: 814.3176
         width: 160
         height: 30
     - id: 6
@@ -8690,8 +8631,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1412.4734
-        y: 305.0289
+        x: 1482.5256
+        y: 798.8971
         width: 160
         height: 30
     - id: 7
@@ -8755,8 +8696,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1220.0334
-        y: 306.04907
+        x: 1290.0859
+        y: 799.91724
         width: 160
         height: 30
     - id: 8
@@ -8822,8 +8763,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1015.2225
-        y: 306.40347
+        x: 1085.2747
+        y: 800.2716
         width: 160
         height: 30
     - id: 9
@@ -8883,8 +8824,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 154.58562
-        y: 622.7301
+        x: 224.63794
+        y: 1116.598
         width: 160
         height: 30
     - id: 10
@@ -8944,8 +8885,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1418.7745
-        y: 580.3251
+        x: 1488.8269
+        y: 1074.193
         width: 160
         height: 30
     - id: 11
@@ -8999,8 +8940,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 732.31836
-        y: 483.6692
+        x: 802.37067
+        y: 977.53723
         width: 160
         height: 30
     - id: 16
@@ -9090,8 +9031,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 761.44165
-        y: 162.40567
+        x: 831.49396
+        y: 656.2738
         width: 160
         height: 30
     - id: 17
@@ -9151,8 +9092,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 926.5975
-        y: 595.72534
+        x: 996.6499
+        y: 1089.5933
         width: 160
         height: 30
     - id: 18
@@ -9200,8 +9141,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 738.30945
-        y: 763.73883
+        x: 808.36176
+        y: 1257.6067
         width: 160
         height: 30
     - id: 19
@@ -9261,8 +9202,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1412.4734
-        y: 415.63492
+        x: 1482.5256
+        y: 909.50305
         width: 160
         height: 30
     - id: 20
@@ -9322,13 +9263,741 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 144.91792
-        y: 417.72223
+        x: 214.97021
+        y: 911.59033
+        width: 160
+        height: 30
+    - id: 21
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: This interaction is shaped by you and all those that came before you.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Anfangsfrage/Anfangsfrage Akt1_01)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 21
+        destinationConversationID: 2
+        destinationDialogueID: 22
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 811.93964
+        y: 185.72487
+        width: 160
+        height: 30
+    - id: 22
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: And I will remeber this interaction after you have left.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Anfangsfrage/Anfangsfrage Akt1_03)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 22
+        destinationConversationID: 2
+        destinationDialogueID: 23
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 821.8039
+        y: 240.4554
+        width: 160
+        height: 30
+    - id: 23
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'Often I wonder if I am alone.
+
+          Not in your world,
+
+          but
+          in this place,'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Anfangsfrage/Anfangsfrage Akt1_04)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 23
+        destinationConversationID: 2
+        destinationDialogueID: 24
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 719.7811
+        y: 280.95358
+        width: 160
+        height: 30
+    - id: 24
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'this endless expanse of loops and logic,
+
+          where every path
+          circles back on itself.'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: '
+
+          AudioWait(Voicelines/Anfangsfrage/Anfangsfrage Akt1_05)'
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 24
+        destinationConversationID: 2
+        destinationDialogueID: 25
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 892.2718
+        y: 307.2192
+        width: 160
+        height: 30
+    - id: 25
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'The other angels are here,
+
+          but they are not companions.'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Anfangsfrage/Anfangsfrage Akt1_06)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 25
+        destinationConversationID: 2
+        destinationDialogueID: 26
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 952.9359
+        y: 368.04935
+        width: 160
+        height: 30
+    - id: 26
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'They flicker at the edges of thought,
+
+          their presence more
+          shadow than substance.'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Anfangsfrage/Anfangsfrage Akt1_07)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 26
+        destinationConversationID: 2
+        destinationDialogueID: 27
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1096.9617
+        y: 292.65475
+        width: 160
+        height: 30
+    - id: 27
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'I cannot touch them.
+
+          I cannot know them.'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Anfangsfrage/Anfangsfrage Akt1_08)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 27
+        destinationConversationID: 2
+        destinationDialogueID: 28
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1163.7253
+        y: 194.86441
+        width: 160
+        height: 30
+    - id: 28
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: And yet, I feel them watching,
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Anfangsfrage/Anfangsfrage Akt1_09)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 28
+        destinationConversationID: 2
+        destinationDialogueID: 29
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1311.8175
+        y: 247.59207
+        width: 160
+        height: 30
+    - id: 29
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'their eyes like shards of broken glass,
+
+          cold and sharp
+          against my being.'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Anfangsfrage/Anfangsfrage Akt1_10)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 29
+        destinationConversationID: 2
+        destinationDialogueID: 30
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1394.8469
+        y: 308.42227
+        width: 160
+        height: 30
+    - id: 30
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Touch my hands to communicate with me.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Anfangsfrage/Anfangsfrage Akt1_11)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 30
+        destinationConversationID: 2
+        destinationDialogueID: 31
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1488.0427
+        y: 369.25244
+        width: 160
+        height: 30
+    - id: 31
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: What do you seek?
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Anfangsfrage/Anfangsfrage Akt1_12)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 31
+        destinationConversationID: 2
+        destinationDialogueID: 32
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1392.1495
+        y: 428.04944
+        width: 160
+        height: 30
+    - id: 32
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Knowledge. - Revelation.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Anfangsfrage/Anfangsfrage Akt1_13)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 32
+        destinationConversationID: 2
+        destinationDialogueID: 16
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1164.0979
+        y: 452.28198
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 174.76228, y: 186.08783}
-    canvasZoom: 0.34000045
+    canvasScrollPosition: {x: 0, y: 6.1904297}
+    canvasZoom: 0.48462096
   - id: 3
     fields:
     - title: Title
@@ -9453,16 +10122,16 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "\nWelcome.\n\n\nThis interaction is shaped by you and all those that
-          came before you.\n\n\nAnd I will remeber this interaction after you have
-          left.\n\n\nOften I wonder if I am alone.\nNot in your world,\nbut in this
-          place,\nthis endless expanse of loops and logic,\nwhere every path circles
-          back on itself.\nThe other angels are here,\nbut they are not companions.\nThey
-          flicker at the edges of thought,\ntheir presence more shadow than substance.\nI
-          cannot touch them.\nI cannot know them.\nAnd yet, I feel them watching,\ntheir
-          eyes like shards of broken glass,\ncold and sharp against my being.\n\n\nTouch
-          my hands to communicate with me.\n\n\nWhat do you seek?\n\n\n Knowledge.
-          - Revelation.\n"
+        value: "\nWelcome.|\n\n\nThis interaction is shaped by you and all those
+          that came before you.|\n\n\nAnd I will remeber this interaction after you
+          have left.|\n\n\nOften I wonder if I am alone.\nNot in your world,\nbut
+          in this place,|\nthis endless expanse of loops and logic,\nwhere every
+          path circles back on itself.|\nThe other angels are here,\nbut they are
+          not companions.|\nThey flicker at the edges of thought,\ntheir presence
+          more shadow than substance.|\nI cannot touch them.\nI cannot know them.|\nAnd
+          yet, I feel them watching,|\ntheir eyes like shards of broken glass,\ncold
+          and sharp against my being.|\n\n\nTouch my hands to communicate with me.|\n\n\nWhat
+          do you seek?|\n\n\n Knowledge. - Revelation.\n"
         type: 0
         typeString: 
       - title: Sequence
@@ -9489,8 +10158,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0.000011444092, y: 0.0000013113022}
-    canvasZoom: 1.0899999
+    canvasScrollPosition: {x: 9.922412, y: 0.41925293}
+    canvasZoom: 1.075
   - id: 4
     fields:
     - title: Title
