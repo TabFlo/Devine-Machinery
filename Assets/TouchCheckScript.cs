@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using PixelCrushers.DialogueSystem;
@@ -5,7 +6,7 @@ using UnityEngine.Events;
 
 public class TouchCheckScript : MonoBehaviour
 {
-    private static int appro = 2;  // Initialize appro to 0 at the start
+    private static int appro = 3;  // Initialize appro to 0 at the start
     private bool isUpdating = false;  // Flag to prevent multiple updates in quick succession
 
     public UnityEvent touchConmtinue;
@@ -16,9 +17,15 @@ public class TouchCheckScript : MonoBehaviour
         DialogueLua.SetVariable("Approval", appro);  // Initialize it for the Dialogue System
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            //Debugging/Fast Dialogue advancing
+            (DialogueManager.dialogueUI as StandardDialogueUI).OnContinue();
+        }
+    }
 
-
-    
 
     private void OnTriggerEnter(Collider other)
     {
