@@ -264,6 +264,34 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: 
+  - id: 14
+    fields:
+    - title: Name
+      value: killedTime
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
+  - id: 15
+    fields:
+    - title: Name
+      value: x
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
   conversations:
   - id: 1
     fields:
@@ -9045,7 +9073,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1356.9092
+        x: 1355.6271
         y: 1661.689
         width: 160
         height: 30
@@ -9138,8 +9166,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1324.875
-        y: 1191.625
+        x: 1326.7489
+        y: 1180.3674
         width: 160
         height: 30
     - id: 17
@@ -9189,7 +9217,7 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 17
         destinationConversationID: 2
-        destinationDialogueID: 16
+        destinationDialogueID: 248
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -9200,7 +9228,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1370.2151
-        y: 1775.0377
+        y: 1774.0427
         width: 160
         height: 30
     - id: 18
@@ -9931,8 +9959,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1328
-        y: 890
+        x: 1323.7806
+        y: 858.7763
         width: 160
         height: 30
     - id: 30
@@ -9990,8 +10018,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1328
-        y: 974
+        x: 1318.3384
+        y: 912.8443
         width: 160
         height: 30
     - id: 31
@@ -10049,8 +10077,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1328
-        y: 1058
+        x: 1318.3384
+        y: 969.6335
         width: 160
         height: 30
     - id: 32
@@ -10100,7 +10128,7 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 32
         destinationConversationID: 2
-        destinationDialogueID: 16
+        destinationDialogueID: 248
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -10110,8 +10138,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1328
-        y: 1142
+        x: 1316.9778
+        y: 1022.8371
         width: 160
         height: 30
     - id: 33
@@ -22297,9 +22325,119 @@ MonoBehaviour:
         y: 4856.4336
         width: 160
         height: 30
+    - id: 246
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: Continue()
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 246
+        destinationConversationID: 2
+        destinationDialogueID: 16
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1325.6783
+        y: 1124.4321
+        width: 160
+        height: 30
+    - id: 248
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: Continue()
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 248
+        destinationConversationID: 2
+        destinationDialogueID: 246
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1320.426
+        y: 1068.2394
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1068.4857, y: 0}
-    canvasZoom: 0.6399997
+    canvasScrollPosition: {x: 0, y: 946.2995}
+    canvasZoom: 0.48999968
   - id: 3
     fields:
     - title: Title
@@ -23858,11 +23996,14 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'you have killed me '
+        value: I remember dying
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: 'AudioWait(Voicelines/Wildcards Positive/Akt 1_Wildcard 1_Approval
+          Pos_01);
+
+'
         type: 0
         typeString: 
       conversationID: 14
@@ -23913,11 +24054,15 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 
+        value: '[var=killedTime]'
         type: 0
         typeString: 
       - title: Sequence
         value: 
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 11062956-72ab-4eb0-ac31-3029bb039835
         type: 0
         typeString: 
       conversationID: 14
@@ -23968,11 +24113,12 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: times
+        value: times before
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Voicelines/Wildcards Positive/Akt 1_Wildcard 1_Approval
+          Pos_02)
         type: 0
         typeString: 
       conversationID: 14
@@ -23982,7 +24128,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 14
+        originDialogueID: 3
+        destinationConversationID: 14
+        destinationDialogueID: 4
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -23994,9 +24146,68 @@ MonoBehaviour:
         y: 284.6667
         width: 160
         height: 30
+    - id: 4
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: Continue()
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 92970ed8-2ed6-4edf-b466-a1b82481e40b
+        type: 0
+        typeString: 
+      conversationID: 14
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 14
+        originDialogueID: 4
+        destinationConversationID: 14
+        destinationDialogueID: 1
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: Variable["killedTime"] = 6969
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 564.6666
+        y: 345.26746
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 48.66667}
-    canvasZoom: 1
+    canvasScrollPosition: {x: 0, y: 48.57144}
+    canvasZoom: 0.7000003
   syncInfo:
     syncActors: 0
     syncItems: 0

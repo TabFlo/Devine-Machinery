@@ -9,7 +9,7 @@ public class OnStartScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    DialogueManager.StartConversation("killTest");   
+    DialogueManager.StartConversation("MainDialogue1");   
     }
 
     public void startDialogue()
