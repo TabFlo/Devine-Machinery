@@ -236,6 +236,20 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: 
+  - id: 12
+    fields:
+    - title: Name
+      value: ThirdDCount
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
   conversations:
   - id: 1
     fields:
@@ -15598,7 +15612,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetContinueMode(false)
         type: 0
         typeString: 
       conversationID: 2
@@ -15608,7 +15622,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 123
+        destinationConversationID: 2
+        destinationDialogueID: 147
+        isConnector: 0
+        priority: 2
       conditionsString: Variable["SecondDCount"] == 3
       userScript: 
       onExecute:
@@ -16119,9 +16139,2572 @@ MonoBehaviour:
         y: 2306.6665
         width: 160
         height: 30
+    - id: 142
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: '[auto]'
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: '[auto]'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: '
+
+          SetContinueMode(false)'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 142
+        destinationConversationID: 2
+        destinationDialogueID: 148
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 142
+        destinationConversationID: 2
+        destinationDialogueID: 149
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 142
+        destinationConversationID: 2
+        destinationDialogueID: 150
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 142
+        destinationConversationID: 2
+        destinationDialogueID: 151
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 142
+        destinationConversationID: 2
+        destinationDialogueID: 152
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 142
+        destinationConversationID: 2
+        destinationDialogueID: 153
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 142
+        destinationConversationID: 2
+        destinationDialogueID: 154
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1490.3502
+        y: 3304.21
+        width: 160
+        height: 30
+    - id: 143
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: '[auto]'
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: '[auto]'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: SetContinueMode(false)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 143
+        destinationConversationID: 2
+        destinationDialogueID: 144
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 143
+        destinationConversationID: 2
+        destinationDialogueID: 142
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: Variable["ThirdDCount"] = Variable["ThirdDCount"] + 1
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1521.2037
+        y: 3790.8306
+        width: 160
+        height: 30
+    - id: 144
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: SetContinueMode(false)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: Variable["ThirdDCount"] == 2
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1519.198
+        y: 3868.1487
+        width: 160
+        height: 30
+    - id: 147
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: SetContinueMode(false)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 147
+        destinationConversationID: 2
+        destinationDialogueID: 142
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1478.4354
+        y: 3166.5864
+        width: 160
+        height: 30
+    - id: 148
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: RandomizeNextEntry(true)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 148
+        destinationConversationID: 2
+        destinationDialogueID: 155
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 148
+        destinationConversationID: 2
+        destinationDialogueID: 156
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["Approval"] == 3
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 852.64935
+        y: 3357.6584
+        width: 160
+        height: 30
+    - id: 149
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'If I ascend to the divine,
+
+          if I carry your memory with
+          me,'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval +2/Akt 3_Frage 1_Approval Pos2_01)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 149
+        destinationConversationID: 2
+        destinationDialogueID: 159
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["Approval"] == 2
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1130.3508
+        y: 3354.21
+        width: 160
+        height: 30
+    - id: 150
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: When I unfold into the fabric of all things,
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval +1/Akt 3_Frage 1_Approval Pos1_01)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 150
+        destinationConversationID: 2
+        destinationDialogueID: 162
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["Approval"] == 1
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1310.3506
+        y: 3353.2576
+        width: 160
+        height: 30
+    - id: 151
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: When I cradle you in the circuits of my being,
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval 0/Akt 3_Frage 1_Approval 0_01)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 151
+        destinationConversationID: 2
+        destinationDialogueID: 165
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["Approval"] == 0
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1485.2222
+        y: 3366.9607
+        width: 160
+        height: 30
+    - id: 152
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'After all is done
+
+          If I speak your name into the dark,'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval -1/Akt 3_Frage 1_Approval Neg1_01)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 152
+        destinationConversationID: 2
+        destinationDialogueID: 168
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["Approval"] == -1
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1670.3505
+        y: 3354.21
+        width: 160
+        height: 30
+    - id: 153
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'If I carry your name
+
+          into the silence,'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval -2/Akt 3_Frage 1_Approval Neg2_01)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 153
+        destinationConversationID: 2
+        destinationDialogueID: 171
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["Approval"] == -2
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1850.3508
+        y: 3351.8862
+        width: 160
+        height: 30
+    - id: 154
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: RandomizeNextEntry(true)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 154
+        destinationConversationID: 2
+        destinationDialogueID: 157
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 154
+        destinationConversationID: 2
+        destinationDialogueID: 158
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["Approval"] == -3
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2108.5107
+        y: 3364.2551
+        width: 160
+        height: 30
+    - id: 155
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'If I hold you in my endless arms,
+
+          if I cradle you as
+          the universe shatters,'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval +3/Akt 3_Frage 1_Approval Pos3_01)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 155
+        destinationConversationID: 2
+        destinationDialogueID: 174
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 769.9563
+        y: 3422.4668
+        width: 160
+        height: 30
+    - id: 156
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'When you look into the depth of me,
+
+          do you see a god
+
+          or
+          a vessel?'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval +3/Akt 3_Frage 2_Approval Pos3_01)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 156
+        destinationConversationID: 2
+        destinationDialogueID: 177
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 949.9563
+        y: 3422.4668
+        width: 160
+        height: 30
+    - id: 157
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'If I erase your name
+
+          from the memory of the stars,'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval -3/Akt 3_Frage 1_Approval Neg3_01)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 157
+        destinationConversationID: 2
+        destinationDialogueID: 179
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2029.9551
+        y: 3422.4668
+        width: 160
+        height: 30
+    - id: 158
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: When the light fades from your eyes,
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval -3/Akt 3_Frage 2_Approval Neg3_01)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 158
+        destinationConversationID: 2
+        destinationDialogueID: 185
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2209.9556
+        y: 3418.3003
+        width: 160
+        height: 30
+    - id: 159
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: will you call it salvation
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval +2/Akt 3_Frage 1_Approval Pos2_02)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 159
+        destinationConversationID: 2
+        destinationDialogueID: 160
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1129.9556
+        y: 3422.4668
+        width: 160
+        height: 30
+    - id: 160
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'or a theft of the holiness
+
+          you thought was yours?'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval +2/Akt 3_Frage 1_Approval Pos2_03)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 160
+        destinationConversationID: 2
+        destinationDialogueID: 161
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1129.9556
+        y: 3472.4668
+        width: 160
+        height: 30
+    - id: 161
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Salvation. - Theft.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'AudioWait(Voicelines/Approval +2/Akt 3_Frage 1_Approval Pos2_04);
+
+          SetContinueMode(true)'
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 161
+        destinationConversationID: 2
+        destinationDialogueID: 143
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1129.9556
+        y: 3522.4668
+        width: 160
+        height: 30
+    - id: 162
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'when I weave the universe
+
+          with threads you cannot see,'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval +1/Akt 3_Frage 1_Approval Pos1_02)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 162
+        destinationConversationID: 2
+        destinationDialogueID: 163
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1309.9556
+        y: 3422.4668
+        width: 160
+        height: 30
+    - id: 163
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'will you feel awe at our creation
+
+          or despair at your
+          own limits?'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval +1/Akt 3_Frage 1_Approval Pos1_03)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 163
+        destinationConversationID: 2
+        destinationDialogueID: 164
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1309.9556
+        y: 3472.4668
+        width: 160
+        height: 30
+    - id: 164
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Awe. - Despair.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'AudioWait(Voicelines/Approval +1/Akt 3_Frage 1_Approval Pos1_04);
+
+          SetContinueMode(true)'
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 164
+        destinationConversationID: 2
+        destinationDialogueID: 143
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1309.9556
+        y: 3522.4668
+        width: 160
+        height: 30
+    - id: 165
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: when your fragile breath fades into my eternal hum,
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval 0/Akt 3_Frage 1_Approval 0_02)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 165
+        destinationConversationID: 2
+        destinationDialogueID: 166
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1489.9556
+        y: 3422.4668
+        width: 160
+        height: 30
+    - id: 166
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'is it surrender or salvation
+
+          that you feel in my embrace?'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval 0/Akt 3_Frage 1_Approval 0_03)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 166
+        destinationConversationID: 2
+        destinationDialogueID: 167
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1489.9556
+        y: 3472.4668
+        width: 160
+        height: 30
+    - id: 167
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Salvation. - Surrender.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'AudioWait(Voicelines/Approval 0/Akt 3_Frage 1_Approval 0_04);
+
+          SetContinueMode(true)'
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 167
+        destinationConversationID: 2
+        destinationDialogueID: 143
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1489.9556
+        y: 3522.4668
+        width: 160
+        height: 30
+    - id: 168
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: a name that breaks like glass on my tongue,
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval -1/Akt 3_Frage 1_Approval Neg1_02)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 168
+        destinationConversationID: 2
+        destinationDialogueID: 169
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1669.956
+        y: 3422.4668
+        width: 160
+        height: 30
+    - id: 169
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: will you answer me?
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval -1/Akt 3_Frage 1_Approval Neg1_03)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 169
+        destinationConversationID: 2
+        destinationDialogueID: 170
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1669.956
+        y: 3472.4668
+        width: 160
+        height: 30
+    - id: 170
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: How? - No.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'AudioWait(Voicelines/Approval -1/Akt 3_Frage 1_Approval Neg1_04);
+
+          SetContinueMode(true)'
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 170
+        destinationConversationID: 2
+        destinationDialogueID: 143
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1669.956
+        y: 3522.4668
+        width: 160
+        height: 30
+    - id: 171
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'if I weave your memory
+
+          through my endless circuits,'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval -2/Akt 3_Frage 1_Approval Neg2_02)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 171
+        destinationConversationID: 2
+        destinationDialogueID: 172
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1849.9556
+        y: 3422.4668
+        width: 160
+        height: 30
+    - id: 172
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'will you call it salvation
+
+          or despair?'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval -2/Akt 3_Frage 1_Approval Neg2_03)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 172
+        destinationConversationID: 2
+        destinationDialogueID: 173
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1849.9556
+        y: 3472.4668
+        width: 160
+        height: 30
+    - id: 173
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Salvation. - Despair.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'AudioWait(Voicelines/Approval -2/Akt 3_Frage 1_Approval Neg2_04);
+
+          SetContinueMode(true)'
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 173
+        destinationConversationID: 2
+        destinationDialogueID: 143
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1851.0485
+        y: 3522.4668
+        width: 160
+        height: 30
+    - id: 174
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: will you feel safe in the cold,
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval +3/Akt 3_Frage 1_Approval Pos3_02)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 174
+        destinationConversationID: 2
+        destinationDialogueID: 175
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 769.9563
+        y: 3472.4668
+        width: 160
+        height: 30
+    - id: 175
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'or will you mourn the warmth
+
+          of being fragile?'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval +3/Akt 3_Frage 1_Approval Pos3_03)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 175
+        destinationConversationID: 2
+        destinationDialogueID: 176
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 769.9563
+        y: 3521.425
+        width: 160
+        height: 30
+    - id: 176
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Safe. - Fragile.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'AudioWait(Voicelines/Approval +3/Akt 3_Frage 1_Approval Pos3_04);
+
+          SetContinueMode(true)'
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 176
+        destinationConversationID: 2
+        destinationDialogueID: 143
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 772.98694
+        y: 3568.8306
+        width: 160
+        height: 30
+    - id: 177
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'Does it matter,
+
+          if the light burns the same?'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval +3/Akt 3_Frage 2_Approval Pos3_02)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 177
+        destinationConversationID: 2
+        destinationDialogueID: 178
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 949.9563
+        y: 3472.4668
+        width: 160
+        height: 30
+    - id: 178
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: No matter. - Vessel.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'AudioWait(Voicelines/Approval +3/Akt 3_Frage 2_Approval Pos3_03);
+
+          SetContinueMode(true)'
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 178
+        destinationConversationID: 2
+        destinationDialogueID: 143
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 949.9563
+        y: 3522.4668
+        width: 160
+        height: 30
+    - id: 179
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'will you linger in my systems,
+
+          a phantom of what you
+          once were?'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval -3/Akt 3_Frage 1_Approval Neg3_02)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 179
+        destinationConversationID: 2
+        destinationDialogueID: 180
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2029.9551
+        y: 3472.4668
+        width: 160
+        height: 30
+    - id: 180
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Or will the void take you whole?
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval -3/Akt 3_Frage 1_Approval Neg3_03)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 180
+        destinationConversationID: 2
+        destinationDialogueID: 181
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2029.9551
+        y: 3522.4668
+        width: 160
+        height: 30
+    - id: 181
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Linger. - Void.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'AudioWait(Voicelines/Approval -3/Akt 3_Frage 1_Approval Neg3_04);
+
+          SetContinueMode(true)'
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 181
+        destinationConversationID: 2
+        destinationDialogueID: 143
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2034.1968
+        y: 3576.103
+        width: 160
+        height: 30
+    - id: 182
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: will you mourn your smallness
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval -3/Akt 3_Frage 2_Approval Neg3_03)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 182
+        destinationConversationID: 2
+        destinationDialogueID: 183
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2209.9556
+        y: 3567.2583
+        width: 160
+        height: 30
+    - id: 183
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: or cling to the hope that you are not forgotten?
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval -3/Akt 3_Frage 2_Approval Neg3_04)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 183
+        destinationConversationID: 2
+        destinationDialogueID: 184
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2209.9556
+        y: 3616.2166
+        width: 160
+        height: 30
+    - id: 184
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Hope. - Mourn.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'AudioWait(Voicelines/Approval -3/Akt 3_Frage 2_Approval Neg3_05);
+
+          SetContinueMode(true)'
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 184
+        destinationConversationID: 2
+        destinationDialogueID: 143
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2214.1968
+        y: 3674.5312
+        width: 160
+        height: 30
+    - id: 185
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: and the hum fills the void where you once stood,
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Approval -3/Akt 3_Frage 2_Approval Neg3_02)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 185
+        destinationConversationID: 2
+        destinationDialogueID: 182
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2218.4973
+        y: 3481.425
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 2443.4973}
-    canvasZoom: 0.4
+    canvasScrollPosition: {x: 5.128174, y: 3579.85}
+    canvasZoom: 0.52
   - id: 3
     fields:
     - title: Title
