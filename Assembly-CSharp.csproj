@@ -51,6 +51,7 @@
     <Compile Include="Assets\DataHandle.cs" />
     <Compile Include="Assets\Kino\Glitch\AnalogGlitch.cs" />
     <Compile Include="Assets\Kino\Glitch\DigitalGlitch.cs" />
+    <Compile Include="Assets\NumberScript.cs" />
     <Compile Include="Assets\checkScriptTest.cs" />
     <Compile Include="Assets\LuaScript.cs" />
     <Compile Include="Assets\GetSerailData.cs" />
