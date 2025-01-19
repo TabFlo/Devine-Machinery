@@ -149,6 +149,7 @@ namespace PixelCrushers.DialogueSystem
             CheckAssignments();
             DestroyInstantiatedMessages(); // Start with clean slate.
             dialogueActorCache.Clear();
+            shouldShowContinueButton = false;
 
             if (headingText != null)
             {
@@ -167,7 +168,8 @@ namespace PixelCrushers.DialogueSystem
         {
             StopAllCoroutines();
             base.Close();
-            if (!isLoadingGame) records.Clear();
+            if (!isLoadingGame) ClearRecords();
+            shouldShowContinueButton = false;
         }
 
         public override void ShowSubtitle(Subtitle subtitle)
@@ -271,12 +273,12 @@ namespace PixelCrushers.DialogueSystem
         {
             var dialogueActor = GetDialogueActor(subtitle);
             var template = GetTemplate(subtitle, dialogueActor);
-            var go = Instantiate(template.panel.gameObject) as GameObject;
+            var panel = AcquireSubtitlePanelInstance(template);
+            var go = panel.gameObject;
             var text = subtitle.formattedText.text;
             go.name = (text.Length <= 20) ? text : text.Substring(0, Mathf.Min(20, text.Length)) + "...";
             instantiatedMessages.Add(go);
             go.transform.SetParent(messagePanel.transform, false);
-            var panel = go.GetComponent<StandardUISubtitlePanel>();
             if (panel.addSpeakerName)
             {
                 subtitle.formattedText.text = FormattedText.Parse(string.Format(panel.addSpeakerNameFormat, new object[] { subtitle.speakerInfo.Name, subtitle.formattedText.text })).text;
@@ -302,7 +304,7 @@ namespace PixelCrushers.DialogueSystem
             }
             if (maxMessages > 0 && instantiatedMessages.Count > maxMessages)
             {
-                Destroy(instantiatedMessages[0]);
+                ReleaseSubtitlePanelInstance(instantiatedMessages[0]);
                 instantiatedMessages.RemoveAt(0);
             }
             ScrollToBottom(); //--- Now does smooth scroll: StartCoroutine(JumpToBottom());
@@ -311,6 +313,7 @@ namespace PixelCrushers.DialogueSystem
         public override void ShowContinueButton(Subtitle subtitle)
         {
             shouldShowContinueButton = true;
+            if (continueButton != null) continueButton.gameObject.SetActive(true);
         }
 
         public override void OnContinueConversation()
@@ -387,7 +390,7 @@ namespace PixelCrushers.DialogueSystem
         {
             for (int i = 0; i < instantiatedMessages.Count; i++)
             {
-                Destroy(instantiatedMessages[i]);
+                ReleaseSubtitlePanelInstance(instantiatedMessages[i]);
             }
             instantiatedMessages.Clear();
         }
@@ -423,12 +426,13 @@ namespace PixelCrushers.DialogueSystem
         }
 
         /// <summary>
-        /// When saving game data, save the current actor, conversant, and dialogue entry records.
+        /// Save the actor, conversant, and dialogue entry records.
         /// </summary>
         public virtual void OnRecordPersistentData()
         {
             if (DontLoadInThisScene()) return;
             if (!DialogueManager.IsConversationActive) return;
+            if (records == null || records.Count == 0) return;
             if (Debug.isDebugBuild) Debug.Log("TextlineDialogueUI.OnRecordPersistentData: Saving current conversation to " + currentDialogueEntryRecords);
             // Save actor & conversant:
             var actorName = (DialogueManager.CurrentActor != null) ? DialogueManager.CurrentActor.name : string.Empty;
@@ -457,25 +461,42 @@ namespace PixelCrushers.DialogueSystem
 
             if (DontLoadInThisScene()) Debug.Log("OnApplyPersistentData Dont Load in this scene: " + SceneManager.GetActiveScene().buildIndex);
             if (DontLoadInThisScene()) return;
-            records.Clear();
+            ClearRecords();
             if (!DialogueLua.DoesVariableExist(currentDialogueEntryRecords)) return;
             StopAllCoroutines();
 
+            RestoreRecordsFromLua();
+            ApplyRecords();
+        }
+
+        protected virtual void RestoreRecordsFromLua()
+        {
             // Load dialogue entry records:
             var s = DialogueLua.GetVariable(currentDialogueEntryRecords).AsString;
             if (Debug.isDebugBuild) Debug.Log("TextlineDialogueUI.OnApplyPersistentData: Restoring current conversation from " + currentDialogueEntryRecords + ": " + s);
             var ints = s.Split(';');
             var numRecords = Tools.StringToInt(ints[0]);
+            if (numRecords == 0) return;
             for (int i = 0; i < numRecords; i++)
             {
                 var conversationID = Tools.StringToInt(ints[1 + i * 2]);
                 var entryID = Tools.StringToInt(ints[2 + i * 2]);
                 records.Add(new DialogueEntryRecord(conversationID, entryID));
             }
+        }
 
+        protected virtual void ApplyRecords()
+        {
+            var actorName = DialogueLua.GetVariable(currentConversationActor).AsString;
+            var conversantName = DialogueLua.GetVariable(currentConversationConversant).AsString;
+            ApplyRecords(records, actorName, conversantName);
+        }
+
+        protected virtual void ApplyRecords(List<DialogueEntryRecord> recordsList, string actorName, string conversantName)
+        {
             // If we have records, resume the conversation:
-            if (records.Count == 0) return;
-            var lastRecord = records[records.Count - 1];
+            if (recordsList.Count == 0) return;
+            var lastRecord = recordsList[recordsList.Count - 1];
             if (lastRecord.conversationID >= 0 && lastRecord.entryID > 0)
             {
                 UnityEngine.UI.Button lastContinueButton = null;
@@ -484,8 +505,6 @@ namespace PixelCrushers.DialogueSystem
                     // Resume conversation:
                     isLoadingGame = true;
                     var conversation = DialogueManager.MasterDatabase.GetConversation(lastRecord.conversationID);
-                    var actorName = DialogueLua.GetVariable(currentConversationActor).AsString;
-                    var conversantName = DialogueLua.GetVariable(currentConversationConversant).AsString;
                     var actor = GameObject.Find(actorName);
                     var conversant = GameObject.Find(conversantName);
                     var actorTransform = (actor != null) ? actor.transform : null;
@@ -527,7 +546,7 @@ namespace PixelCrushers.DialogueSystem
                     }
                     skipNextRecord = true;
                     isInPreDelay = false;
-                    DialogueManager.StartConversation(conversation.Title, actorTransform, conversantTransform, lastRecord.entryID);
+                    DialogueManager.StartConversation(conversation.Title, actorTransform, conversantTransform, lastRecord.entryID, this);
                     lastContinueButton = continueButton;
                     lastEntry.Sequence = originalSequence;
                     npcPreDelaySettingsCopy.CopyTo(npcPreDelaySettings);
@@ -537,9 +556,9 @@ namespace PixelCrushers.DialogueSystem
                     var lastInstance = (instantiatedMessages.Count > 0) ? instantiatedMessages[instantiatedMessages.Count - 1] : null;
                     instantiatedMessages.Remove(lastInstance);
                     DestroyInstantiatedMessages();
-                    for (int i = 0; i < records.Count - 1; i++)
+                    for (int i = 0; i < recordsList.Count - 1; i++)
                     {
-                        var entry = DialogueManager.MasterDatabase.GetDialogueEntry(records[i].conversationID, records[i].entryID);
+                        var entry = DialogueManager.MasterDatabase.GetDialogueEntry(recordsList[i].conversationID, recordsList[i].entryID);
                         var speakerInfo = DialogueManager.ConversationModel.GetCharacterInfo(entry.ActorID);
                         var listenerInfo = DialogueManager.ConversationModel.GetCharacterInfo(entry.ConversantID);
                         var formattedText = FormattedText.Parse(entry.currentDialogueText, DialogueManager.MasterDatabase.emphasisSettings);
@@ -570,7 +589,7 @@ namespace PixelCrushers.DialogueSystem
             ScrollToBottom();
         }
 
-        public void ClearRecords()
+        public virtual void ClearRecords()
         {
             records.Clear();
         }
@@ -602,14 +621,32 @@ namespace PixelCrushers.DialogueSystem
             {
                 OnApplyPersistentData();
             }
-            else 
+            else
             {
                 if (string.IsNullOrEmpty(conversation))
                 {
                     conversation = DialogueLua.GetVariable("Conversation").asString;
                 }
-                DialogueManager.StartConversation(conversation);
+                DialogueManager.StartConversation(conversation, null, null, -1, this);
             }
+        }
+
+
+        /// <summary>
+        /// Instantiates an instance of the Subtitle Panel. Override this to implement pooling.
+        /// </summary>
+        protected virtual T AcquireSubtitlePanelInstance<T>(T subtitlePanelTemplate) where T : StandardUISubtitlePanel
+        {
+            return Instantiate(subtitlePanelTemplate);
+        }
+
+        /// <summary>
+        /// Destroys the passed GameObject. Override this to implement pooling. Instead of Destroy, return the object to your pool.
+        /// </summary>
+        /// <param name="subtitlePanel"></param>
+        protected virtual void ReleaseSubtitlePanelInstance(GameObject subtitlePanel)
+        {
+            Destroy(subtitlePanel);
         }
 
     }

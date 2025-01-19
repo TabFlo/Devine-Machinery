@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
 using System;
+using System.Text.RegularExpressions;
 
 namespace PixelCrushers.DialogueSystem
 {
@@ -314,6 +315,22 @@ namespace PixelCrushers.DialogueSystem
             }
         }
 
+        protected virtual void StopFocusWhenOpenCoroutine()
+        {
+            if (m_focusWhenOpenCoroutine != null)
+            {
+                StopCoroutine(m_focusWhenOpenCoroutine);
+                m_focusWhenOpenCoroutine = null;
+            }
+        }
+
+        public virtual void StopShowSubtitleCoroutines()
+        {
+            StopShowAfterClosingCoroutine();
+            StopFocusWhenOpenCoroutine();
+
+        }
+
         /// <summary>
         /// Hides a subtitle, playing the unfocus and close animations.
         /// </summary>
@@ -366,7 +383,7 @@ namespace PixelCrushers.DialogueSystem
         {
             if (panelState == PanelState.Opening && enabled && gameObject.activeInHierarchy)
             {
-                if (m_focusWhenOpenCoroutine != null) StopCoroutine(m_focusWhenOpenCoroutine);
+                StopFocusWhenOpenCoroutine();
                 m_focusWhenOpenCoroutine = StartCoroutine(FocusWhenOpen());
             }
             else
@@ -415,11 +432,7 @@ namespace PixelCrushers.DialogueSystem
         public virtual void Unfocus()
         {
             if (m_panelAnimator != null && !string.IsNullOrEmpty(focusAnimationTrigger)) m_panelAnimator.ResetTrigger(focusAnimationTrigger);
-            if (m_focusWhenOpenCoroutine != null)
-            {
-                StopCoroutine(m_focusWhenOpenCoroutine);
-                m_focusWhenOpenCoroutine = null;
-            }
+            StopShowSubtitleCoroutines();
             if (!string.IsNullOrEmpty(focusAnimationTrigger) && animatorMonitor.currentTrigger == focusAnimationTrigger)
             {
                 animatorMonitor.CancelCurrentAnimation();
@@ -466,16 +479,31 @@ namespace PixelCrushers.DialogueSystem
             numAccumulatedLines = 0;
         }
 
+        private Coroutine m_ShowContinueButtonCoroutine;
+
         public virtual void ShowContinueButton()
         {
+            if (m_ShowContinueButtonCoroutine != null)
+            {
+                DialogueManager.instance.StopCoroutine(m_ShowContinueButtonCoroutine);
+            }
             if (blockInputDuration > 0)
             {
-                DialogueManager.instance.StartCoroutine(ShowContinueButtonAfterBlockDuration());
+                m_ShowContinueButtonCoroutine = DialogueManager.instance.StartCoroutine(ShowContinueButtonAfterBlockDuration());
             }
             else
             {
                 ShowContinueButtonNow();
             }
+        }
+
+        public virtual void HideContinueButton()
+        {
+            if (m_ShowContinueButtonCoroutine != null)
+            {
+                DialogueManager.instance.StopCoroutine(m_ShowContinueButtonCoroutine);
+            }
+            Tools.SetGameObjectActive(continueButton, false);
         }
 
         protected virtual IEnumerator ShowContinueButtonAfterBlockDuration()
@@ -493,6 +521,7 @@ namespace PixelCrushers.DialogueSystem
             yield return DialogueManager.instance.StartCoroutine(DialogueTime.WaitForSeconds(blockInputDuration));
             continueButton.interactable = true;
             ShowContinueButtonNow();
+            m_ShowContinueButtonCoroutine = null;
         }
 
         protected virtual void ShowContinueButtonNow()
@@ -513,11 +542,6 @@ namespace PixelCrushers.DialogueSystem
                 }
             }
             shouldShowContinueButton = true;
-        }
-
-        public virtual void HideContinueButton()
-        {
-            Tools.SetGameObjectActive(continueButton, false);
         }
 
         /// <summary>
@@ -595,22 +619,27 @@ namespace PixelCrushers.DialogueSystem
 
         protected virtual void SetSubtitleTextContent(Subtitle subtitle)
         {
+            if (addSpeakerName && !string.IsNullOrEmpty(subtitle.speakerInfo.Name))
+            {
+                subtitle.formattedText.text = FormattedText.Parse(string.Format(addSpeakerNameFormat, new object[] { subtitle.speakerInfo.Name, subtitle.formattedText.text })).text;
+            }
+
             TypewriterUtility.StopTyping(subtitleText);
             var previousText = accumulateText ? m_accumulatedText : string.Empty;
             if (accumulateText && !string.IsNullOrEmpty(subtitle.formattedText.text))
             {
                 if (numAccumulatedLines < maxLines)
                 {
-                    numAccumulatedLines++;
+                    numAccumulatedLines += (1 + NumCharOccurrences('\n', subtitle.formattedText.text));
                 }
                 else
                 {
                     // If we're at the max number of lines, remove the first line from the accumulated text:
-                    previousText = previousText.Substring(previousText.IndexOf("\n") + 1);
+                    previousText = RemoveFirstLine(previousText);
                 }
             }
             var previousChars = accumulateText ? UITools.StripRPGMakerCodes(Tools.StripTextMeshProTags(Tools.StripRichTextCodes(previousText))).Length : 0;
-            SetFormattedText(subtitleText, previousText, subtitle.formattedText);
+            SetFormattedText(subtitleText, previousText, subtitle);
             if (accumulateText) m_accumulatedText = UITools.StripRPGMakerCodes(subtitleText.text) + "\n";
             if (scrollbarEnabler != null && !HasTypewriter())
             {
@@ -626,6 +655,40 @@ namespace PixelCrushers.DialogueSystem
             }
         }
 
+        protected virtual string RemoveFirstLine(string previousText)
+        {
+            if (string.IsNullOrEmpty(previousText)) return string.Empty;
+            var newlineIndex = previousText.IndexOf("\n");
+            if (previousText.Contains("<"))
+            {
+                // Preserve rich text tags in first line:
+                var tags = string.Empty;
+                var firstLine = previousText.Substring(0, newlineIndex);
+                foreach (Match match in Tools.TextMeshProTagsRegex.Matches(firstLine))
+                {
+                    tags += match.Value;
+                }
+                return tags + previousText.Substring(newlineIndex + 1);
+            }
+            else
+            {
+                return previousText.Substring(newlineIndex + 1);
+            }
+        }
+
+        /// <summary>
+        /// Returns the number of times character c occurs in string s.
+        /// </summary>
+        protected int NumCharOccurrences(char c, string s)
+        {
+            int count = 0;
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (c == s[i]) count++;
+            }
+            return count;
+        }
+
         protected virtual IEnumerator StartTypingWhenFocused(UITextField subtitleText, string text, int fromIndex)
         {
             subtitleText.text = string.Empty;
@@ -638,6 +701,20 @@ namespace PixelCrushers.DialogueSystem
             TypewriterUtility.StartTyping(subtitleText, text, fromIndex);
         }
 
+        protected virtual void SetFormattedText(UITextField textField, string previousText, Subtitle subtitle)
+        {
+            var currentText = UITools.GetUIFormattedText(subtitle.formattedText);
+            textField.text = previousText + currentText;
+            UITools.SendTextChangeMessage(textField);
+            if (!haveSavedOriginalColor)
+            {
+                originalColor = textField.color;
+                haveSavedOriginalColor = true;
+            }
+            textField.color = (subtitle.formattedText.emphases != null && subtitle.formattedText.emphases.Length > 0) ? subtitle.formattedText.emphases[0].color : originalColor;
+        }
+
+        // No longer used, but kept in case user subclasses use it.
         protected virtual void SetFormattedText(UITextField textField, string previousText, FormattedText formattedText)
         {
             textField.text = previousText + UITools.GetUIFormattedText(formattedText);

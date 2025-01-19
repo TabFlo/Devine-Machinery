@@ -214,7 +214,7 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
 
         private float GetTopOffsetHeight()
         {
-            return isSearchBarOpen ? 70f : 49f;
+            return isSearchBarOpen ? 72f : 56f;
         }
 
         private void DrawCanvasContents()
@@ -477,23 +477,36 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
             return false;
         }
 
-        private void DrawNewLinkConnector()
+        private void DrawNewLinkConnector() // Draw from selected or multinode selection.
         {
-            if (isMakingLink && (linkSourceEntry != null))
+            if (!isMakingLink) return;
+            if (multinodeSelection.nodes.Count > 1)
             {
-                Vector3 start = new Vector3(linkSourceEntry.canvasRect.center.x, linkSourceEntry.canvasRect.center.y, 0);
-                if ((linkTargetEntry != null) && Event.current.isMouse)
+                foreach (var node in multinodeSelection.nodes)
                 {
-                    if (!linkTargetEntry.canvasRect.Contains(Event.current.mousePosition))
-                    {
-                        linkTargetEntry = null;
-                    }
+                    DrawNewLinkConnectorFrom(node);
                 }
-                Vector3 end = (linkTargetEntry != null)
-                    ? new Vector3(linkTargetEntry.canvasRect.center.x, linkTargetEntry.canvasRect.center.y, 0)
-                    : new Vector3(Event.current.mousePosition.x, Event.current.mousePosition.y, 0);
-                DrawLink(start, end, Color.white, false);
             }
+            else if (linkSourceEntry != null)
+            {
+                DrawNewLinkConnectorFrom(linkSourceEntry);
+            }
+        }
+
+        private void DrawNewLinkConnectorFrom(DialogueEntry linkSourceEntry)
+        {
+            Vector3 start = new Vector3(linkSourceEntry.canvasRect.center.x, linkSourceEntry.canvasRect.center.y, 0);
+            if ((linkTargetEntry != null) && Event.current.isMouse)
+            {
+                if (!linkTargetEntry.canvasRect.Contains(Event.current.mousePosition))
+                {
+                    linkTargetEntry = null;
+                }
+            }
+            Vector3 end = (linkTargetEntry != null)
+                ? new Vector3(linkTargetEntry.canvasRect.center.x, linkTargetEntry.canvasRect.center.y, 0)
+                : new Vector3(Event.current.mousePosition.x, Event.current.mousePosition.y, 0);
+            DrawLink(start, end, Color.white, false);
         }
 
         private void HandleNodeEditorScrollWheelEvents()
@@ -1711,6 +1724,40 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
                 contextMenu.AddItem(new GUIContent("Group/Delete"), false, DeleteEntryGroup, null);
             }
 
+            contextMenu.AddItem(new GUIContent("Sort/By Title"), false, SortConversationsByTitle);
+            contextMenu.AddItem(new GUIContent("Sort/By ID"), false, SortConversationsByID);
+            contextMenu.AddItem(new GUIContent("Sort/Reorder IDs/This Conversation"), false, ConfirmReorderIDsThisConversation);
+            contextMenu.AddItem(new GUIContent("Sort/Reorder IDs/All Conversations"), false, ConfirmReorderIDsAllConversations);
+            contextMenu.AddItem(new GUIContent("Sort/Reorder IDs/Depth First Reordering"), reorderIDsDepthFirst, () => { reorderIDsDepthFirst = !reorderIDsDepthFirst; });
+            contextMenu.AddItem(new GUIContent("Show/Show Conversation IDs"), prefs.showConversationIDs, ToggleShowConversationIDs);
+            contextMenu.AddItem(new GUIContent("Show/Show Node IDs"), prefs.showNodeIDs, ToggleShowNodeIDs);
+            contextMenu.AddItem(new GUIContent("Show/Show All Actor Names"), prefs.showAllActorNames, ToggleShowAllActorNames);
+            contextMenu.AddItem(new GUIContent("Show/Show Non-Primary Actor Names"), prefs.showOtherActorNames, ToggleShowOtherActorNames);
+            contextMenu.AddItem(new GUIContent("Show/Show Actor Portraits"), prefs.showActorPortraits, ToggleShowActorPortraits);
+            contextMenu.AddItem(new GUIContent("Show/Show Descriptions"), prefs.showDescriptions, ToggleShowDescriptions);
+            contextMenu.AddItem(new GUIContent("Show/Show Full Text On Hover"), prefs.showFullTextOnHover, ToggleShowFullTextOnHover);
+            contextMenu.AddItem(new GUIContent("Show/Show Link Order On Arrows"), prefs.showLinkOrderOnConnectors, () => { prefs.showLinkOrderOnConnectors = !prefs.showLinkOrderOnConnectors; });
+            contextMenu.AddItem(new GUIContent("Show/Show End Node Markers"), prefs.showEndNodeMarkers, ToggleShowEndNodeMarkers);
+            contextMenu.AddItem(new GUIContent("Show/Show Titles Instead of Text"), prefs.showTitlesInsteadOfText, ToggleShowTitlesBeforeText);
+            contextMenu.AddItem(new GUIContent("Show/Show Primary Actors in Lower Right"), prefs.showParticipantNames, ToggleShowParticipantNames);
+            contextMenu.AddItem(new GUIContent("Show/Prefer Titles For 'Links To' Menus"), prefs.preferTitlesForLinksTo, TogglePreferTitlesForLinksTo);
+            contextMenu.AddItem(new GUIContent("Show/Node Width/1x"), canvasRectWidthMultiplier == 1, SetNodeWidthMultiplier, (int)1);
+            contextMenu.AddItem(new GUIContent("Show/Node Width/2x"), canvasRectWidthMultiplier == 2, SetNodeWidthMultiplier, (int)2);
+            contextMenu.AddItem(new GUIContent("Show/Node Width/3x"), canvasRectWidthMultiplier == 3, SetNodeWidthMultiplier, (int)3);
+            contextMenu.AddItem(new GUIContent("Show/Node Width/4x"), canvasRectWidthMultiplier == 4, SetNodeWidthMultiplier, (int)4);
+            contextMenu.AddItem(new GUIContent("Grid/No Snap"), prefs.snapToGridAmount < MinorGridLineWidth, SetSnapToGrid, 0f);
+            contextMenu.AddItem(new GUIContent("Grid/12 pixels"), Mathf.Approximately(12f, prefs.snapToGridAmount), SetSnapToGrid, 12f);
+            contextMenu.AddItem(new GUIContent("Grid/24 pixels"), Mathf.Approximately(24f, prefs.snapToGridAmount), SetSnapToGrid, 24f);
+            contextMenu.AddItem(new GUIContent("Grid/36 pixels"), Mathf.Approximately(36f, prefs.snapToGridAmount), SetSnapToGrid, 36f);
+            contextMenu.AddItem(new GUIContent("Grid/48 pixels"), Mathf.Approximately(48f, prefs.snapToGridAmount), SetSnapToGrid, 48f);
+            contextMenu.AddItem(new GUIContent("Grid/Snap All Nodes To Grid"), false, SnapAllNodesToGrid);
+            contextMenu.AddItem(new GUIContent("Search/Search Bar"), isSearchBarOpen, ToggleDialogueTreeSearchBar);
+            contextMenu.AddItem(new GUIContent("Search/Global Search and Replace..."), false, OpenGlobalSearchAndReplace);
+            contextMenu.AddItem(new GUIContent("Settings/Auto Arrange After Adding Node"), prefs.autoArrangeOnCreate, ToggleAutoArrangeOnCreate);
+            contextMenu.AddItem(new GUIContent("Settings/Add New Nodes to Right"), prefs.addNewNodesToRight, ToggleAddNewNodesToRight);
+            contextMenu.AddItem(new GUIContent("Settings/Confirm Node and Link Deletion"), confirmDelete, ToggleConfirmDelete);
+            contextMenu.AddItem(new GUIContent("Outline Mode"), false, ActivateOutlineMode);
+
             AddCanvasContextMenuGotoItems(contextMenu);
 
             contextMenu.AddSeparator(string.Empty);
@@ -1800,6 +1847,8 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
             contextMenu.AddSeparator(string.Empty);
             contextMenu.AddItem(new GUIContent("Play From Here..."), false, PlayConversationFromEntry, currentEntry.id);
 
+            if (customNodeContextMenuSetup != null) customNodeContextMenuSetup(database, currentEntry, contextMenu);
+
             contextMenu.ShowAsContext();
             contextMenuPosition = Event.current.mousePosition;
 
@@ -1817,10 +1866,12 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
                 {
                     contextMenu.AddItem(new GUIContent("Center on Current Entry"), false, GotoCurrentRuntimeEntry);
                 }
+                contextMenu.AddItem(new GUIContent("Refresh"), false, RefreshConversation);
             }
             else
             {
                 contextMenu.AddDisabledItem(new GUIContent("Center on START"));
+                contextMenu.AddDisabledItem(new GUIContent("Refresh"));
             }
         }
 
@@ -1862,6 +1913,31 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
 
         private void FinishMakingLink()
         {
+            if (multinodeSelection.nodes.Count > 1)
+            {
+                // Link from all selected nodes to target:
+                foreach (var node in multinodeSelection.nodes)
+                {
+                    MakeSingleLinkFrom(node);
+                }
+            }
+            else
+            {
+                // Link from selected node to target:
+                MakeSingleLinkFrom(linkSourceEntry);
+            }
+            isMakingLink = false;
+            linkSourceEntry = null;
+            linkTargetEntry = null;
+            multinodeSelection.Clear();
+            InitializeDialogueTree();
+            ResetDialogueEntryText();
+            Repaint();
+            SetDatabaseDirty("Make Link");
+        }
+
+        private void MakeSingleLinkFrom(DialogueEntry linkSourceEntry)
+        {
             if ((linkSourceEntry != null) && (linkTargetEntry != null) &&
                 (linkSourceEntry != linkTargetEntry) &&
                 !LinkExists(linkSourceEntry, linkTargetEntry))
@@ -1872,14 +1948,7 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
                 link.destinationConversationID = currentConversation.id;
                 link.destinationDialogueID = linkTargetEntry.id;
                 linkSourceEntry.outgoingLinks.Add(link);
-                InitializeDialogueTree();
-                ResetDialogueEntryText();
-                Repaint();
             }
-            isMakingLink = false;
-            linkSourceEntry = null;
-            linkTargetEntry = null;
-            SetDatabaseDirty("Make Link");
         }
 
         private void DeleteEntryCallback(object o)
@@ -2032,8 +2101,12 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
         private void CopyEntryCallback(object o)
         {
             nodeClipboard = new List<DialogueEntry>();
-            nodeClipboard.Add(DuplicateEntryForClipboard(currentEntry));
-            RemoveOutgoingLinksFromClipboard();
+            var dupe = DuplicateEntryForClipboard(currentEntry);
+            if (dupe != null)
+            {
+                nodeClipboard.Add(dupe);
+                RemoveOutgoingLinksFromClipboard();
+            }
         }
 
         private void CopyMultipleEntriesCallback(object o)
@@ -2041,7 +2114,8 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
             nodeClipboard = new List<DialogueEntry>();
             foreach (var entry in multinodeSelection.nodes)
             {
-                nodeClipboard.Add(DuplicateEntryForClipboard(entry));
+                var dupe = DuplicateEntryForClipboard(entry);
+                if (dupe != null) nodeClipboard.Add(dupe);
             }
             RemoveOutgoingLinksFromClipboard();
         }
@@ -2050,6 +2124,7 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
         {
             if (nodeClipboard == null) return;
             var clipboardIDs = new List<int>();
+            nodeClipboard.RemoveAll(x => x == null);
             foreach (var node in nodeClipboard)
             {
                 clipboardIDs.Add(node.id);
@@ -2081,6 +2156,8 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
         private void PasteClipboardNodes(DialogueEntry originEntry)
         {
             if (nodeClipboard == null || nodeClipboard.Count == 0) return;
+            nodeClipboard.RemoveAll(x => x == null);
+            if (nodeClipboard.Count == 0) return;
 
             // Position:
             var xMin = nodeClipboard[0].canvasRect.xMin;

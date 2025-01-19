@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class TouchCheckScript : MonoBehaviour
 {
-    private static int appro = 0;  // Initialize appro to 0 at the start
+    private static int appro = 2;  // Initialize appro to 0 at the start
     private bool isUpdating = false;  // Flag to prevent multiple updates in quick succession
 
     public UnityEvent touchConmtinue;
@@ -16,13 +16,15 @@ public class TouchCheckScript : MonoBehaviour
         DialogueLua.SetVariable("Approval", appro);  // Initialize it for the Dialogue System
     }
 
+
+
     
 
     private void OnTriggerEnter(Collider other)
     {
         if (isUpdating) return;  // Prevent multiple updates within the same frame
         Debug.Log("Ball has entered the trigger!");
-        //StartCoroutine(SendAnswer());
+        StartCoroutine(SendAnswer());
     }
 
     private void OnTriggerExit(Collider other)

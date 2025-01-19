@@ -52,6 +52,7 @@ namespace PixelCrushers.DialogueSystem
             if (order == BarkOrder.Random)
             {
                 if (numEntries == 0) return 0;
+                var isNewList = entries == null;
                 if (entries == null) entries = new List<int>();
 
                 // If the entries have changed or we've reached the end of the shuffled list, remake the list:
@@ -66,7 +67,7 @@ namespace PixelCrushers.DialogueSystem
                         entries.Add(i);
                     }
                     entries.Shuffle();
-                    if (entries[0] == lastEntry)
+                    if (entries[0] == lastEntry && !isNewList)
                     {
                         // If the first entry of new list is the same as the last entry used, move it to the end:
                         entries.RemoveAt(0);
@@ -191,7 +192,8 @@ namespace PixelCrushers.DialogueSystem
             IBarkUI barkUI = DialogueActor.GetBarkUI(speaker); //speaker.GetComponentInChildren(typeof(IBarkUI)) as IBarkUI;
             if ((barkUI == null) && DialogueDebug.logWarnings) Debug.LogWarning(string.Format("{0}: Bark (speaker={1}, listener={2}): '{3}' speaker has no bark UI", new System.Object[] { DialogueDebug.Prefix, speaker, listener, conversationTitle }), speaker);
             var firstValid = stopAtFirstValid || ((barkHistory == null) ? false : barkHistory.order == (BarkOrder.FirstValid));
-            ConversationModel conversationModel = new ConversationModel(database ?? DialogueManager.masterDatabase, conversationTitle, speaker, listener, DialogueManager.allowLuaExceptions, DialogueManager.isDialogueEntryValid, -1, firstValid);
+            ConversationModel conversationModel = new ConversationModel(database ?? DialogueManager.masterDatabase, conversationTitle, speaker, listener, DialogueManager.allowLuaExceptions, 
+                DialogueManager.isDialogueEntryValid, -1, firstValid, false, DialogueManager.useLinearGroupMode);
             ConversationState firstState = conversationModel.firstState;
             if ((firstState == null) && DialogueDebug.logWarnings) Debug.LogWarning(string.Format("{0}: Bark (speaker={1}, listener={2}): '{3}' has no START entry", new System.Object[] { DialogueDebug.Prefix, speaker, listener, conversationTitle }), speaker);
             if ((firstState != null) && !firstState.hasAnyResponses && DialogueDebug.logWarnings) Debug.LogWarning(string.Format("{0}: Bark (speaker={1}, listener={2}): '{3}' has no valid bark at this time", new System.Object[] { DialogueDebug.Prefix, speaker, listener, conversationTitle }), speaker);
@@ -292,7 +294,7 @@ namespace PixelCrushers.DialogueSystem
                 if (sequence.Contains(SequencerKeywords.End))
                 {
                     var text = barkText;
-                    int numCharacters = string.IsNullOrEmpty(text) ? 0 : Tools.StripRichTextCodes(text).Length;
+                    int numCharacters = string.IsNullOrEmpty(text) ? 0 : Tools.StripRPGMakerCodes(Tools.StripTextMeshProTags(text)).Length;
                     var endDuration = Mathf.Max(DialogueManager.displaySettings.GetMinSubtitleSeconds(), numCharacters / Mathf.Max(1, DialogueManager.displaySettings.GetSubtitleCharsPerSecond()));
                     sequence = sequence.Replace(SequencerKeywords.End, endDuration.ToString(System.Globalization.CultureInfo.InvariantCulture));
                 }

@@ -1,5 +1,4 @@
-// Recompile at 10/16/2024 11:09:07 AM
-// Copyright (c) Pixel Crushers. All rights reserved.
+﻿// Copyright (c) Pixel Crushers. All rights reserved.
 
 using System.Collections;
 using System.Collections.Generic;
@@ -75,7 +74,10 @@ namespace PixelCrushers.DialogueSystem
         {
             get
             {
-                if (m_textComponent == null) m_textComponent = GetComponent<TMPro.TMP_Text>();
+                if (m_textComponent == null && gameObject != null)
+                {
+                    m_textComponent = GetComponent<TMPro.TMP_Text>();
+                }
                 return m_textComponent;
             }
         }
@@ -85,7 +87,7 @@ namespace PixelCrushers.DialogueSystem
         {
             get
             {
-                if (m_layoutElement == null)
+                if (m_layoutElement == null && gameObject != null)
                 {
                     m_layoutElement = GetComponent<LayoutElement>();
                     if (m_layoutElement == null) m_layoutElement = gameObject.AddComponent<LayoutElement>();
@@ -98,7 +100,10 @@ namespace PixelCrushers.DialogueSystem
         {
             get
             {
-                if (audioSource == null) audioSource = GetComponent<AudioSource>();
+                if (audioSource == null && gameObject != null)
+                {
+                    audioSource = GetComponent<AudioSource>();
+                }
                 if (audioSource == null && (audioClip != null))
                 {
                     audioSource = gameObject.AddComponent<AudioSource>();
@@ -256,6 +261,7 @@ namespace PixelCrushers.DialogueSystem
                 textComponent.maxVisibleCharacters = fromIndex;
                 textComponent.ForceMeshUpdate();
                 TMPro.TMP_TextInfo textInfo = textComponent.textInfo;
+                if (textInfo == null) yield break;
                 var parsedText = textComponent.GetParsedText();
                 int totalVisibleCharacters = textInfo.characterCount; // Get # of Visible Character in text object
                 charactersTyped = fromIndex;
@@ -428,7 +434,7 @@ namespace PixelCrushers.DialogueSystem
                 onEnd.Invoke();
                 Sequencer.Message(SequencerMessages.Typed);
             }
-            if (textComponent != null) 
+            if (textComponent != null && textComponent.textInfo != null) 
             {
                 textComponent.maxVisibleCharacters = textComponent.textInfo.characterCount;
                 textComponent.ForceMeshUpdate();

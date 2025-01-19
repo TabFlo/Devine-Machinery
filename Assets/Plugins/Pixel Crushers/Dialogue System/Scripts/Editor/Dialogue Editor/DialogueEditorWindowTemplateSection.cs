@@ -69,15 +69,19 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
             EditorWindowTools.StartIndentedSection();
             DrawTemplate("Actors", template.actorFields, template.actorPrimaryFieldTitles, ref templateFoldouts.actors);
             DrawActorTemplateAIButton();
-            DrawTemplate("Items", template.itemFields, null, ref templateFoldouts.items);
+            DrawTemplate("Items", template.itemFields, template.itemPrimaryFieldTitles, ref templateFoldouts.items);
             DrawTemplate("Quests", template.questFields, template.questPrimaryFieldTitles, ref templateFoldouts.quests);
-            DrawTemplate("Locations", template.locationFields, null, ref templateFoldouts.locations);
+            DrawTemplate("Locations", template.locationFields, template.locationPrimaryFieldTitles, ref templateFoldouts.locations);
             DrawTemplate("Variables", template.variableFields, null, ref templateFoldouts.variables);
             DrawTemplate("Conversations", template.conversationFields, template.conversationPrimaryFieldTitles, ref templateFoldouts.conversations);
             DrawTemplate("Dialogue Entries", template.dialogueEntryFields, template.dialogueEntryPrimaryFieldTitles, ref templateFoldouts.dialogueEntries);
             DrawDialogueLineColors();
             EditorWindowTools.EndIndentedSection();
-            if (EditorGUI.EndChangeCheck()) SaveTemplate();
+            if (EditorGUI.EndChangeCheck())
+            {
+                SaveTemplate();
+                ResetLastFieldsChecked();
+            }
         }
 
         private void DrawActorTemplateAIButton()
@@ -121,7 +125,11 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
             currentTemplateFoldout = foldoutName;
             EditorGUILayout.BeginHorizontal();
             foldout = EditorGUILayout.Foldout(foldout, foldoutName);
-            if (GUILayout.Button(new GUIContent(" ", "Add new field to template."), "OL Plus", GUILayout.Width(16))) fields.Add(new Field());
+            if (GUILayout.Button(new GUIContent(" ", "Add new field to template."), "OL Plus", GUILayout.Width(16)))
+            {
+                foldout = true;
+                fields.Add(new Field());
+            }
             EditorGUILayout.EndHorizontal();
             if (foldout)
             {
