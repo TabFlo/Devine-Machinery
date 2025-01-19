@@ -149,7 +149,7 @@ RectTransform:
   m_GameObject: {fileID: 84374873}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.58749, y: 0.58749, z: 0.58749}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1671804011}
@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 800, y: 0}
+  m_AnchoredPosition: {x: 635, y: 42}
   m_SizeDelta: {x: 800, y: 480}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &84374875
@@ -216,7 +216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &134232422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,7 +284,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 1
+  m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -390,7 +390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22325660, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: m_TargetDisplay
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6193717574850487428, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: m_UiScaleMode
@@ -1773,6 +1773,7 @@ MonoBehaviour:
   persistentDataName: 
   portrait: {fileID: 0}
   spritePortrait: {fileID: 0}
+  audioSource: {fileID: 0}
   barkUISettings:
     barkUI: {fileID: 0}
     barkUIOffset: {x: 0, y: 2, z: 0}
@@ -2555,7 +2556,7 @@ MonoBehaviour:
     m_textMeshProUGUI: {fileID: 1842456907}
   addSpeakerName: 0
   addSpeakerNameFormat: '{0}: {1}'
-  accumulateText: 1
+  accumulateText: 0
   maxLines: 100
   delayTypewriterUntilOpen: 0
   continueButton: {fileID: 0}
@@ -3144,6 +3145,7 @@ MonoBehaviour:
     defaultNPCSubtitlePanel: {fileID: 1270328299}
     defaultPCSubtitlePanel: {fileID: 1270328299}
     allowOpenSubtitlePanelsOnStartConversation: 1
+    allowDialogueActorCustomPanels: 1
     menuPanels:
     - {fileID: 1399287980}
     defaultMenuPanel: {fileID: 1399287980}
@@ -3416,6 +3418,7 @@ MonoBehaviour:
   persistentDataName: 
   portrait: {fileID: 0}
   spritePortrait: {fileID: 0}
+  audioSource: {fileID: 0}
   barkUISettings:
     barkUI: {fileID: 0}
     barkUIOffset: {x: 0, y: 2, z: 0}
@@ -3999,7 +4002,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1842456906}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1360375efe462cd4ab520d1661206035, type: 3}
   m_Name: 

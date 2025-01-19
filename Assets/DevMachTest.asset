@@ -19737,8 +19737,7 @@ MonoBehaviour:
       - title: Dialogue Text
         value: 'Does eternity feel like love
 
-          when it is not yours to
-          hold?'
+          when it is not yours to hold?'
         type: 0
         typeString: 
       - title: Sequence
@@ -22299,8 +22298,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 3070.001}
-    canvasZoom: 0.12999982
+    canvasScrollPosition: {x: 202.76297, y: 4064.3804}
+    canvasZoom: 0.4899998
   - id: 3
     fields:
     - title: Title

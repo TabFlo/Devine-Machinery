@@ -21328,7 +21328,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: Delay(1.5)
         type: 0
         typeString: 
       conversationID: 2
@@ -21383,7 +21383,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: Delay(1.5)
         type: 0
         typeString: 
       conversationID: 2
@@ -21438,7 +21438,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: Delay(1.5)
         type: 0
         typeString: 
       conversationID: 2
@@ -21493,7 +21493,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: Delay(1.5)
         type: 0
         typeString: 
       conversationID: 2
@@ -21518,7 +21518,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1523.8203
-        y: 4248.7886
+        y: 4247.7935
         width: 160
         height: 30
     - id: 233
@@ -21548,7 +21548,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: Delay(1.5)
         type: 0
         typeString: 
       conversationID: 2
@@ -21603,7 +21603,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: Delay(1.5)
         type: 0
         typeString: 
       conversationID: 2
@@ -21658,7 +21658,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: Delay(1.5)
         type: 0
         typeString: 
       conversationID: 2
@@ -21683,7 +21683,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 2068.3938
-        y: 4299.9355
+        y: 4298.9404
         width: 160
         height: 30
     - id: 236
@@ -21713,7 +21713,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: Continue()
         type: 0
         typeString: 
       conversationID: 2
@@ -21737,14 +21737,14 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["LastLineLoop"] = Variable["LastLineLoop"] + 1
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 987.4889
-        y: 4489.4424
+        x: 989.67456
+        y: 4497.093
         width: 160
         height: 30
     - id: 237
@@ -21774,7 +21774,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: Continue()
         type: 0
         typeString: 
       conversationID: 2
@@ -21798,7 +21798,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["LastLineLoop"] = Variable["LastLineLoop"] + 1
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -21835,7 +21835,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: Continue()
         type: 0
         typeString: 
       conversationID: 2
@@ -21859,7 +21859,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["LastLineLoop"] = Variable["LastLineLoop"] + 1
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -21896,7 +21896,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: Continue()
         type: 0
         typeString: 
       conversationID: 2
@@ -21920,7 +21920,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["LastLineLoop"] = Variable["LastLineLoop"] + 1
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -21957,7 +21957,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: Continue()
         type: 0
         typeString: 
       conversationID: 2
@@ -21981,7 +21981,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["LastLineLoop"] = Variable["LastLineLoop"] + 1
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -22018,7 +22018,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: Continue()
         type: 0
         typeString: 
       conversationID: 2
@@ -22042,7 +22042,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["LastLineLoop"] = Variable["LastLineLoop"] + 1
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -22079,7 +22079,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: Continue()
         type: 0
         typeString: 
       conversationID: 2
@@ -22103,7 +22103,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["LastLineLoop"] = Variable["LastLineLoop"] + 1
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -22140,7 +22140,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: Continue()
         type: 0
         typeString: 
       conversationID: 2
@@ -22157,7 +22157,7 @@ MonoBehaviour:
         destinationDialogueID: 244
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: Variable["LastLineLoop"] == 4
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -22195,7 +22195,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: Continue()
         type: 0
         typeString: 
       conversationID: 2
@@ -22213,7 +22213,32 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: 'Variable["LastLineLoop"] = 0;
+
+        Variable["ThirdDCount"]
+        = 0;
+
+        Variable["played_33"] = false;
+
+        Variable["played_32"]
+        = false;
+
+        Variable["played+33"] = false;
+
+        Variable["played+32"]
+        = false;
+
+        Variable["played+3"] = false;
+
+        Variable["played_3"]
+        = false;
+
+        Variable["SecondDCount"] = 0;
+
+        Variable["FirstDCount"]
+        = 0;
+
+        Variable["FirstDCount"] = 0'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -22250,62 +22275,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 2
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 2
-        originDialogueID: 245
-        destinationConversationID: 2
-        destinationDialogueID: 246
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 1537.3696
-        y: 4856.4336
-        width: 160
-        height: 30
-    - id: 246
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: 
+        value: Continue()
         type: 0
         typeString: 
       conversationID: 2
@@ -22324,12 +22294,12 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1537.3696
-        y: 4906.4336
+        y: 4856.4336
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 438.48462, y: 4372.86}
-    canvasZoom: 0.6099999
+    canvasScrollPosition: {x: 202.76297, y: 4064.3804}
+    canvasZoom: 0.4899998
   - id: 3
     fields:
     - title: Title
