@@ -47,14 +47,15 @@
   <ItemGroup>
     <Compile Include="Assets\OnStartScript.cs" />
     <Compile Include="Assets\DialogueList.cs" />
+    <Compile Include="Assets\stringManager.cs" />
     <Compile Include="Assets\TouchCheckScript.cs" />
+    <Compile Include="Assets\SerialManager.cs" />
     <Compile Include="Assets\DataHandle.cs" />
     <Compile Include="Assets\Kino\Glitch\AnalogGlitch.cs" />
     <Compile Include="Assets\Kino\Glitch\DigitalGlitch.cs" />
     <Compile Include="Assets\NumberScript.cs" />
     <Compile Include="Assets\checkScriptTest.cs" />
     <Compile Include="Assets\LuaScript.cs" />
-    <Compile Include="Assets\GetSerailData.cs" />
     <Compile Include="Assets\mouseFollowForTest.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
