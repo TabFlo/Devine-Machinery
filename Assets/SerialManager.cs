@@ -17,24 +17,33 @@ public enum BODY_PART {
     TORSO, 
     CHEST, 
     HAND_L, 
-    HAND_R, 
+    HAND_R,
+}
+
+public enum LED_STATE //These NEED to be the same as on the Arduino sonnst bin ich gefickt
+{
+    ON, 
+    OFF,
+    FADE, 
+    FLASH, 
 }
 
 public class SerialManager : MonoBehaviour
 {
     // Setup
-    SerialPort stream = new SerialPort("COM15", 9600);
-    [SerializeField] private float readRate;
+    SerialPort stream = new ("COM15", 9600);
+    [SerializeField] private float readRate = 10;
     
     // Testing
     [SerializeField] private Color color;
 
-    
+    // Serial Read/Write
     private float timeSinceLastRead;
     private String currentReadLine;
 
-
+    //Data
     private Dictionary<BODY_PART, float> sensorData = new Dictionary<BODY_PART, float>();
+   // public static event Action OnHandTouched 
 
     // Unity Functions
     void Start()
@@ -54,18 +63,22 @@ public class SerialManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ReadToFData();
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (timeSinceLastRead >= (1 / readRate))
         {
-            SendData(color.ToString());
+            TryReadData(stream, ref currentReadLine);
+            ReadToFData();
+            sendColorData(color, "EYE");  
+            
+            timeSinceLastRead = 0;
         }
+
+        timeSinceLastRead += Time.deltaTime;
     }
     
     // API Methods
     
     /// <summary>
-    /// Returns sensor Data from various body Parts
+    /// Returns sensor Data from various body Parts, funktioniert jetzt mal nur für
     /// </summary>
     /// <param name="bodyPart"></param>
     /// <returns>Value is always a float, needs to be parsed to other data types if needed</returns>
@@ -73,11 +86,28 @@ public class SerialManager : MonoBehaviour
     {
         return sensorData[bodyPart];
     }
+
+    public void SetLEDColor(Color c, BODY_PART bodyPart)
+    {
+        sendColorData(c,bodyPart.ToString());
+    }
+
+    public void SetLedState()
+    {
+        //TODO: Implement this.
+    }
     
-    
+    public void SetLedAnimationSpeed(BODY_PART? bodyPart)
+    {
+        if (String.IsNullOrEmpty(bodyPart.ToString()))
+        {
+            //TODO: change Speed gloablly, implement for other functions as well
+        }
+    }
+
     // Private Methods 
 
-    public void ReadToFData()
+    private void ReadToFData()
     {
         BODY_PART[] parts = { BODY_PART.HAND_L, BODY_PART.HAND_R };
         var output = -1;
@@ -101,7 +131,6 @@ public class SerialManager : MonoBehaviour
             Debug.Log("Sent Message: " + msg);
         }
     }
-
     
     void sendColorData(Color c, [CanBeNull] String prefix)
     {
@@ -109,11 +138,11 @@ public class SerialManager : MonoBehaviour
         int g = Mathf.RoundToInt(c.g * 255); 
         int b = Mathf.RoundToInt(c.b * 255);
         
-        String msg = String.Join(r.ToString(), g.ToString(), b.ToString());
+        String msg = String.Join(" ", r.ToString(), g.ToString(), b.ToString());
         
         if (!String.IsNullOrEmpty(prefix))
         {
-            msg = String.Join(prefix, msg);
+            msg = prefix + " " + msg; 
         }
         SendData(msg);
     }
@@ -121,16 +150,13 @@ public class SerialManager : MonoBehaviour
 
     bool TryReadData(SerialPort stream, ref String currentReadLine)
     {
-        if (timeSinceLastRead >= 1/readRate && stream.IsOpen && stream.BytesToRead > 0)
+        if (stream.IsOpen && stream.BytesToRead > 0)
         {
             String value = stream.ReadLine();
             Debug.Log(value);
-            currentReadLine = value; 
-            timeSinceLastRead = 0;
+            currentReadLine = value;
             return true; 
         }
-
-        timeSinceLastRead += Time.deltaTime;
         return false; 
     }
 
