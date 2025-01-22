@@ -8,6 +8,7 @@ public class TouchCheckScript : MonoBehaviour
 {
     private static int appro = 0;  // Initialize appro to 0 at the start
     private bool isUpdating = false;  // Flag to prevent multiple updates in quick succession
+    public static bool touchAllowed = false;
 
     public UnityEvent touchConmtinue;
 
@@ -31,7 +32,25 @@ public class TouchCheckScript : MonoBehaviour
     {
         if (isUpdating) return;  // Prevent multiple updates within the same frame
         Debug.Log("Ball has entered the trigger!");
-        StartCoroutine(SendAnswer());
+
+        if (DialogueLua.GetVariable("touched").AsBool == false)
+        {
+            DialogueLua.SetVariable("touched", true);
+           // (DialogueManager.dialogueUI as StandardDialogueUI).OnContinue();
+            var entry = DialogueManager.masterDatabase.GetDialogueEntry(2, 1);
+            var state = DialogueManager.conversationModel.GetState(entry);
+            DialogueManager.conversationController.GotoState(state);
+            
+        }
+        else
+        {
+            if (touchAllowed)
+            {
+                StartCoroutine(SendAnswer());
+            }
+        }
+
+
     }
 
     private void OnTriggerExit(Collider other)
