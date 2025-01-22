@@ -36,8 +36,8 @@ public class TouchCheckScript : MonoBehaviour
         if (DialogueLua.GetVariable("touched").AsBool == false)
         {
             DialogueLua.SetVariable("touched", true);
-           // (DialogueManager.dialogueUI as StandardDialogueUI).OnContinue();
-            var entry = DialogueManager.masterDatabase.GetDialogueEntry(2, 1);
+           (DialogueManager.dialogueUI as StandardDialogueUI).OnContinue();
+            var entry = DialogueManager.masterDatabase.GetDialogueEntry(2, 261);
             var state = DialogueManager.conversationModel.GetState(entry);
             DialogueManager.conversationController.GotoState(state);
             
