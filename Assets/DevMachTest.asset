@@ -292,6 +292,20 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: 
+  - id: 16
+    fields:
+    - title: Name
+      value: touched
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
   conversations:
   - id: 1
     fields:
@@ -8390,7 +8404,7 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 0
         destinationConversationID: 2
-        destinationDialogueID: 1
+        destinationDialogueID: 257
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -8464,7 +8478,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1328
-        y: 131.57578
+        y: 224.67934
         width: 160
         height: 30
     - id: 2
@@ -9475,8 +9489,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1326.8505
-        y: 218
+        x: 1324.5516
+        y: 288.115
         width: 160
         height: 30
     - id: 22
@@ -9534,8 +9548,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1328
-        y: 302
+        x: 1323.4023
+        y: 337.6322
         width: 160
         height: 30
     - id: 23
@@ -22292,7 +22306,10 @@ MonoBehaviour:
         Variable["FirstDCount"]
         = 0;
 
-        Variable["FirstDCount"] = 0'
+        Variable["FirstDCount"] = 0;
+
+        Variable["touched"] =
+        false'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -22339,7 +22356,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 245
+        destinationConversationID: 2
+        destinationDialogueID: 259
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -22846,9 +22869,184 @@ MonoBehaviour:
         y: 4252.121
         width: 160
         height: 30
+    - id: 257
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Touch my hands to communicate with me.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'AudioWait(Voicelines/Anfangsfrage/Anfangsfrage Akt1_11);
+
+'
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 257
+        destinationConversationID: 2
+        destinationDialogueID: 258
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1743.9495
+        y: 98.3017
+        width: 160
+        height: 30
+    - id: 258
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: Delay(10)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 258
+        destinationConversationID: 2
+        destinationDialogueID: 257
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1694.1981
+        y: 218.94849
+        width: 160
+        height: 30
+    - id: 259
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: Delay(8)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 259
+        destinationConversationID: 2
+        destinationDialogueID: 257
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2053.7227
+        y: 203.4
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 633.0624, y: 1903.8711}
-    canvasZoom: 0.6099996
+    canvasScrollPosition: {x: 887.7039, y: 893.86}
+    canvasZoom: 0.75999993
   - id: 3
     fields:
     - title: Title

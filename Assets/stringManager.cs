@@ -23,6 +23,11 @@ public class stringManager : MonoBehaviour
         if (entryString.Contains("-"))
         {
             Debug.Log(entryString);
+            TouchCheckScript.touchAllowed = true;
+        }
+        else
+        {
+            TouchCheckScript.touchAllowed = false;
         }
         
        
