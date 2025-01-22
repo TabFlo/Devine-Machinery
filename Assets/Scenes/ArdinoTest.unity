@@ -319,7 +319,6 @@ GameObject:
   - component: {fileID: 775301321}
   - component: {fileID: 775301324}
   - component: {fileID: 775301323}
-  - component: {fileID: 775301322}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -346,20 +345,6 @@ RectTransform:
   m_AnchoredPosition: {x: 136.884, y: 31.363}
   m_SizeDelta: {x: 473.768, y: 134.725}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &775301322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 775301320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cb89a242f094404d8bb7dd88d78394e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonState: 0
-  value: 
 --- !u!114 &775301323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,6 +442,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 775301320}
   m_CullTransparentMesh: 1
+--- !u!1 &1527329906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1527329908}
+  - component: {fileID: 1527329907}
+  m_Layer: 0
+  m_Name: serialManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1527329907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527329906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cb89a242f094404d8bb7dd88d78394e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  readRate: 2
+  color: {r: 0, g: 0, b: 0, a: 0}
+--- !u!4 &1527329908
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527329906}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 90}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1800043624
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,3 +666,4 @@ SceneRoots:
   - {fileID: 269915006}
   - {fileID: 1800043628}
   - {fileID: 2128286096}
+  - {fileID: 1527329908}

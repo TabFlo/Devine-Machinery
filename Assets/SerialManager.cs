@@ -5,6 +5,7 @@ using UnityEngine;
 using System.IO.Ports;
 using JetBrains.Annotations;
 using TMPro;
+using Unity.VisualScripting;
 
 public enum DATA_TYPE {
     COLOR, 
@@ -31,8 +32,8 @@ public enum LED_STATE //These NEED to be the same as on the Arduino sonnst bin i
 public class SerialManager : MonoBehaviour
 {
     // Setup
-    SerialPort stream = new ("COM15", 9600);
-    [SerializeField] private float readRate = 10;
+    SerialPort stream = new ("COM15", 115200);
+    [SerializeField] private float readRate = 0.5f;
     
     // Testing
     [SerializeField] private Color color;
@@ -43,7 +44,7 @@ public class SerialManager : MonoBehaviour
 
     //Data
     private Dictionary<BODY_PART, float> sensorData = new Dictionary<BODY_PART, float>();
-   // public static event Action OnHandTouched 
+   // public static event Action OnHandTouched //TODO: implement this
 
     // Unity Functions
     void Start()
@@ -66,6 +67,7 @@ public class SerialManager : MonoBehaviour
         if (timeSinceLastRead >= (1 / readRate))
         {
             TryReadData(stream, ref currentReadLine);
+            Debug.Log("curretnLine " + currentReadLine);
             ReadToFData();
             sendColorData(color, "EYE");  
             
@@ -73,6 +75,16 @@ public class SerialManager : MonoBehaviour
         }
 
         timeSinceLastRead += Time.deltaTime;
+        
+        
+        
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            foreach (KeyValuePair<BODY_PART, float> entry in sensorData)
+            {
+                Debug.Log($"Body Part: {entry.Key}, Value: {entry.Value}");
+            }
+        }
     }
     
     // API Methods
@@ -116,10 +128,11 @@ public class SerialManager : MonoBehaviour
         {
             if (TryReadData(stream, ref currentReadLine) && currentReadLine.Contains(bodyPart.ToString()))
             {
-                currentReadLine = currentReadLine.Replace(bodyPart.ToString(), "");
+               
                 TryParseData(DATA_TYPE.FLOAT, ' ', currentReadLine, ref output);
+                sensorData[bodyPart] = output; 
             }
-            sensorData[bodyPart] = output; 
+            
         }
     }
 
@@ -128,7 +141,7 @@ public class SerialManager : MonoBehaviour
         if(stream != null && stream.IsOpen)
         {
             stream.WriteLine(msg);
-            Debug.Log("Sent Message: " + msg);
+            //Debug.Log("Sent Message: " + msg);
         }
     }
     
@@ -153,7 +166,6 @@ public class SerialManager : MonoBehaviour
         if (stream.IsOpen && stream.BytesToRead > 0)
         {
             String value = stream.ReadLine();
-            Debug.Log(value);
             currentReadLine = value;
             return true; 
         }
@@ -166,15 +178,13 @@ public class SerialManager : MonoBehaviour
         String[] slices = data.Split(delimiter);
         String prefix = slices[0];
         
-        
-        if (!String.Equals(prefix, dataType.ToString())) return false; 
-        
         switch (dataType)
         {
             case DATA_TYPE.FLOAT:
-                if (float.TryParse(slices[1], out float resultF))
+                if (int.TryParse(slices[1], out int resultF))
                 {
                     output = (T)Convert.ChangeType(resultF, typeof(T));
+                    
                     return true; 
                 }
                 break; 

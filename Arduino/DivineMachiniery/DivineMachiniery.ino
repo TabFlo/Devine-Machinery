@@ -1,23 +1,35 @@
 #include <FastLED.h>
+#include <Wire.h>
+#include <Adafruit_VL53L0X.h>
 #include "LED.h"
+
 
 #define NUM_EYELEDS 12
 #define EYELED_PIN 3
+
+Adafruit_VL53L0X sensorL = Adafruit_VL53L0X();
 
 LED eyeLed(3, 12); 
   
 
 void setup() {
 
-  Serial.begin(9600); 
+  Serial.begin(115200);
   Serial.println("Arduino Setup");
 
   //init Tof 
+  Wire.begin(); // Default I2C pins (SDA, SCL)
+  if (!sensorL.begin()) {
+    Serial.println("Failed to boot VL53L0X sensor 1!");
+    while (1);
+  }
+
   //init Cap 
   //init LEDs
   eyeLed.setColor(255, 0, 0);
   eyeLed.on();
-
+  delay(100);
+  Serial.flush(); 
   // put your setup code here, to run once:
 
 }
@@ -33,20 +45,33 @@ void loop() {
   // put your main code here, to run repeatedly:
 
   // get input enable flag from Unity
-    // read tof data 
-    // read cap data 
-      // if Input, send
+
+  // read tof data 
+  VL53L0X_RangingMeasurementData_t measure;
+
+  sensorL.rangingTest(&measure, false);
+    if (measure.RangeStatus != 4) {
+      Serial.print("HAND_L "); Serial.println(measure.RangeMilliMeter);
+    } else {
+      Serial.print("HAND_L "); Serial.println(-1);
+    }
+  Serial.flush(); 
+  // read cap data 
+  // if Input, send
 
   // sendLED data 
-    // eyes 
-    int r, g, b;
-    if(parseRGBA(data, r, g, b).equals("EYE")){
-      eyeLed.setColor(r, g, b);
-      eyeLed.on();
-    }
+  // eyes 
+  
+  int r, g, b;
+  if(parseRGBA(data, r, g, b).equals("EYE")){
+    eyeLed.setColor(r, g, b);
+    eyeLed.on();
+  } 
     
-    // Back 
-    // torsp
+  delay(100);
+  Serial.flush(); 
+  // Back 
+  // torsp
 }
 
 
