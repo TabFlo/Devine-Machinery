@@ -8,6 +8,7 @@ public class stringManager : MonoBehaviour
    [SerializeField] private float timerDuration = 180f; // Timer duration in seconds (default: 3 minutes)
     private Coroutine timerCoroutine; // Reference to the running timer coroutine
     private bool isTimerRunning = false;
+    public TextSender textSender;
 
     void Start()
     {
@@ -22,7 +23,8 @@ public class stringManager : MonoBehaviour
         {
             Debug.Log(entryString);
             TouchCheckScript.touchAllowed = true;
-
+            string trimmedEntry = entryString.Replace(" ", "").Replace(".", "");
+            textSender.SetProjectionText(trimmedEntry);
             
             if (!isTimerRunning)
             {
