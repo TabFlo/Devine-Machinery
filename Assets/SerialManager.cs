@@ -66,7 +66,7 @@ public class SerialManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update()  
     {
         if (timeSinceLastRead >= (1 / readRate) && stream.IsOpen)
         {
@@ -78,8 +78,6 @@ public class SerialManager : MonoBehaviour
                 currentLines.Add(line);
 
             }
-           
-            sendColorData(color, "EYE");
 
             touchL = GetSensorData(BODY_PART.TOUCH_L);
             if (sensorData.ContainsKey(BODY_PART.TOUCH_L) && sensorData.ContainsKey(BODY_PART.HAND_L))
@@ -99,9 +97,11 @@ public class SerialManager : MonoBehaviour
         
         if(Input.GetKeyDown(KeyCode.Space))
         {
+            SetLEDColor(color, BODY_PART.EYE);
             foreach (KeyValuePair<BODY_PART, float> entry in sensorData)
             {
                 Debug.Log($"Body Part: {entry.Key}, Value: {entry.Value}");
+                
             }
         }
     }
@@ -192,8 +192,8 @@ public class SerialManager : MonoBehaviour
     {
         if(stream != null && stream.IsOpen)
         {
-            stream.WriteLine(msg);
-            //Debug.Log("Sent Message: " + msg);
+            stream.WriteLine(msg + "\n");
+            Debug.Log("Sent Message: " + msg);
         }
     }
     
