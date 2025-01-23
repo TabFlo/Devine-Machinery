@@ -5,18 +5,19 @@ using System.Net.Sockets;
 using System.Text;
 using UnityEngine;
 using PixelCrushers.DialogueSystem;
-using UnityEngine.Events;
 
 public class TouchCheckScript : MonoBehaviour
 {
-    private static int appro = 0; // Initialize appro to 0 at the start
-    private bool isUpdating = false; // Flag to prevent multiple updates in quick succession
+    private static int appro = 0; // Initialize approval value
+    private bool isUpdating = false; // Prevent multiple updates within the same frame
     public static bool touchAllowed = false;
 
-    public UnityEvent touchConmtinue;
+    public bool usePhysicalTouch = true; // Toggle between physical touch and trigger events
 
     private UdpClient udpClient; // UDP client for sending data
     private IPEndPoint endPoint; // Target endpoint for vvvv
+    
+    public SerialManager serialManager;
 
     private void Start()
     {
@@ -29,15 +30,6 @@ public class TouchCheckScript : MonoBehaviour
 
         // Send the current appro value to vvvv on start
         SendApprovalToVVVV(appro);
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            // Debugging/Fast Dialogue advancing
-            (DialogueManager.dialogueUI as StandardDialogueUI).OnContinue();
-        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -64,54 +56,47 @@ public class TouchCheckScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        StopAllCoroutines(); // Stop any running coroutines when the trigger is exited
-        isUpdating = false;
+        Debug.Log("Ball has exited the trigger!");
+        StopAllCoroutines(); // Stop any running coroutines related to the trigger
+        isUpdating = false; // Reset the update lock
     }
 
     public IEnumerator SendAnswer()
     {
-        if (isUpdating) yield break; // Don't start another coroutine if one is already running
+        if (isUpdating) yield break; // Prevent overlapping coroutines
 
-        isUpdating = true; // Lock the update to prevent overlaps
+        isUpdating = true; // Lock to prevent multiple updates
+        yield return new WaitForSeconds(3f); // Wait before updating
 
-        yield return new WaitForSeconds(3f); // Wait for 3 seconds before making any change
-
-        // Update the appro value inside the switch case
         switch (tag)
         {
             case "Trim":
-                appro -= 1; // Decrease appro by 1
-                Debug.Log("Trim pressed. Decreasing approval.");
+                appro -= 1; // Decrease approval
+                Debug.Log("Trim touched. Decreasing approval.");
                 break;
 
             case "Fasz":
-                appro += 1; // Increase appro by 1
-                Debug.Log("Fasz pressed. Increasing approval.");
+                appro += 1; // Increase approval
+                Debug.Log("Fasz touched. Increasing approval.");
                 break;
 
             default:
-                Debug.Log("Tag does not match any case. No changes to approval.");
+                Debug.Log("Unhandled tag. No approval change.");
                 break;
         }
 
-        // Clamp the appro value to be between -3 and 3
-        appro = Mathf.Clamp(appro, -3, 3);
-
-        // Ensure that the updated approval is saved in the dialogue system immediately after the case
-        UpdateApprovalVariable();
-
-        // Send the updated appro value to vvvv
-        SendApprovalToVVVV(appro);
+        appro = Mathf.Clamp(appro, -3, 3); // Clamp approval value
+        UpdateApprovalVariable(); // Update Lua variable
+        SendApprovalToVVVV(appro); // Send updated approval to vvvv
 
         (DialogueManager.dialogueUI as StandardDialogueUI).OnContinue();
-        isUpdating = false; // Unlock the update after the coroutine is done
+        isUpdating = false; // Unlock after completion
     }
 
     private void UpdateApprovalVariable()
     {
-        // Update the approval value for both Dialogue Lua and logging purposes
         DialogueLua.SetVariable("Approval", appro);
-        Debug.Log($"Approval updated: {appro}");
+        Debug.Log($"Approval updated to: {appro}");
     }
 
     private void SendApprovalToVVVV(int value)
@@ -124,9 +109,8 @@ public class TouchCheckScript : MonoBehaviour
             // Convert the transformed value to a byte array
             byte[] messageBytes = BitConverter.GetBytes(vvvvValue);
 
-            // Send the transformed value as a byte array to vvvv
+            // Send the transformed value to vvvv
             udpClient.Send(messageBytes, messageBytes.Length, endPoint);
-
             Debug.Log($"Sent approval value to vvvv: {vvvvValue}");
         }
         else
@@ -135,6 +119,63 @@ public class TouchCheckScript : MonoBehaviour
         }
     }
 
+    private void UpdateTouchState()
+    {
+        bool touchL = serialManager.GetTouchState(BODY_PART.TOUCH_L);
+        bool touchR = serialManager.GetTouchState(BODY_PART.TOUCH_R);
+
+        if (touchL && !isUpdating)
+        {
+            HandleTouch("Fasz");
+        }
+        else if (touchR && !isUpdating)
+        {
+            HandleTouch("Trim");
+        }
+        else if (!touchL && !touchR)
+        {
+            HandleTouchEnd();
+        }
+    }
+
+    private void HandleTouch(string touchTag)
+    {
+        Debug.Log($"Touch detected: {touchTag}");
+
+        tag = touchTag; // Dynamically assign the tag
+        if (DialogueLua.GetVariable("touched").AsBool == false)
+        {
+            DialogueLua.SetVariable("touched", true);
+            (DialogueManager.dialogueUI as StandardDialogueUI).OnContinue();
+            var entry = DialogueManager.masterDatabase.GetDialogueEntry(2, 261);
+            var state = DialogueManager.conversationModel.GetState(entry);
+            DialogueManager.conversationController.GotoState(state);
+        }
+        else if (touchAllowed)
+        {
+            StartCoroutine(SendAnswer());
+        }
+    }
+
+    private void HandleTouchEnd()
+    {
+        Debug.Log("No touch detected. Stopping coroutines and resetting.");
+        StopAllCoroutines(); // Stop any running coroutines
+        isUpdating = false;
+    }
+
+    private void Update()
+    {
+        if (usePhysicalTouch)
+        {
+            UpdateTouchState(); // Continuously check for physical touch inputs
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            (DialogueManager.dialogueUI as StandardDialogueUI).OnContinue(); // Debug advancing dialogue
+        }
+    }
 
     private void OnApplicationQuit()
     {
