@@ -38,10 +38,13 @@ public class SerialManager : MonoBehaviour
     
     // Testing
     [SerializeField] private Color color;
+    [SerializeField] private float distL;
+    [SerializeField] private float touchL; 
 
     // Serial Read/Write
     private float timeSinceLastRead;
-    private String buffer;
+    private List<string> buffer = new List<string>();
+    private List<string> currentLines = new List<string>();
 
     //Data
     private Dictionary<BODY_PART, float> sensorData = new Dictionary<BODY_PART, float>();
@@ -68,16 +71,31 @@ public class SerialManager : MonoBehaviour
         if (timeSinceLastRead >= (1 / readRate) && stream.IsOpen)
         {
             TryReadData(stream, ref buffer);
-            
-            ReadSensorData();
-            sendColorData(color, "EYE");  
-            
+
+            foreach (string line in buffer)
+            {
+                ReadSensorData(line);
+                currentLines.Add(line);
+
+            }
+           
+            sendColorData(color, "EYE");
+
+            touchL = GetSensorData(BODY_PART.TOUCH_L);
+            if (sensorData.ContainsKey(BODY_PART.TOUCH_L) && sensorData.ContainsKey(BODY_PART.HAND_L))
+            {
+                distL = GetSensorData(BODY_PART.HAND_L);
+            }
+
             timeSinceLastRead = 0;
         }
 
+        foreach (string line in currentLines)
+        {
+            buffer.Remove(line);
+        }
+        currentLines.Clear();
         timeSinceLastRead += Time.deltaTime;
-        
-        
         
         if(Input.GetKeyDown(KeyCode.Space))
         {
@@ -92,15 +110,25 @@ public class SerialManager : MonoBehaviour
     // API Methods
     
     /// <summary>
-    /// Returns sensor Data from various body Parts, funktioniert jetzt mal nur für
+    /// Returns sensor Data from various body Parts, funktioniert jetzt mal nur für hände und distanz
     /// </summary>
     /// <param name="bodyPart"></param>
-    /// <returns>Value is always a float, needs to be parsed to other data types if needed</returns>
+    /// <returns>Value is always a float, needs to be parsed to other data types if needed, returns -1 if ot found</returns>
     public float GetSensorData(BODY_PART bodyPart)
     {
-        return sensorData[bodyPart];
+        if(sensorData.TryGetValue(bodyPart, out var data))
+        {
+            return data;
+        }
+
+        return -1; 
     }
 
+    /// <summary>
+    /// Changes color of leds on a specific body part
+    /// </summary>
+    /// <param name="c">Led color, alpha g</param>
+    /// <param name="bodyPart"></param>
     public void SetLEDColor(Color c, BODY_PART bodyPart)
     {
         sendColorData(c,bodyPart.ToString());
@@ -108,9 +136,15 @@ public class SerialManager : MonoBehaviour
 
     public void SetLedState()
     {
+        Debug.LogWarning("not implemented yet, set color to black to turn them off");
         //TODO: Implement this.
     }
     
+    /// <summary>
+    /// Returns Touch state as bool, easier to use
+    /// </summary>
+    /// <param name="bodyPart"></param>
+    /// <returns></returns>
     public bool GetTouchState(BODY_PART bodyPart)
     {
         if (!(bodyPart.ToString().Equals(BODY_PART.TOUCH_L.ToString()) ||
@@ -118,17 +152,16 @@ public class SerialManager : MonoBehaviour
         {
             return false; 
         }
-
         if (GetSensorData(bodyPart) == 1)
         {
             return true;
         }
-
         return false; 
     }
     
     public void SetLedAnimationSpeed(BODY_PART? bodyPart)
     {
+        Debug.LogWarning("not implemented yet");
         if (String.IsNullOrEmpty(bodyPart.ToString()))
         {
             //TODO: change Speed gloablly, implement for other functions as well
@@ -137,20 +170,20 @@ public class SerialManager : MonoBehaviour
 
     // Private Methods 
 
-    private void ReadSensorData()
+    private void ReadSensorData(string line)
     {
         BODY_PART[] parts = { BODY_PART.HAND_L, BODY_PART.HAND_R,  BODY_PART.TOUCH_L ,  BODY_PART.TOUCH_R  };
         var output = -1;
         
         foreach (BODY_PART bodyPart in parts)
         {
-            if (TryReadData(stream, ref buffer) && buffer.Contains(bodyPart.ToString()))
+            if (!string.IsNullOrEmpty(line) && line.Contains(bodyPart.ToString()))
             {
-                TryParseData(DATA_TYPE.FLOAT, ' ', buffer, ref output);
-                Debug.Log("curretnLine " + buffer);
-                sensorData[bodyPart] = output; 
+                TryParseData(DATA_TYPE.FLOAT, ' ', line, ref output);
+                Debug.Log("curretnLine " + line);
+                sensorData[bodyPart] = output;
+                
             }
-            
         }
     }
 
@@ -180,23 +213,25 @@ public class SerialManager : MonoBehaviour
     }
 
 
-    bool TryReadData(SerialPort stream, ref String currentReadLine)
+    bool TryReadData(SerialPort stream, ref List<string> currentReadLine)
     {
+        string buffer = ""; 
         if (stream.IsOpen && stream.BytesToRead > 0)
         {
             string value = stream.ReadExisting();
             if (!string.IsNullOrEmpty(value))
             {
-
-                currentReadLine += value;
+                buffer += value;
                 int newlineIndex;
                 while ((newlineIndex = buffer.IndexOf('\n')) != -1)
                 {
                     // Extract a single line
-                    string message = buffer.Substring(0, newlineIndex).Trim();
-                    buffer = buffer.Substring(newlineIndex + 1); // Remove the processed line
+                    string message = buffer.Substring(0, newlineIndex);
+                    currentReadLine.Add(message);
                     
-                    Debug.Log("Message" + value);
+                    buffer = buffer.Substring(newlineIndex + 1); 
+                    
+                    Debug.Log("Messages " + currentReadLine.Count);
                 }
             }
 

@@ -471,8 +471,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cb89a242f094404d8bb7dd88d78394e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  readRate: 0.5
+  readRate: 2
   color: {r: 0, g: 0, b: 0, a: 0}
+  distL: 0
+  touchL: 0
 --- !u!4 &1527329908
 Transform:
   m_ObjectHideFlags: 0
