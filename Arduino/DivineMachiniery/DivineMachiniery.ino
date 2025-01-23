@@ -16,7 +16,7 @@ LED eyeLed(3, 12);
 
 void setup() {
 
-  Serial.begin(115200);
+  Serial.begin(9600);
   Serial.println("Arduino Setup");
 
   pinMode(ToUCH_PIN_L, INPUT);
@@ -30,7 +30,7 @@ void setup() {
 
   //init Cap 
   //init LEDs
-  eyeLed.setColor(255, 0, 0);
+  eyeLed.setColor(255, 255, 255);
   eyeLed.on();
   delay(100);
   Serial.flush(); 
@@ -43,9 +43,10 @@ void loop() {
   String data; 
   if (Serial.available()> 0){
     data = Serial.readStringUntil('\n');
-    //Serial.println("Data: " + data);
+   
   }
-
+ Serial.println("Data: " + data);
+  delay(500);
   // put your main code here, to run repeatedly:
 
   // get input enable flag from Unity
@@ -55,23 +56,22 @@ void loop() {
 
   sensorL.rangingTest(&measure, false);
     if (measure.RangeStatus != 4) {
-      Serial.print("HAND_L "); Serial.println(measure.RangeMilliMeter);
+      //Serial.print("HAND_L "); Serial.println(measure.RangeMilliMeter);
     } else {
-      Serial.print("HAND_L "); Serial.println(-1);
+      //Serial.print("HAND_L "); Serial.println(-1);
     }
-  Serial.flush(); 
+
   // read cap data 
 
   int buttonState = digitalRead(ToUCH_PIN_L);
   if (buttonState == LOW) {
-    Serial.println("TOUCH_L 1");
+   // Serial.println("TOUCH_L 1");
   } 
   else{
-    Serial.println("TOUCH_L 0");
+   // Serial.println("TOUCH_L 0");
   }
-  Serial.flush(); 
 
-  // if Input, send
+
 
   // sendLED data 
   // eyes 
@@ -82,8 +82,8 @@ void loop() {
     eyeLed.on();
   } 
     
-  delay(500);
-  Serial.flush(); 
+
+
   // Back 
   // torsp
 }
@@ -112,7 +112,7 @@ String parseRGBA(String input, int &r, int &g, int &b) {
     b = data.substring(secondSpace + 1).toInt();
 
     // Debug output for the parsed color values
-    Serial.println("color " + String(r) + " " + String(g) + " " + String(b));
+    Serial.println("color " + String(r) + " " + String(g) + " " + String(b) + " " + prefix);
 
     return prefix;
 }
