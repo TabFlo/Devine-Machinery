@@ -6,6 +6,8 @@ public class GlitchManager : MonoBehaviour
 {
     public Kino.AnalogGlitch glitchEffect; // Reference to the AnalogGlitch component
     private float lerpSpeed = 10f; // Speed at which parameters lerp
+    public TouchCheckScript touchCheckScript; // Reference to TouchCheckScript
+    public SerialManager serialManager; // Reference to SerialManager
 
     void Start()
     {
@@ -13,6 +15,10 @@ public class GlitchManager : MonoBehaviour
         if (glitchEffect == null)
         {
             Debug.LogError("AnalogGlitch reference is not set! Please assign it in the inspector.");
+        }
+        if (serialManager == null)
+        {
+            Debug.LogError("SerialManager reference is not set! Please assign it in the inspector.");
         }
     }
 
@@ -24,9 +30,16 @@ public class GlitchManager : MonoBehaviour
             glitchEffect.scanLineJitter = Mathf.Lerp(glitchEffect.scanLineJitter, 0f, Time.deltaTime * lerpSpeed);
             glitchEffect.colorDrift = Mathf.Lerp(glitchEffect.colorDrift, 0f, Time.deltaTime * lerpSpeed);
         }
+
+        // Update LED colors based on the approval value
+        if (touchCheckScript != null)
+        {
+            int appro = TouchCheckScript.appro; // Get approval value
+            SendColorAccordingToAppro(appro); // Update LED colors
+        }
     }
 
-    // Method to handle messages
+    // Method to handle glitch effects
     public void ApplyGlitchEffect(string parameter)
     {
         Debug.Log("gotMessage");
@@ -49,5 +62,34 @@ public class GlitchManager : MonoBehaviour
                 Debug.LogWarning($"Unknown glitch parameter: {parameter}");
                 break;
         }
+    }
+
+    // Method to send color data based on the appro value
+    private void SendColorAccordingToAppro(int appro)
+    {
+        // Calculate color components based on the approval value
+        float red = 0f;
+        float blue = 0f;
+
+        if (appro > 0)
+        {
+            // Positive approval: increase blue intensity
+            blue = appro / 3f; // Map appro (1 to 3) to blue intensity (0.33 to 1)
+        }
+        else if (appro < 0)
+        {
+            // Negative approval: increase red intensity
+            red = Mathf.Abs(appro) / 3f; // Map appro (-1 to -3) to red intensity (0.33 to 1)
+        }
+
+        Color color = new Color(red, 0f, blue); // Neutral green channel (0)
+
+        // Send the color to SerialManager
+        if (serialManager != null)
+        {
+            serialManager.SetLEDColor(color, BODY_PART.EYE); // Update the LEDs for the "EYE"
+        }
+
+        Debug.Log($"Approval: {appro}, Color Sent: {color}");
     }
 }
