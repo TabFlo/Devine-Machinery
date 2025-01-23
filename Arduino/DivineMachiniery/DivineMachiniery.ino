@@ -16,7 +16,7 @@ LED eyeLed(3, 12);
 
 void setup() {
 
-  Serial.begin(9600);
+  Serial.begin(115200);
   Serial.println("Arduino Setup");
 
   pinMode(ToUCH_PIN_L, INPUT);
@@ -45,7 +45,7 @@ void loop() {
     data = Serial.readStringUntil('\n');
    
   }
- Serial.println("Data: " + data);
+ //Serial.println("Data: " + data);
   delay(500);
   // put your main code here, to run repeatedly:
 
@@ -56,19 +56,19 @@ void loop() {
 
   sensorL.rangingTest(&measure, false);
     if (measure.RangeStatus != 4) {
-      //Serial.print("HAND_L "); Serial.println(measure.RangeMilliMeter);
+      Serial.print("HAND_L "); Serial.println(measure.RangeMilliMeter);
     } else {
-      //Serial.print("HAND_L "); Serial.println(-1);
+      Serial.print("HAND_L "); Serial.println(-1);
     }
 
   // read cap data 
 
   int buttonState = digitalRead(ToUCH_PIN_L);
   if (buttonState == LOW) {
-   // Serial.println("TOUCH_L 1");
+   Serial.println("TOUCH_L 1");
   } 
   else{
-   // Serial.println("TOUCH_L 0");
+   Serial.println("TOUCH_L 0");
   }
 
 

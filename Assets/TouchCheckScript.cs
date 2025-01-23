@@ -66,7 +66,7 @@ public class TouchCheckScript : MonoBehaviour
         if (isUpdating) yield break; // Prevent overlapping coroutines
 
         isUpdating = true; // Lock to prevent multiple updates
-        yield return new WaitForSeconds(3f); // Wait before updating
+        yield return new WaitForSeconds(2f); // Wait before updating
 
         switch (tag)
         {
