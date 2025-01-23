@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO.Ports;
 using JetBrains.Annotations;
-using TMPro;
-using Unity.VisualScripting;
+
 
 public enum DATA_TYPE {
     COLOR, 
@@ -18,7 +17,9 @@ public enum BODY_PART {
     TORSO, 
     CHEST, 
     HAND_L, 
-    HAND_R,
+    HAND_R, 
+    TOUCH_L,
+    TOUCH_R,
 }
 
 public enum LED_STATE //These NEED to be the same as on the Arduino sonnst bin ich gefickt
@@ -40,15 +41,15 @@ public class SerialManager : MonoBehaviour
 
     // Serial Read/Write
     private float timeSinceLastRead;
-    private String currentReadLine;
+    private String buffer;
 
     //Data
     private Dictionary<BODY_PART, float> sensorData = new Dictionary<BODY_PART, float>();
-   // public static event Action OnHandTouched //TODO: implement this
 
     // Unity Functions
     void Start()
     {
+        stream.ReadTimeout = 50; 
         if (!stream.IsOpen){
             try
             {
@@ -64,11 +65,11 @@ public class SerialManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timeSinceLastRead >= (1 / readRate))
+        if (timeSinceLastRead >= (1 / readRate) && stream.IsOpen)
         {
-            TryReadData(stream, ref currentReadLine);
-            Debug.Log("curretnLine " + currentReadLine);
-            ReadToFData();
+            TryReadData(stream, ref buffer);
+            
+            ReadSensorData();
             sendColorData(color, "EYE");  
             
             timeSinceLastRead = 0;
@@ -86,7 +87,8 @@ public class SerialManager : MonoBehaviour
             }
         }
     }
-    
+
+   
     // API Methods
     
     /// <summary>
@@ -109,6 +111,22 @@ public class SerialManager : MonoBehaviour
         //TODO: Implement this.
     }
     
+    public bool GetTouchState(BODY_PART bodyPart)
+    {
+        if (!(bodyPart.ToString().Equals(BODY_PART.TOUCH_L.ToString()) ||
+            bodyPart.ToString().Equals(BODY_PART.TOUCH_R.ToString())))
+        {
+            return false; 
+        }
+
+        if (GetSensorData(bodyPart) == 1)
+        {
+            return true;
+        }
+
+        return false; 
+    }
+    
     public void SetLedAnimationSpeed(BODY_PART? bodyPart)
     {
         if (String.IsNullOrEmpty(bodyPart.ToString()))
@@ -119,22 +137,23 @@ public class SerialManager : MonoBehaviour
 
     // Private Methods 
 
-    private void ReadToFData()
+    private void ReadSensorData()
     {
-        BODY_PART[] parts = { BODY_PART.HAND_L, BODY_PART.HAND_R };
+        BODY_PART[] parts = { BODY_PART.HAND_L, BODY_PART.HAND_R,  BODY_PART.TOUCH_L ,  BODY_PART.TOUCH_R  };
         var output = -1;
         
         foreach (BODY_PART bodyPart in parts)
         {
-            if (TryReadData(stream, ref currentReadLine) && currentReadLine.Contains(bodyPart.ToString()))
+            if (TryReadData(stream, ref buffer) && buffer.Contains(bodyPart.ToString()))
             {
-               
-                TryParseData(DATA_TYPE.FLOAT, ' ', currentReadLine, ref output);
+                TryParseData(DATA_TYPE.FLOAT, ' ', buffer, ref output);
+                Debug.Log("curretnLine " + buffer);
                 sensorData[bodyPart] = output; 
             }
             
         }
     }
+
 
     void SendData(String msg)
     {
@@ -165,8 +184,22 @@ public class SerialManager : MonoBehaviour
     {
         if (stream.IsOpen && stream.BytesToRead > 0)
         {
-            String value = stream.ReadLine();
-            currentReadLine = value;
+            string value = stream.ReadExisting();
+            if (!string.IsNullOrEmpty(value))
+            {
+
+                currentReadLine += value;
+                int newlineIndex;
+                while ((newlineIndex = buffer.IndexOf('\n')) != -1)
+                {
+                    // Extract a single line
+                    string message = buffer.Substring(0, newlineIndex).Trim();
+                    buffer = buffer.Substring(newlineIndex + 1); // Remove the processed line
+                    
+                    Debug.Log("Message" + value);
+                }
+            }
+
             return true; 
         }
         return false; 

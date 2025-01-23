@@ -7,6 +7,8 @@
 #define NUM_EYELEDS 12
 #define EYELED_PIN 3
 
+#define ToUCH_PIN_L 7
+
 Adafruit_VL53L0X sensorL = Adafruit_VL53L0X();
 
 LED eyeLed(3, 12); 
@@ -16,6 +18,8 @@ void setup() {
 
   Serial.begin(115200);
   Serial.println("Arduino Setup");
+
+  pinMode(ToUCH_PIN_L, INPUT);
 
   //init Tof 
   Wire.begin(); // Default I2C pins (SDA, SCL)
@@ -57,6 +61,16 @@ void loop() {
     }
   Serial.flush(); 
   // read cap data 
+
+  int buttonState = digitalRead(ToUCH_PIN_L);
+  if (buttonState == LOW) {
+    Serial.println("TOUCH_L 1");
+  } 
+  else{
+    Serial.println("TOUCH_L 0");
+  }
+  Serial.flush(); 
+
   // if Input, send
 
   // sendLED data 
@@ -68,7 +82,7 @@ void loop() {
     eyeLed.on();
   } 
     
-  delay(100);
+  delay(500);
   Serial.flush(); 
   // Back 
   // torsp
