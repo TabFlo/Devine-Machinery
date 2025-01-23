@@ -24,22 +24,29 @@ public class TextSender : MonoBehaviour
     void Start()
     {
        ConnectToServer("127.0.0.1", 8080);
-       SendMessageToServer("Test");
     }
-    
-    
 
+
+ 
+    
     /// <summary>
     /// sets the text on the arm projection in vvvv 
     /// </summary>
     /// <param name="text">in the format "Left-Right</param>
+    
     public void SetProjectionText(string text)
     {
         if (SendMessageToServer(text + " "))
         {
+            projectionText = text; 
             Debug.Log("Text Set scuessfully");
         }
         Debug.LogError("Could not set projection text: " + text);
+    }
+
+    public string GetProjectionText()
+    {
+        return projectionText; 
     }
     
     void ConnectToServer(string ip, int port)
