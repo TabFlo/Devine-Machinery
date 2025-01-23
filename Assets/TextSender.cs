@@ -36,7 +36,7 @@ public class TextSender : MonoBehaviour
     
     public void SetProjectionText(string text)
     {
-        if (SendMessageToServer(text + " "))
+        if (SendMessageToServer(text + "/"))
         {
             projectionText = text; 
             Debug.Log("Text Set scuessfully");

@@ -23,7 +23,7 @@ public class stringManager : MonoBehaviour
         {
             Debug.Log(entryString);
             TouchCheckScript.touchAllowed = true;
-            string trimmedEntry = entryString.Replace(" ", "").Replace(".", "");
+            string trimmedEntry = entryString.Replace(".", "");
             textSender.SetProjectionText(trimmedEntry);
             
             if (!isTimerRunning)

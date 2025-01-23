@@ -1258,7 +1258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usePhysicalTouch: 1
-  serialManager: {fileID: 0}
+  serialManager: {fileID: 1346082585}
 --- !u!65 &691155623
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2517,7 +2517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b88005c6b969d445a04bcffebdd9a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerDuration: 20
+  timerDuration: 120
   textSender: {fileID: 1346082584}
 --- !u!1 &1213289822
 GameObject:
@@ -3099,6 +3099,7 @@ GameObject:
   - component: {fileID: 1346082582}
   - component: {fileID: 1346082583}
   - component: {fileID: 1346082584}
+  - component: {fileID: 1346082585}
   m_Layer: 0
   m_Name: ServerHandler
   m_TagString: Untagged
@@ -3147,6 +3148,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectionText: Left
   rate: 0
+--- !u!114 &1346082585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346082581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cb89a242f094404d8bb7dd88d78394e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  readRate: 0.5
+  color: {r: 0, g: 0, b: 0, a: 0}
+  distL: 0
+  touchL: 0
 --- !u!1 &1399287978
 GameObject:
   m_ObjectHideFlags: 0
@@ -3703,7 +3720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usePhysicalTouch: 1
-  serialManager: {fileID: 0}
+  serialManager: {fileID: 1346082585}
 --- !u!65 &1639566072
 BoxCollider:
   m_ObjectHideFlags: 0
