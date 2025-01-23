@@ -10145,7 +10145,10 @@ MonoBehaviour:
       - title: Sequence
         value: 'AudioWait(Voicelines/Anfangsfrage/Anfangsfrage Akt1_13);
 
-          SetContinueMode(true)'
+          SetContinueMode(true);
+
+          SendMessage(ApplyGlitchEffect,
+          intense, GlitchManager);'
         type: 0
         typeString: 
       - title: Audio Files
@@ -22911,7 +22914,9 @@ MonoBehaviour:
       - title: Sequence
         value: '
 
-          AudioWait(Voicelines/Touch_my_hands_Initial)'
+          AudioWait(Voicelines/Touch_my_hands_Initial);
+
+          SetContinueMode(false)'
         type: 0
         typeString: 
       - title: Audio Files
@@ -23054,7 +23059,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1730.8347
-        y: 224.80441
+        y: 223.44388
         width: 160
         height: 30
     - id: 261
@@ -23168,8 +23173,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 47.05835, y: 0}
-    canvasZoom: 0.34000015
+    canvasScrollPosition: {x: 934.3765, y: 780.3711}
+    canvasZoom: 0.5800001
   - id: 3
     fields:
     - title: Title

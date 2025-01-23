@@ -41,6 +41,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="E:\Devine-Machinery\Library\PackageCache\com.unity.transport@2.4.0\Analyzers\Unity.Transport.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.55f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.55f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -79,8 +80,8 @@
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Triggers\ConditionPropertyDrawer.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\Misc\AssetUtility.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Importers\Articy\Schemas\Articy 4.0\Articy_4_0_EditorTools.cs" />
-    <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Triggers\ReferenceDatabaseDialogueEventEditor.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\UI\UITextFieldDrawer.cs" />
+    <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Triggers\ReferenceDatabaseDialogueEventEditor.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueEditorWindowDialogueTreeSection.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Triggers\Legacy\SetComponentEnabledOnDialogueEventEditor.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueEditorWindowGUIStyles.cs" />
@@ -530,6 +531,9 @@
     <Reference Include="Unity.VisualScripting.YamlDotNet">
       <HintPath>E:\Devine-Machinery\Library\PackageCache\com.unity.visualscripting@1.9.5\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Collections.LowLevel.ILSupport">
+      <HintPath>E:\Devine-Machinery\Library\PackageCache\com.unity.collections@2.2.1\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.IonicZip">
       <HintPath>E:\Devine-Machinery\Library\PackageCache\com.unity.visualscripting@1.9.5\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
     </Reference>
@@ -538,6 +542,9 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">
       <HintPath>E:\Devine-Machinery\Library\PackageCache\com.unity.visualscripting@1.9.5\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>E:\Devine-Machinery\Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>E:\Devine-Machinery\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
@@ -917,35 +924,38 @@
     <Reference Include="System.Xml.XPath.XDocument">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.55f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+    <Reference Include="UnityEditor.TestRunner">
+      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.State.Editor">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+    <Reference Include="UnityEngine.TestRunner">
+      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Editor">
+      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst">
+      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
       <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Core">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+    <Reference Include="Unity.VisualStudio.Editor">
+      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VisualScripting.Core">
+      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Core.Editor">
       <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Networking.Transport">
+      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.Networking.Transport.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.State">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
@@ -955,6 +965,36 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
       <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
+      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.State.Editor">
+      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections.Editor">
+      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.Collections.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Networking.Editor">
+      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.Networking.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.State">
+      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -966,6 +1006,10 @@
       <Project>{23ffde85-6e28-cd7a-4206-a8badf2e8bee}</Project>
       <Name>FMODUnityEditor</Name>
     </ProjectReference>
+    <ProjectReference Include="FMODUnityResonance.csproj">
+      <Project>{44632b45-b338-97be-b252-3e905f120e44}</Project>
+      <Name>FMODUnityResonance</Name>
+    </ProjectReference>
     <ProjectReference Include="FMODUnity.csproj">
       <Project>{72349459-c116-ffa2-23ee-471bea4c20c3}</Project>
       <Name>FMODUnity</Name>
@@ -973,10 +1017,6 @@
     <ProjectReference Include="FMODUnityResonanceEditor.csproj">
       <Project>{1b22a4ee-fdeb-1943-e07e-beed3b747b47}</Project>
       <Name>FMODUnityResonanceEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="FMODUnityResonance.csproj">
-      <Project>{44632b45-b338-97be-b252-3e905f120e44}</Project>
-      <Name>FMODUnityResonance</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
