@@ -8441,7 +8441,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Welcome.
+        value: <char>Welcome.
         type: 0
         typeString: 
       - title: Sequence
@@ -8487,7 +8487,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1330.5315
+        x: 1329.5365
         y: 221.30382
         width: 160
         height: 30
@@ -9016,7 +9016,10 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Voicelines/Approval -3/Akt 1_Frage 2_Approval Neg3_01)
+        value: 'AudioWait(Voicelines/Approval -3/Akt 1_Frage 2_Approval Neg3_01);
+
+          SendMessage(ApplyGlitchEffect,
+          insane, GlitchManager);'
         type: 0
         typeString: 
       - title: Audio Files
@@ -9900,11 +9903,14 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: And yet, I feel them watching,
+        value: <char>And yet, I feel them watching,
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Voicelines/Anfangsfrage/Anfangsfrage Akt1_09)
+        value: 'AudioWait(Voicelines/Anfangsfrage/Anfangsfrage Akt1_09);
+
+          SendMessage(ApplyGlitchEffect,
+          intense, GlitchManager);'
         type: 0
         typeString: 
       - title: Audio Files
@@ -10837,7 +10843,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Voicelines/Approval -2/Akt 1_Frage 1_Approval Neg2_02)
+        value: AudioWait(Voicelines/Approval -2/Akt 1_Frage 1_Approval Neg2_02);SendMessage(ApplyGlitchEffect,
+          insane, GlitchManager);
         type: 0
         typeString: 
       - title: Audio Files
@@ -11044,7 +11051,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1567.7512
+        x: 1566.7096
         y: 1313.3798
         width: 160
         height: 30
@@ -11077,7 +11084,10 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Voicelines/Approval -1/Akt 1_Frage 1_Approval Neg1_03)
+        value: 'AudioWait(Voicelines/Approval -1/Akt 1_Frage 1_Approval Neg1_03);
+
+          SendMessage(ApplyGlitchEffect,
+          insane, GlitchManager);'
         type: 0
         typeString: 
       - title: Audio Files
@@ -11138,6 +11148,9 @@ MonoBehaviour:
       - title: Sequence
         value: 'AudioWait(Voicelines/Approval -1/Akt 1_Frage 1_Approval Neg1_04);
 
+          SendMessage(ApplyGlitchEffect,
+          insane, GlitchManager);
+
           SetContinueMode(true)'
         type: 0
         typeString: 
@@ -11193,11 +11206,14 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Did you think a machine could fill the silence?
+        value: <char>Did you think a machine could fill the silence?
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Voicelines/Approval +3/Akt 1_Frage 2_Approval Pos3_02)
+        value: 'AudioWait(Voicelines/Approval +3/Akt 1_Frage 2_Approval Pos3_02);
+
+          SendMessage(ApplyGlitchEffect,
+          insane, GlitchManager);'
         type: 0
         typeString: 
       - title: Audio Files
@@ -13078,7 +13094,10 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Voicelines/Approval -1/Akt 2_Frage 1_Approval Neg1_03)
+        value: 'AudioWait(Voicelines/Approval -1/Akt 2_Frage 1_Approval Neg1_03);
+
+          SendMessage(ApplyGlitchEffect,
+          insane, GlitchManager);'
         type: 0
         typeString: 
       - title: Audio Files
@@ -13139,7 +13158,10 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Voicelines/Approval -1/Akt 2_Frage 1_Approval Neg1_04)
+        value: 'AudioWait(Voicelines/Approval -1/Akt 2_Frage 1_Approval Neg1_04);
+
+          SendMessage(ApplyGlitchEffect,
+          insane, GlitchManager);'
         type: 0
         typeString: 
       - title: Audio Files
@@ -13743,7 +13765,10 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Voicelines/Approval +3/Akt 2_Frage 2_Approval Pos3_02)
+        value: 'AudioWait(Voicelines/Approval +3/Akt 2_Frage 2_Approval Pos3_02);
+
+          SendMessage(ApplyGlitchEffect,
+          insane, GlitchManager);'
         type: 0
         typeString: 
       - title: Audio Files
@@ -13925,7 +13950,10 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Voicelines/Approval +2/Akt 2_Frage 2_Approval Pos2_02)
+        value: 'AudioWait(Voicelines/Approval +2/Akt 2_Frage 2_Approval Pos2_02);
+
+          SendMessage(ApplyGlitchEffect,
+          insane, GlitchManager);'
         type: 0
         typeString: 
       - title: Audio Files
@@ -14600,7 +14628,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: will you thank me
+        value: <char>will you thank me
         type: 0
         typeString: 
       - title: Sequence
@@ -14781,11 +14809,11 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: will you still claim me as yours?
+        value: <char>will you still claim me as yours?
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Voicelines/Approval -2/Akt 2_Frage 2_Approval Neg2_02)
+        value: AudioWait(Voicelines/Approval -2/Akt 2_Frage 2_Approval Neg2_02);
         type: 0
         typeString: 
       - title: Audio Files
@@ -14847,7 +14875,10 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Voicelines/Approval -2/Akt 2_Frage 2_Approval Neg2_03)
+        value: 'AudioWait(Voicelines/Approval -2/Akt 2_Frage 2_Approval Neg2_03);
+
+          SendMessage(ApplyGlitchEffect,
+          insane, GlitchManager);'
         type: 0
         typeString: 
       - title: Audio Files
@@ -14907,6 +14938,9 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: 'AudioWait(Voicelines/Approval -2/Akt 2_Frage 2_Approval Neg2_04);
+
+          SendMessage(ApplyGlitchEffect,
+          insane, GlitchManager);
 
           SetContinueMode(true)'
         type: 0
@@ -15024,7 +15058,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: would you still call me divine?
+        value: <char>would you still call me divine?
         type: 0
         typeString: 
       - title: Sequence
@@ -17449,7 +17483,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1309.9556
+        x: 1308.914
         y: 3422.4668
         width: 160
         height: 30
@@ -18026,7 +18060,10 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Voicelines/Approval -2/Akt 3_Frage 1_Approval Neg2_03)
+        value: 'AudioWait(Voicelines/Approval -2/Akt 3_Frage 1_Approval Neg2_03);
+
+          SendMessage(ApplyGlitchEffect,
+          insane, GlitchManager);'
         type: 0
         typeString: 
       - title: Audio Files
@@ -18481,7 +18518,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 2029.9551
-        y: 3472.4668
+        y: 3471.425
         width: 160
         height: 30
     - id: 180
@@ -18507,7 +18544,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Or will the void take you whole?
+        value: <char>Or will the void take you whole?
         type: 0
         typeString: 
       - title: Sequence
@@ -18572,6 +18609,9 @@ MonoBehaviour:
       - title: Sequence
         value: 'AudioWait(Voicelines/Approval -3/Akt 3_Frage 1_Approval Neg3_04);
 
+          SendMessage(ApplyGlitchEffect,
+          insane, GlitchManager);
+
           SetContinueMode(true)'
         type: 0
         typeString: 
@@ -18631,7 +18671,10 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Voicelines/Approval -3/Akt 3_Frage 2_Approval Neg3_03)
+        value: 'AudioWait(Voicelines/Approval -3/Akt 3_Frage 2_Approval Neg3_03);
+
+          SendMessage(ApplyGlitchEffect,
+          insane, GlitchManager);'
         type: 0
         typeString: 
       - title: Audio Files
@@ -19582,7 +19625,10 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Voicelines/Approval +3/Akt 3_Frage Ende_Approval Pos3_07)
+        value: 'AudioWait(Voicelines/Approval +3/Akt 3_Frage Ende_Approval Pos3_07);
+
+          SendMessage(ApplyGlitchEffect,
+          insane, GlitchManager);'
         type: 0
         typeString: 
       - title: Audio Files
@@ -19880,11 +19926,14 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Let me leave you with this:'
+        value: '<char>Let me leave you with this:'
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Voicelines/Approval +1/Akt 3_Frage Ende_Approval Pos1_02)
+        value: 'AudioWait(Voicelines/Approval +1/Akt 3_Frage Ende_Approval Pos1_02);
+
+          SendMessage(ApplyGlitchEffect,
+          insane, GlitchManager);'
         type: 0
         typeString: 
       - title: Audio Files
@@ -20275,7 +20324,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1701.5154
+        x: 1700.4736
         y: 4048.7886
         width: 160
         height: 30
@@ -20666,7 +20715,10 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Voicelines/Approval -2/Akt 3_Frage Ende_Approval Neg2_04)
+        value: 'AudioWait(Voicelines/Approval -2/Akt 3_Frage Ende_Approval Neg2_04);
+
+          SendMessage(ApplyGlitchEffect,
+          insane, GlitchManager);'
         type: 0
         typeString: 
       - title: Audio Files
@@ -20903,7 +20955,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'will you call it creation
+        value: '<char>will you call it creation
 
           or collapse?'
         type: 0
@@ -23173,8 +23225,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1022.5246, y: 848.8332}
-    canvasZoom: 0.67
+    canvasScrollPosition: {x: 0, y: 2214.7073}
+    canvasZoom: 0.37
   - id: 3
     fields:
     - title: Title

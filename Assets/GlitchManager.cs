@@ -57,6 +57,10 @@ public class GlitchManager : MonoBehaviour
                 glitchEffect.scanLineJitter = Random.Range(0.1f, 0.3f);
                 glitchEffect.colorDrift = Random.Range(0.1f, 0.3f);
                 break;
+            case "insane":
+                glitchEffect.scanLineJitter = Random.Range(0.7f, 1f);
+                glitchEffect.colorDrift = Random.Range(0.8f, 1f);
+                break;
 
             default:
                 Debug.LogWarning($"Unknown glitch parameter: {parameter}");
