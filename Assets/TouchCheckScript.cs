@@ -8,7 +8,7 @@ using PixelCrushers.DialogueSystem;
 
 public class TouchCheckScript : MonoBehaviour
 {
-    private static int appro = 0; // Initialize approval value
+    public static int appro = 0; // Initialize approval value
     private bool isUpdating = false; // Prevent multiple updates within the same frame
     public static bool touchAllowed = false;
 
