@@ -1,6 +1,5 @@
-#include <FastLED.h>
 #include <Wire.h>
-#include <Adafruit_VL53L0X.h>
+//#include <Adafruit_VL53L0X.h>
 #include "LED.h"
 
 
@@ -9,7 +8,9 @@
 
 #define ToUCH_PIN_L 7
 
-Adafruit_VL53L0X sensorL = Adafruit_VL53L0X();
+#define ToUCH_PIN_L 8
+
+//Adafruit_VL53L0X sensorL = Adafruit_VL53L0X();
 
 LED eyeLed(3, 12); 
   
@@ -21,16 +22,18 @@ void setup() {
 
   pinMode(ToUCH_PIN_L, INPUT);
 
+  /*
   //init Tof 
   Wire.begin(); // Default I2C pins (SDA, SCL)
   if (!sensorL.begin()) {
     Serial.println("Failed to boot VL53L0X sensor 1!");
     while (1);
   }
+  */
 
   //init Cap 
   //init LEDs
-  eyeLed.setColor(255, 255, 255);
+  eyeLed.setColor(255, 255, 0);
   eyeLed.on();
   delay(100);
   Serial.flush(); 
@@ -51,6 +54,7 @@ void loop() {
 
   // get input enable flag from Unity
 
+  /*
   // read tof data 
   VL53L0X_RangingMeasurementData_t measure;
 
@@ -60,6 +64,7 @@ void loop() {
     } else {
       Serial.print("HAND_L "); Serial.println(-1);
     }
+  */
 
   // read cap data 
 
@@ -69,6 +74,15 @@ void loop() {
   } 
   else{
    Serial.println("TOUCH_L 0");
+  }
+
+
+ int buttonState = digitalRead(ToUCH_PIN_R);
+  if (buttonState == LOW) {
+   Serial.println("TOUCH_R 1");
+  } 
+  else{
+   Serial.println("TOUCH_R 0");
   }
 
 
