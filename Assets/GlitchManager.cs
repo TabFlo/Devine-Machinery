@@ -7,7 +7,10 @@ public class GlitchManager : MonoBehaviour
     public Kino.AnalogGlitch glitchEffect; // Reference to the AnalogGlitch component
     private float lerpSpeed = 10f; // Speed at which parameters lerp
     public TouchCheckScript touchCheckScript; // Reference to TouchCheckScript
-    public SerialManager serialManager; // Reference to SerialManager
+    public SerialManager serialManager;
+
+    [SerializeField] private Color[] eyeColors = new Color[7];
+    // Reference to SerialManager
 
     void Start()
     {
@@ -72,9 +75,9 @@ public class GlitchManager : MonoBehaviour
     private void SendColorAccordingToAppro(int appro)
     {
         // Calculate color components based on the approval value
-        float red = 0f;
-        float blue = 0f;
-
+        //float red = 0f;
+        // float blue = 0f;
+        /*
         if (appro > 0)
         {
             // Positive approval: increase blue intensity
@@ -85,15 +88,17 @@ public class GlitchManager : MonoBehaviour
             // Negative approval: increase red intensity
             red = Mathf.Abs(appro) / 3f; // Map appro (-1 to -3) to red intensity (0.33 to 1)
         }
+        */
+        Color color = eyeColors[appro + 3];
 
-        Color color = new Color(red, 0f, blue); // Neutral green channel (0)
-
+        
+            
         // Send the color to SerialManager
         if (serialManager != null)
         {
             serialManager.SetLEDColor(color, BODY_PART.EYE); // Update the LEDs for the "EYE"
         }
 
-        Debug.Log($"Approval: {appro}, Color Sent: {color}");
+        //Debug.Log($"Approval: {appro}, Color Sent: {color}");
     }
 }

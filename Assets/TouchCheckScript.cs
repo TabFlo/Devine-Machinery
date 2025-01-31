@@ -36,7 +36,8 @@ public class TouchCheckScript : MonoBehaviour
     {
         if (isUpdating) return; // Prevent multiple updates within the same frame
         Debug.Log("Ball has entered the trigger!");
-
+    
+        
         if (DialogueLua.GetVariable("touched").AsBool == false)
         {
             DialogueLua.SetVariable("touched", true);
@@ -126,10 +127,12 @@ public class TouchCheckScript : MonoBehaviour
 
         if (touchL && !isUpdating)
         {
+            Debug.Log("Touched L");
             HandleTouch("Fasz");
         }
         else if (touchR && !isUpdating)
         {
+            Debug.Log("Touched R");
             HandleTouch("Trim");
         }
         else if (!touchL && !touchR)
@@ -145,11 +148,7 @@ public class TouchCheckScript : MonoBehaviour
         tag = touchTag; // Dynamically assign the tag
         if (DialogueLua.GetVariable("touched").AsBool == false)
         {
-            DialogueLua.SetVariable("touched", true);
-            (DialogueManager.dialogueUI as StandardDialogueUI).OnContinue();
-            var entry = DialogueManager.masterDatabase.GetDialogueEntry(2, 261);
-            var state = DialogueManager.conversationModel.GetState(entry);
-            DialogueManager.conversationController.GotoState(state);
+            StartCoroutine(startTouchHandler());
         }
         else if (touchAllowed)
         {
@@ -175,6 +174,23 @@ public class TouchCheckScript : MonoBehaviour
         {
             (DialogueManager.dialogueUI as StandardDialogueUI).OnContinue(); // Debug advancing dialogue
         }
+    }
+
+    public IEnumerator startTouchHandler()
+    {
+        
+        if (isUpdating) yield break; // Prevent overlapping coroutines
+
+        isUpdating = true; // Lock to prevent multiple updates
+        yield return new WaitForSeconds(2f); // Wait before updating
+        
+        DialogueLua.SetVariable("touched", true);
+        (DialogueManager.dialogueUI as StandardDialogueUI).OnContinue();
+        var entry = DialogueManager.masterDatabase.GetDialogueEntry(2, 261);
+        var state = DialogueManager.conversationModel.GetState(entry);
+        DialogueManager.conversationController.GotoState(state);
+        
+        isUpdating = false; // Unlock after completion
     }
 
     private void OnApplicationQuit()

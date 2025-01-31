@@ -95,7 +95,7 @@ public class SerialManager : MonoBehaviour
         currentLines.Clear();
         timeSinceLastRead += Time.deltaTime;
         
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.P))
         {
             SetLEDColor(color, BODY_PART.EYE);
             foreach (KeyValuePair<BODY_PART, float> entry in sensorData)
@@ -190,7 +190,8 @@ public class SerialManager : MonoBehaviour
 
     void SendData(String msg)
     {
-        if(stream != null && stream.IsOpen)
+        
+        if(timeSinceLastRead > 1/readRate && stream != null && stream.IsOpen)
         {
             stream.WriteLine(msg + "\n");
             Debug.Log("Sent Message: " + msg);
