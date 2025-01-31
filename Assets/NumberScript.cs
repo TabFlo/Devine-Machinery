@@ -10,6 +10,8 @@ public class NumberScript : MonoBehaviour
     public string audioFilePrefix = "Number_Wildcard_Approval Pos_"; // Prefix for the audio files
     public AudioClip hundredClip; // Clip for "hundred"
     public AudioClip thousandClip; // Clip for "thousand"
+    
+    public int number;
 
     public int ConvID;
     public int entryID;
@@ -49,8 +51,9 @@ public class NumberScript : MonoBehaviour
         audioClips[$"Voicelines/Wildcards Positive/{audioFilePrefix}100"] = hundredClip;
     }
 
-    public void PlayNumber(int number)
+    public void PlayNumber()
     {
+        
         if (number <= 0) return;
 
         // Break down the number and get the sequence
@@ -126,16 +129,18 @@ public class NumberScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            PlayNumber(killedXTimes);
+            PlayNumber();
+            Debug.Log(number);
         }
+        number = DialogueLua.GetVariable("killedTime").AsInt;
     }
 
-    public void PlaySoundAncContinue()
+  /*  public void PlaySoundAncContinue()
     {
         DialogueLua.SetVariable("killedTime", killedXTimes);
-        PlayNumber(killedXTimes);
+        PlayNumber();
         
-    }
+    }*/
 
     public void setKill(int killedTimes)
     {

@@ -1426,7 +1426,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1529460689}
           m_TargetAssemblyTypeName: NumberScript, Assembly-CSharp
-          m_MethodName: PlaySoundAncContinue
+          m_MethodName: PlayNumber
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1467,10 +1467,14 @@ MonoBehaviour:
   - guid: 67c043fa-de7a-4225-a51e-15a103eb28e7
     onExecute:
       m_PersistentCalls:
+        m_Calls: []
+  - guid: c013f53e-d854-40cc-b570-154bdc9fe685
+    onExecute:
+      m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1125102422}
-          m_TargetAssemblyTypeName: stringManager, Assembly-CSharp
-          m_MethodName: getStringEntry
+        - m_Target: {fileID: 1529460689}
+          m_TargetAssemblyTypeName: NumberScript, Assembly-CSharp
+          m_MethodName: PlayNumber
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2509,7 +2513,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerDuration: 120
-  textSender: {fileID: 1346082584}
 --- !u!1 &1213289822
 GameObject:
   m_ObjectHideFlags: 0
@@ -2557,6 +2560,14 @@ MonoBehaviour:
   glitchEffect: {fileID: 1475545609}
   touchCheckScript: {fileID: 691155622}
   serialManager: {fileID: 1346082585}
+  eyeColors:
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &1239071273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3139,8 +3150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9cf2703a4bd6346b35ceba5852760e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectionText: Left
-  rate: 0
 --- !u!114 &1346082585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3723,9 +3732,10 @@ MonoBehaviour:
   audioFilePrefix: Numbers_Wildcard_Approval Pos_
   hundredClip: {fileID: 8300000, guid: 880e3aabe5df14cc59e22154e7dc2984, type: 3}
   thousandClip: {fileID: 8300000, guid: 0a732725480c74688a3ff32e6deb9299, type: 3}
+  number: 0
   ConvID: 0
   entryID: 0
-  killedXTimes: 3462
+  killedXTimes: 0
 --- !u!1 &1612278712
 GameObject:
   m_ObjectHideFlags: 0
@@ -3760,7 +3770,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -2}
+  m_AnchoredPosition: {x: 0, y: -1.9999847}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1612278714
@@ -4289,7 +4299,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -19}
+  m_AnchoredPosition: {x: 0, y: -18.999985}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1697692321

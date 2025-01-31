@@ -10,6 +10,7 @@ public class OnStartScript : MonoBehaviour
     void Start()
     {
     DialogueManager.StartConversation("MainDialogue1");   
+    //MainDialogue1
     }
 
     public void startDialogue()
