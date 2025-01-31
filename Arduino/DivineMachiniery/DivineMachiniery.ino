@@ -14,7 +14,7 @@ unsigned long previousTime = 0;
 
 //Adafruit_VL53L0X sensorL = Adafruit_VL53L0X();
 
-LED eyeLed(3, 8, 5000); 
+LED eyeLed(3, 8, 3000); 
   
 
 void setup() {
@@ -94,7 +94,7 @@ void loop() {
   // TIME HANDLING
   previousTime = currentTime; 
   eyeLed.UpdateTime(deltaTime); 
-
+  eyeLed.Update();
   delay(100);
 }
 
