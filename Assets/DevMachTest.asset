@@ -16476,8 +16476,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1521.2037
-        y: 3790.8306
+        x: 1518.0787
+        y: 3791.872
         width: 160
         height: 30
     - id: 144
@@ -22500,8 +22500,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1537.3696
-        y: 4856.4336
+        x: 1816.4392
+        y: 4947.9062
         width: 160
         height: 30
     - id: 246
@@ -25417,7 +25417,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Voicelines/Wildcards Positive/Akt 3_Wildcard 1_Approval
+          Pos_01)
         type: 0
         typeString: 
       - title: Audio Files
@@ -25478,7 +25479,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Voicelines/Wildcards Positive/Akt 3_Wildcard 2_Approval
+          Pos_01)
         type: 0
         typeString: 
       - title: Audio Files
@@ -25507,7 +25509,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 543.0858
-        y: 3466.6692
+        y: 3465.792
         width: 160
         height: 30
     - id: 300
@@ -25539,7 +25541,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Voicelines/Wildcards Negative/Akt 3_WIldcard 1_Approval
+          Neg_01)
         type: 0
         typeString: 
       - title: Audio Files
@@ -25598,7 +25601,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Voicelines/Wildcards Negative/Akt 3_WIldcard 2_Approval
+          Neg_01)
         type: 0
         typeString: 
       - title: Audio Files
@@ -25653,7 +25657,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: XX
+        value: '[var=killedTime]'
         type: 0
         typeString: 
       - title: Sequence
@@ -25662,6 +25666,10 @@ MonoBehaviour:
         typeString: 
       - title: Audio Files
         value: '[]'
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 56bb8ea3-ca25-4cad-a307-888e6a04b31c
         type: 0
         typeString: 
       conversationID: 2
@@ -25716,7 +25724,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Voicelines/Wildcards Positive/Akt 3_Wildcard 1_Approval
+          Pos_02)
         type: 0
         typeString: 
       - title: Audio Files
@@ -25775,7 +25784,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Voicelines/Wildcards Positive/Akt 3_Wildcard 1_Approval
+          Pos_03)
         type: 0
         typeString: 
       - title: Audio Files
@@ -25836,7 +25846,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Voicelines/Wildcards Positive/Akt 3_Wildcard 1_Approval
+          Pos_04)
         type: 0
         typeString: 
       - title: Audio Files
@@ -25895,7 +25906,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Voicelines/Wildcards Positive/Akt 3_Wildcard 1_Approval
+          Pos_05)
         type: 0
         typeString: 
       - title: Audio Files
@@ -25909,7 +25921,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 306
+        destinationConversationID: 2
+        destinationDialogueID: 314
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -25950,7 +25968,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Voicelines/Wildcards Positive/Akt 3_Wildcard 2_Approval
+          Pos_02)
         type: 0
         typeString: 
       - title: Audio Files
@@ -25964,7 +25983,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 307
+        destinationConversationID: 2
+        destinationDialogueID: 314
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -26003,7 +26028,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Voicelines/Wildcards Negative/Akt 3_WIldcard 1_Approval
+          Neg_02)
         type: 0
         typeString: 
       - title: Audio Files
@@ -26063,7 +26089,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Voicelines/Wildcards Negative/Akt 3_WIldcard 1_Approval
+          Neg_03)
         type: 0
         typeString: 
       - title: Audio Files
@@ -26077,7 +26104,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 309
+        destinationConversationID: 2
+        destinationDialogueID: 316
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -26171,15 +26204,12 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'times
-
-          
-
-          Is it fear that drove your hand?'
+        value: times
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Voicelines/Wildcards Negative/Akt 3_WIldcard 2_Approval
+          Neg_02)
         type: 0
         typeString: 
       - title: Audio Files
@@ -26197,7 +26227,7 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 311
         destinationConversationID: 2
-        destinationDialogueID: 312
+        destinationDialogueID: 315
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -26207,8 +26237,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2714.4785
-        y: 3540.8906
+        x: 2702.0977
+        y: 3550.4143
         width: 160
         height: 30
     - id: 312
@@ -26243,7 +26273,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Voicelines/Wildcards Negative/Akt 3_WIldcard 2_Approval
+          Neg_04)
         type: 0
         typeString: 
       - title: Audio Files
@@ -26271,8 +26302,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2729.8806
-        y: 3604.9136
+        x: 2719.4045
+        y: 3675.39
         width: 160
         height: 30
     - id: 313
@@ -26304,7 +26335,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: AudioWait(Voicelines/Wildcards Negative/Akt 3_WIldcard 2_Approval
+          Neg_05)
         type: 0
         typeString: 
       - title: Audio Files
@@ -26318,7 +26350,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 313
+        destinationConversationID: 2
+        destinationDialogueID: 316
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -26326,13 +26364,183 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2730.34
-        y: 3671.235
+        x: 2719.864
+        y: 3741.7114
+        width: 160
+        height: 30
+    - id: 314
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: Delay(1)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 314
+        destinationConversationID: 2
+        destinationDialogueID: 143
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 568.69836
+        y: 3810.989
+        width: 160
+        height: 30
+    - id: 315
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Is it fear that drove your hand?
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Wildcards Negative/Akt 3_WIldcard 2_Approval
+          Neg_03)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 315
+        destinationConversationID: 2
+        destinationDialogueID: 312
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2704.0024
+        y: 3603.2715
+        width: 160
+        height: 30
+    - id: 316
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: Delay(1)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 316
+        destinationConversationID: 2
+        destinationDialogueID: 143
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2402.6675
+        y: 3851.6624
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 3102.2502}
-    canvasZoom: 0.46000022
+    canvasScrollPosition: {x: 452.45627, y: 4539.8857}
+    canvasZoom: 0.4300004
   - id: 3
     fields:
     - title: Title
