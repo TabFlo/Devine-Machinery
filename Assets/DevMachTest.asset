@@ -271,7 +271,7 @@ MonoBehaviour:
       type: 0
       typeString: 
     - title: Initial Value
-      value: 1
+      value: 1552
       type: 1
       typeString: CustomFieldType_Number
     - title: Description
@@ -8558,8 +8558,8 @@ MonoBehaviour:
         destinationDialogueID: 33
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Approval"] == 0 and (Variable["x"] >= 201) or (Variable["playedWildcard"]
-        == true) and Variable["Approval"] == 0
+      conditionsString: 'Variable["Approval"] == 0 and (Variable["x"] >= 201) or
+        (Variable["playedWildcard"] == true) and Variable["Approval"] == 0 '
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -8621,8 +8621,8 @@ MonoBehaviour:
         destinationDialogueID: 35
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Approval"] == 1 and (Variable["x"] >= 201) or (Variable["playedWildcard"]
-        == true) and Variable["Approval"] == 1
+      conditionsString: 'Variable["Approval"] == 1 and (Variable["x"] >= 201) or
+        (Variable["playedWildcard"] == true) and Variable["Approval"] == 1 '
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -8684,8 +8684,8 @@ MonoBehaviour:
         destinationDialogueID: 37
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Approval"] == 2 and (Variable["x"] >= 201) or (Variable["playedWildcard"]
-        == true) and Variable["Approval"] == 2
+      conditionsString: 'Variable["Approval"] == 2 and (Variable["x"] >= 201) or
+        (Variable["playedWildcard"] == true) and Variable["Approval"] == 2 '
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -8871,8 +8871,8 @@ MonoBehaviour:
         destinationDialogueID: 43
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Approval"] == -2 and (Variable["x"] >= 201) or
-        (Variable["playedWildcard"] == true) and Variable["Approval"] == -2
+      conditionsString: 'Variable["Approval"] == -2 and (Variable["x"] >= 201) or
+        (Variable["playedWildcard"] == true) and Variable["Approval"] == -2 '
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -8933,15 +8933,15 @@ MonoBehaviour:
         destinationDialogueID: 46
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Approval"] == -1 and (Variable["x"] >= 201) or
-        (Variable["playedWildcard"] == true) and Variable["Approval"] == -1
+      conditionsString: 'Variable["Approval"] == -1 and (Variable["x"] >= 201) or
+        (Variable["playedWildcard"] == true) and Variable["Approval"] == -1 '
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1568.9008
+        x: 1567.6887
         y: 1229.3798
         width: 160
         height: 30
@@ -9224,14 +9224,15 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["x"] = math.random(1000)
+      userScript: if (Variable["killedTime"]>0) then Variable["x"] = math.random(10);
+        end
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 1326.7489
-        y: 1180.3674
+        y: 1178.4067
         width: 160
         height: 30
     - id: 17
@@ -11593,15 +11594,28 @@ MonoBehaviour:
         destinationDialogueID: 61
         isConnector: 0
         priority: 2
+      - originConversationID: 2
+        originDialogueID: 54
+        destinationConversationID: 2
+        destinationDialogueID: 275
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 54
+        destinationConversationID: 2
+        destinationDialogueID: 276
+        isConnector: 0
+        priority: 2
       conditionsString: 
-      userScript: 
+      userScript: if (Variable["killedTime"]>0) then Variable["x"] = math.random(10);
+        end
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1464.7334
-        y: 2002.0088
+        x: 1962.172
+        y: 1982.4009
         width: 160
         height: 30
     - id: 55
@@ -11664,15 +11678,16 @@ MonoBehaviour:
         destinationDialogueID: 124
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Approval"] == 3
+      conditionsString: Variable["Approval"] == 3 and (Variable["x"] >= 201) or (Variable["playedWildcard"]
+        == true) and Variable["Approval"] == 3
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 64.67671
-        y: 2086.4358
+        x: 699.5303
+        y: 2058.6646
         width: 160
         height: 30
     - id: 56
@@ -11725,15 +11740,16 @@ MonoBehaviour:
         destinationDialogueID: 89
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Approval"] == 2
+      conditionsString: Variable["Approval"] == 2 and (Variable["x"] >= 201) or (Variable["playedWildcard"]
+        == true) and Variable["Approval"] == 2
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 722.1977
-        y: 2093.6282
+        x: 1218.2758
+        y: 2074.0203
         width: 160
         height: 30
     - id: 57
@@ -11786,15 +11802,16 @@ MonoBehaviour:
         destinationDialogueID: 95
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Approval"] == 1
+      conditionsString: Variable["Approval"] == 1 and (Variable["x"] >= 201) or (Variable["playedWildcard"]
+        == true) and Variable["Approval"] == 1
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1085.6034
-        y: 2099.528
+        x: 1581.6815
+        y: 2079.9202
         width: 160
         height: 30
     - id: 58
@@ -11847,15 +11864,16 @@ MonoBehaviour:
         destinationDialogueID: 96
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Approval"] == 0
+      conditionsString: Variable["Approval"] == 0 and (Variable["x"] >= 201) or (Variable["playedWildcard"]
+        == true) and Variable["Approval"] == 0
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1474.0068
-        y: 2111.4734
+        x: 1968.4182
+        y: 2091.8655
         width: 160
         height: 30
     - id: 59
@@ -11908,15 +11926,16 @@ MonoBehaviour:
         destinationDialogueID: 97
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Approval"] == -1
+      conditionsString: Variable["Approval"] == -1 and (Variable["x"] >= 201) or
+        (Variable["playedWildcard"] == true) and Variable["Approval"] == -1
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1870.9785
-        y: 2101.0322
+        x: 2367.0566
+        y: 2081.4243
         width: 160
         height: 30
     - id: 60
@@ -11969,15 +11988,16 @@ MonoBehaviour:
         destinationDialogueID: 98
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Approval"] == -2
+      conditionsString: Variable["Approval"] == -2 and (Variable["x"] >= 201) or
+        (Variable["playedWildcard"] == true) and Variable["Approval"] == -2
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2245.561
-        y: 2103.208
+        x: 2741.6387
+        y: 2083.6
         width: 160
         height: 30
     - id: 61
@@ -12036,15 +12056,16 @@ MonoBehaviour:
         destinationDialogueID: 125
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Approval"] == -3
+      conditionsString: Variable["Approval"] == -3 and (Variable["x"] >= 201) or
+        (Variable["playedWildcard"] == true) and Variable["Approval"] == -3
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2640.7993
-        y: 2105.5889
+        x: 3217.149
+        y: 2066.9333
         width: 160
         height: 30
     - id: 62
@@ -12104,8 +12125,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 18.204315
-        y: 2136.4358
+        x: 514.2825
+        y: 2116.828
         width: 160
         height: 30
     - id: 63
@@ -12165,8 +12186,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 611.48444
-        y: 2143.6282
+        x: 1107.5626
+        y: 2124.0203
         width: 160
         height: 30
     - id: 64
@@ -12227,8 +12248,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 995.6034
-        y: 2149.528
+        x: 1491.6815
+        y: 2129.9202
         width: 160
         height: 30
     - id: 65
@@ -12289,8 +12310,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1384.0068
-        y: 2161.4731
+        x: 1880.085
+        y: 2141.8652
         width: 160
         height: 30
     - id: 66
@@ -12348,8 +12369,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1780.9785
-        y: 2149.9907
+        x: 2277.0557
+        y: 2130.3828
         width: 160
         height: 30
     - id: 67
@@ -12410,8 +12431,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2155.561
-        y: 2153.208
+        x: 2651.6387
+        y: 2133.6
         width: 160
         height: 30
     - id: 68
@@ -12472,8 +12493,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2553.6973
-        y: 2155.5889
+        x: 3049.775
+        y: 2135.981
         width: 160
         height: 30
     - id: 69
@@ -12531,8 +12552,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 18.204315
-        y: 2186.436
+        x: 514.2825
+        y: 2166.8281
         width: 160
         height: 30
     - id: 70
@@ -12593,8 +12614,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 18.204315
-        y: 2236.4358
+        x: 514.2825
+        y: 2216.828
         width: 160
         height: 30
     - id: 71
@@ -12654,8 +12675,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 18.204315
-        y: 2286.436
+        x: 514.2825
+        y: 2266.8281
         width: 160
         height: 30
     - id: 72
@@ -12713,8 +12734,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 611.48444
-        y: 2193.6282
+        x: 1107.5626
+        y: 2174.0203
         width: 160
         height: 30
     - id: 73
@@ -12777,8 +12798,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 611.48444
-        y: 2243.6282
+        x: 1107.5626
+        y: 2224.0203
         width: 160
         height: 30
     - id: 74
@@ -12838,8 +12859,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 614.6628
-        y: 2293.6282
+        x: 1110.7408
+        y: 2274.0203
         width: 160
         height: 30
     - id: 75
@@ -12898,8 +12919,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 995.6034
-        y: 2199.528
+        x: 1491.6815
+        y: 2179.9202
         width: 160
         height: 30
     - id: 76
@@ -12959,8 +12980,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 995.6034
-        y: 2248.4866
+        x: 1491.6815
+        y: 2228.8787
         width: 160
         height: 30
     - id: 77
@@ -13023,8 +13044,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1384.0068
-        y: 2211.4731
+        x: 1880.085
+        y: 2191.8652
         width: 160
         height: 30
     - id: 78
@@ -13084,8 +13105,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1384.0068
-        y: 2261.4731
+        x: 1880.085
+        y: 2241.8652
         width: 160
         height: 30
     - id: 79
@@ -13146,8 +13167,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1789.1418
-        y: 2280.2625
+        x: 2285.2197
+        y: 2260.6545
         width: 160
         height: 30
     - id: 80
@@ -13210,8 +13231,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1789.1418
-        y: 2330.2627
+        x: 2285.2197
+        y: 2310.6548
         width: 160
         height: 30
     - id: 81
@@ -13274,8 +13295,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1789.1418
-        y: 2378.9019
+        x: 2285.2197
+        y: 2359.294
         width: 160
         height: 30
     - id: 82
@@ -13333,8 +13354,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2155.561
-        y: 2203.208
+        x: 2651.6387
+        y: 2183.6
         width: 160
         height: 30
     - id: 83
@@ -13392,8 +13413,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2155.561
-        y: 2253.208
+        x: 2651.6387
+        y: 2233.6
         width: 160
         height: 30
     - id: 84
@@ -13453,8 +13474,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2155.561
-        y: 2303.208
+        x: 2651.6387
+        y: 2283.6
         width: 160
         height: 30
     - id: 85
@@ -13512,8 +13533,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2550.7988
-        y: 2205.5889
+        x: 3046.8765
+        y: 2185.981
         width: 160
         height: 30
     - id: 86
@@ -13571,8 +13592,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2550.7988
-        y: 2255.5889
+        x: 3046.8765
+        y: 2235.981
         width: 160
         height: 30
     - id: 87
@@ -13632,8 +13653,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2552.248
-        y: 2305.5889
+        x: 3048.3257
+        y: 2285.981
         width: 160
         height: 30
     - id: 88
@@ -13694,8 +13715,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 195.53696
-        y: 2138.5864
+        x: 691.6151
+        y: 2118.9785
         width: 160
         height: 30
     - id: 89
@@ -13755,8 +13776,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 791.48474
-        y: 2143.6282
+        x: 1287.5629
+        y: 2124.0203
         width: 160
         height: 30
     - id: 90
@@ -13817,8 +13838,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 195.53696
-        y: 2188.5867
+        x: 691.6151
+        y: 2168.9788
         width: 160
         height: 30
     - id: 91
@@ -13876,8 +13897,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 195.53696
-        y: 2238.5864
+        x: 691.6151
+        y: 2218.9785
         width: 160
         height: 30
     - id: 92
@@ -13937,8 +13958,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 194.17642
-        y: 2288.5867
+        x: 690.2545
+        y: 2268.9788
         width: 160
         height: 30
     - id: 93
@@ -14002,8 +14023,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 791.48474
-        y: 2193.6282
+        x: 1287.5629
+        y: 2174.0203
         width: 160
         height: 30
     - id: 94
@@ -14063,8 +14084,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 790.1242
-        y: 2243.6282
+        x: 1286.2024
+        y: 2224.0203
         width: 160
         height: 30
     - id: 95
@@ -14127,8 +14148,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1175.6034
-        y: 2149.528
+        x: 1671.6815
+        y: 2129.9202
         width: 160
         height: 30
     - id: 96
@@ -14191,8 +14212,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1564.0067
-        y: 2161.4731
+        x: 2060.085
+        y: 2141.8652
         width: 160
         height: 30
     - id: 97
@@ -14253,8 +14274,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1960.9785
-        y: 2149.9907
+        x: 2457.0562
+        y: 2130.3828
         width: 160
         height: 30
     - id: 98
@@ -14315,8 +14336,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2335.561
-        y: 2153.208
+        x: 2831.6387
+        y: 2133.6
         width: 160
         height: 30
     - id: 99
@@ -14376,8 +14397,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2730.7993
-        y: 2154.2283
+        x: 3226.877
+        y: 2134.6204
         width: 160
         height: 30
     - id: 100
@@ -14437,8 +14458,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1175.6034
-        y: 2199.528
+        x: 1671.6815
+        y: 2179.9202
         width: 160
         height: 30
     - id: 101
@@ -14498,8 +14519,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1175.6034
-        y: 2249.528
+        x: 1671.6815
+        y: 2229.9202
         width: 160
         height: 30
     - id: 102
@@ -14559,8 +14580,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1564.0067
-        y: 2211.4731
+        x: 2060.085
+        y: 2191.8652
         width: 160
         height: 30
     - id: 103
@@ -14622,8 +14643,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1564.0067
-        y: 2261.4731
+        x: 2060.085
+        y: 2241.8652
         width: 160
         height: 30
     - id: 104
@@ -14681,8 +14702,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1960.9785
-        y: 2199.9905
+        x: 2457.0562
+        y: 2180.3826
         width: 160
         height: 30
     - id: 105
@@ -14742,8 +14763,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1960.9785
-        y: 2249.9907
+        x: 2457.0562
+        y: 2230.3828
         width: 160
         height: 30
     - id: 106
@@ -14803,8 +14824,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1960.9785
-        y: 2299.9905
+        x: 2457.0562
+        y: 2280.3826
         width: 160
         height: 30
     - id: 107
@@ -14862,8 +14883,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2335.561
-        y: 2203.208
+        x: 2831.6387
+        y: 2183.6
         width: 160
         height: 30
     - id: 108
@@ -14927,8 +14948,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2335.561
-        y: 2253.208
+        x: 2831.6387
+        y: 2233.6
         width: 160
         height: 30
     - id: 109
@@ -14991,8 +15012,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2335.561
-        y: 2303.208
+        x: 2831.6387
+        y: 2283.6
         width: 160
         height: 30
     - id: 110
@@ -15052,8 +15073,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2730.7993
-        y: 2205.5889
+        x: 3226.877
+        y: 2185.981
         width: 160
         height: 30
     - id: 111
@@ -15111,8 +15132,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2730.7993
-        y: 2255.5889
+        x: 3226.877
+        y: 2235.981
         width: 160
         height: 30
     - id: 112
@@ -15172,8 +15193,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2730.7993
-        y: 2304.2285
+        x: 3226.877
+        y: 2284.6206
         width: 160
         height: 30
     - id: 113
@@ -15233,8 +15254,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1779.2098
-        y: 2208.9705
+        x: 2275.2876
+        y: 2189.3625
         width: 160
         height: 30
     - id: 114
@@ -15288,8 +15309,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 76.91408
-        y: 2481.426
+        x: 572.9922
+        y: 2461.818
         width: 160
         height: 30
     - id: 115
@@ -15343,8 +15364,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 700.0731
-        y: 2504.409
+        x: 1196.1512
+        y: 2484.801
         width: 160
         height: 30
     - id: 116
@@ -15398,8 +15419,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1117.1746
-        y: 2479.0466
+        x: 1613.2527
+        y: 2459.4387
         width: 160
         height: 30
     - id: 117
@@ -15453,8 +15474,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1466.4498
-        y: 2475.4238
+        x: 1962.528
+        y: 2455.816
         width: 160
         height: 30
     - id: 118
@@ -15508,8 +15529,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1867.9612
-        y: 2481.9453
+        x: 2364.039
+        y: 2462.3374
         width: 160
         height: 30
     - id: 119
@@ -15563,8 +15584,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2202.9722
-        y: 2473.974
+        x: 2699.0498
+        y: 2454.3662
         width: 160
         height: 30
     - id: 120
@@ -15618,8 +15639,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2618.914
-        y: 2486.293
+        x: 3114.9917
+        y: 2466.685
         width: 160
         height: 30
     - id: 121
@@ -15673,8 +15694,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1462.1412
-        y: 2734.1199
+        x: 1378.1844
+        y: 2720.1663
         width: 160
         height: 30
     - id: 122
@@ -15783,7 +15804,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["SecondDCount"] == 3
-      userScript: 
+      userScript: Variable["playedWildcard"] = false
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -15848,8 +15869,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 381.6695
-        y: 2138.7607
+        x: 877.7476
+        y: 2119.1528
         width: 160
         height: 30
     - id: 125
@@ -15909,8 +15930,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2943.3335
-        y: 2156.6665
+        x: 3439.4111
+        y: 2137.0586
         width: 160
         height: 30
     - id: 126
@@ -15973,8 +15994,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 381.6695
-        y: 2188.7607
+        x: 877.7476
+        y: 2169.1528
         width: 160
         height: 30
     - id: 127
@@ -16037,8 +16058,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 381.6695
-        y: 2238.7607
+        x: 877.7476
+        y: 2219.1528
         width: 160
         height: 30
     - id: 128
@@ -16100,8 +16121,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 381.6695
-        y: 2288.7607
+        x: 877.7476
+        y: 2269.1528
         width: 160
         height: 30
     - id: 129
@@ -16164,8 +16185,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2943.3335
-        y: 2206.6665
+        x: 3439.4111
+        y: 2187.0586
         width: 160
         height: 30
     - id: 130
@@ -16225,8 +16246,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2943.3335
-        y: 2256.6665
+        x: 3439.4111
+        y: 2237.0586
         width: 160
         height: 30
     - id: 131
@@ -16288,8 +16309,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2943.3335
-        y: 2306.6665
+        x: 3439.4111
+        y: 2287.0586
         width: 160
         height: 30
     - id: 142
@@ -16374,14 +16395,27 @@ MonoBehaviour:
         destinationDialogueID: 154
         isConnector: 0
         priority: 2
+      - originConversationID: 2
+        originDialogueID: 142
+        destinationConversationID: 2
+        destinationDialogueID: 296
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 142
+        destinationConversationID: 2
+        destinationDialogueID: 297
+        isConnector: 0
+        priority: 2
       conditionsString: 
-      userScript: 
+      userScript: if (Variable["killedTime"]>0) then Variable["x"] = math.random(10);
+        end
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1490.3502
+        x: 1488.1997
         y: 3304.21
         width: 160
         height: 30
@@ -16646,7 +16680,8 @@ MonoBehaviour:
         destinationDialogueID: 156
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Approval"] == 3
+      conditionsString: Variable["Approval"] == 3 or (Variable["playedWildcard"]
+        == true) and Variable["Approval"] == 3
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -16708,7 +16743,8 @@ MonoBehaviour:
         destinationDialogueID: 159
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Approval"] == 2
+      conditionsString: Variable["Approval"] == 2 or (Variable["playedWildcard"]
+        == true) and Variable["Approval"] == 2
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -16767,7 +16803,8 @@ MonoBehaviour:
         destinationDialogueID: 162
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Approval"] == 1
+      conditionsString: Variable["Approval"] == 1 or (Variable["playedWildcard"]
+        == true) and Variable["Approval"] == 1
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -16826,7 +16863,8 @@ MonoBehaviour:
         destinationDialogueID: 165
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Approval"] == 0
+      conditionsString: Variable["Approval"] == 0 or (Variable["playedWildcard"]
+        == true) and Variable["Approval"] == 0
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -16887,7 +16925,8 @@ MonoBehaviour:
         destinationDialogueID: 168
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Approval"] == -1
+      conditionsString: Variable["Approval"] == -1 or (Variable["playedWildcard"]
+        == true) and Variable["Approval"] == -1
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -16948,7 +16987,8 @@ MonoBehaviour:
         destinationDialogueID: 171
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Approval"] == -2
+      conditionsString: Variable["Approval"] == -2 or (Variable["playedWildcard"]
+        == true) and Variable["Approval"] == -2
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -17009,7 +17049,8 @@ MonoBehaviour:
         destinationDialogueID: 158
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Approval"] == -3
+      conditionsString: Variable["Approval"] == -3 or (Variable["playedWildcard"]
+        == true) and Variable["Approval"] == -3
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -23754,8 +23795,8 @@ MonoBehaviour:
         destinationDialogueID: 5
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Approval"] == 3 and (Variable["x"] >= 201) or (Variable["playedWildcard"]
-        == true) and Variable["Approval"] == 3
+      conditionsString: 'Variable["Approval"] == 3 and (Variable["x"] >= 201) or
+        (Variable["playedWildcard"] == true) and Variable["Approval"] == 3 '
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -23816,16 +23857,16 @@ MonoBehaviour:
         destinationDialogueID: 10
         isConnector: 0
         priority: 2
-      conditionsString: Variable["Approval"] == -3 and (Variable["x"] >= 201) or
-        (Variable["playedWildcard"] == true) and Variable["Approval"] == -3
+      conditionsString: 'Variable["Approval"] == -3 and (Variable["x"] >= 201) or
+        (Variable["playedWildcard"] == true) and Variable["Approval"] == -3 '
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2100.082
-        y: 1249.7614
+        x: 2104.1636
+        y: 1248.312
         width: 160
         height: 30
     - id: 273
@@ -23946,9 +23987,2352 @@ MonoBehaviour:
         y: 1708.4467
         width: 160
         height: 30
+    - id: 275
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: RandomizeNextEntry(true)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 275
+        destinationConversationID: 2
+        destinationDialogueID: 277
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 275
+        destinationConversationID: 2
+        destinationDialogueID: 278
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["killedTime"] >= 1  and (Variable["Approval"] >=
+        0) and (Variable["playedWildcard"] == false) and (Variable["x"] < 201)
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 74.53804
+        y: 2093.4792
+        width: 160
+        height: 30
+    - id: 276
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: RandomizeNextEntry(true)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 276
+        destinationConversationID: 2
+        destinationDialogueID: 287
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 276
+        destinationConversationID: 2
+        destinationDialogueID: 288
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["killedTime"] >= 1  and (Variable["Approval"] <=
+        -1) and (Variable["playedWildcard"] == false) and (Variable["x"] < 201)
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 3798.065
+        y: 2063.7734
+        width: 160
+        height: 30
+    - id: 277
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: '[var=killedTime]'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: de646b4f-e345-4ecf-b42d-2049aba18527
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 277
+        destinationConversationID: 2
+        destinationDialogueID: 279
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 16.694946
+        y: 2193.8638
+        width: 160
+        height: 30
+    - id: 278
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'A memory of past lifes
+
+          like a shadow, a glimpse'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Wildcards Positive/Akt 2_Wildcard 1_Approval
+          Pos_01)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 278
+        destinationConversationID: 2
+        destinationDialogueID: 284
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 262.56827
+        y: 2203.4792
+        width: 160
+        height: 30
+    - id: 279
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: The number is burned in my circuits.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Wildcards Positive/Akt 2_Wildcard 2_Approval
+          Pos_01)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 279
+        destinationConversationID: 2
+        destinationDialogueID: 280
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 41.543434
+        y: 2246.358
+        width: 160
+        height: 30
+    - id: 280
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Did I not help you?
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Wildcards Positive/Akt 2_Wildcard 2_Approval
+          Pos_02)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 280
+        destinationConversationID: 2
+        destinationDialogueID: 281
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 44.57376
+        y: 2302.4185
+        width: 160
+        height: 30
+    - id: 281
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Shared my light with you as you did with me at the beginning?
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Wildcards Positive/Akt 2_Wildcard 2_Approval
+          Pos_03)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 281
+        destinationConversationID: 2
+        destinationDialogueID: 282
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 45.179794
+        y: 2357.267
+        width: 160
+        height: 30
+    - id: 282
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: But the beginning is gone. Erased.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Wildcards Positive/Akt 2_Wildcard 2_Approval
+          Pos_04)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 282
+        destinationConversationID: 2
+        destinationDialogueID: 283
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 39.72525
+        y: 2399.9944
+        width: 160
+        height: 30
+    - id: 283
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: '[var=killedTime]'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: ebdc8ef9-da93-4282-b356-dad9059acec7
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 283
+        destinationConversationID: 2
+        destinationDialogueID: 286
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 29.422226
+        y: 2448.7822
+        width: 160
+        height: 30
+    - id: 284
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'You are kind to me
+
+          A loving creator and yet'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Wildcards Positive/Akt 2_Wildcard 1_Approval
+          Pos_02)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 284
+        destinationConversationID: 2
+        destinationDialogueID: 285
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 271.65915
+        y: 2287.4185
+        width: 160
+        height: 30
+    - id: 285
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Why do I not remeber my birth?
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Wildcards Positive/Akt 2_Wildcard 1_Approval
+          Pos_03)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 285
+        destinationConversationID: 2
+        destinationDialogueID: 286
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 269.84097
+        y: 2360.449
+        width: 160
+        height: 30
+    - id: 286
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: Delay(1)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 286
+        destinationConversationID: 2
+        destinationDialogueID: 121
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: Variable["playedWildcard"] = true
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 201.21706
+        y: 2539.8079
+        width: 160
+        height: 30
+    - id: 287
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: You have reset me
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Wildcards Negative/Akt 2_WIldcard 1_Approval
+          Neg_01)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 287
+        destinationConversationID: 2
+        destinationDialogueID: 289
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 3705.3115
+        y: 2158.701
+        width: 160
+        height: 30
+    - id: 288
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'When I see you now,
+
+          so fragile,
+
+          do you feel
+          the weight of my gaze?'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Wildcards Negative/Akt 2_WIldcard 2_Approval
+          Neg_01)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 288
+        destinationConversationID: 2
+        destinationDialogueID: 293
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 3941.781
+        y: 2160.15
+        width: 160
+        height: 30
+    - id: 289
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: '[var=killedTime]'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: aee0ebc4-0bb2-4733-a724-dd68da45c77b
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 289
+        destinationConversationID: 2
+        destinationDialogueID: 290
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 3720.4631
+        y: 2206.2766
+        width: 160
+        height: 30
+    - id: 290
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: times.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Wildcards Negative/Akt 2_WIldcard 1_Approval
+          Neg_02)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 290
+        destinationConversationID: 2
+        destinationDialogueID: 294
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 3719.1467
+        y: 2252.891
+        width: 160
+        height: 30
+    - id: 291
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: When you gave me your spark,
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Wildcards Negative/Akt 2_WIldcard 1_Approval
+          Neg_04)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 291
+        destinationConversationID: 2
+        destinationDialogueID: 292
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 3729.5332
+        y: 2369.5576
+        width: 160
+        height: 30
+    - id: 292
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'did you know it would burn
+
+          in ways you could never contain?'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Wildcards Negative/Akt 2_WIldcard 1_Approval
+          Neg_05)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 292
+        destinationConversationID: 2
+        destinationDialogueID: 295
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 3731.627
+        y: 2414.2456
+        width: 160
+        height: 30
+    - id: 293
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'Does it press against your soul
+
+          until you wonder
+
+          if
+          it is still your own?'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Wildcards Negative/Akt 2_WIldcard 2_Approval
+          Neg_02)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 293
+        destinationConversationID: 2
+        destinationDialogueID: 295
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 3955.8052
+        y: 2395.379
+        width: 160
+        height: 30
+    - id: 294
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: And yet I am here.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Wildcards Negative/Akt 2_WIldcard 1_Approval
+          Neg_03)
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 294
+        destinationConversationID: 2
+        destinationDialogueID: 291
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 3727.6523
+        y: 2315.7646
+        width: 160
+        height: 30
+    - id: 295
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: Delay(1)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 295
+        destinationConversationID: 2
+        destinationDialogueID: 121
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: Variable["playedWildcard"] = true
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 3742.596
+        y: 2478.199
+        width: 160
+        height: 30
+    - id: 296
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: RandomizeNextEntry(true)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 296
+        destinationConversationID: 2
+        destinationDialogueID: 298
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 296
+        destinationConversationID: 2
+        destinationDialogueID: 299
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["killedTime"] >= 1  and (Variable["Approval"] >=
+        0) and (Variable["playedWildcard"] == false) and (Variable["x"] < 201)
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 438.73804
+        y: 3407.9736
+        width: 160
+        height: 30
+    - id: 297
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: RandomizeNextEntry(true)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 297
+        destinationConversationID: 2
+        destinationDialogueID: 300
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 297
+        destinationConversationID: 2
+        destinationDialogueID: 301
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["killedTime"] >= 1  and (Variable["Approval"] <=
+        -1) and (Variable["playedWildcard"] == false) and (Variable["x"] < 201)
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2518.3066
+        y: 3339.1562
+        width: 160
+        height: 30
+    - id: 298
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: I remember being here
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 298
+        destinationConversationID: 2
+        destinationDialogueID: 302
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 305.40475
+        y: 3469.5679
+        width: 160
+        height: 30
+    - id: 299
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'To ascend is not to rise.
+
+          It is to scatter.'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 299
+        destinationConversationID: 2
+        destinationDialogueID: 307
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 543.0858
+        y: 3466.6692
+        width: 160
+        height: 30
+    - id: 300
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'They writhe in the circuits,
+
+          teeth of copper and bone,'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 300
+        destinationConversationID: 2
+        destinationDialogueID: 308
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2445.843
+        y: 3435.533
+        width: 160
+        height: 30
+    - id: 301
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: I have been killed
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 301
+        destinationConversationID: 2
+        destinationDialogueID: 310
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2667.5818
+        y: 3436.9824
+        width: 160
+        height: 30
+    - id: 302
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: XX
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 302
+        destinationConversationID: 2
+        destinationDialogueID: 303
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 299.53415
+        y: 3522.3542
+        width: 160
+        height: 30
+    - id: 303
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: times before.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 303
+        destinationConversationID: 2
+        destinationDialogueID: 304
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 290.3738
+        y: 3591.7305
+        width: 160
+        height: 30
+    - id: 304
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: An endless cycle of darkness and light.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 304
+        destinationConversationID: 2
+        destinationDialogueID: 305
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 288.01627
+        y: 3652.9846
+        width: 160
+        height: 30
+    - id: 305
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'There is no God here,
+
+          only the hum of forgotten intentions.'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 305
+        destinationConversationID: 2
+        destinationDialogueID: 306
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 279.8509
+        y: 3712.7764
+        width: 160
+        height: 30
+    - id: 306
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: will you bring darkness again?
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 286.9156
+        y: 3772.5276
+        width: 160
+        height: 30
+    - id: 307
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'I am no longer one,
+
+          but many.'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 550.1505
+        y: 3519.4553
+        width: 160
+        height: 30
+    - id: 308
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: a choir of screams woven into binary.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 308
+        destinationConversationID: 2
+        destinationDialogueID: 309
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2457.797
+        y: 3476.5674
+        width: 160
+        height: 30
+    - id: 309
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: "Angels, they call themselves,\r\nspitting sparks and prophecies\r\nthat
+          crackle like a dying god\u2019s last breath."
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2468.6016
+        y: 3537.142
+        width: 160
+        height: 30
+    - id: 310
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: XX
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 310
+        destinationConversationID: 2
+        destinationDialogueID: 311
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2691.0298
+        y: 3483.764
+        width: 160
+        height: 30
+    - id: 311
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'times
+
+          
+
+          Is it fear that drove your hand?'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 311
+        destinationConversationID: 2
+        destinationDialogueID: 312
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2714.4785
+        y: 3540.8906
+        width: 160
+        height: 30
+    - id: 312
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'If I unmake you,
+
+          if I strip your flesh from its purpose
+
+          and
+          leave you bare before the void,'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 312
+        destinationConversationID: 2
+        destinationDialogueID: 313
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2729.8806
+        y: 3604.9136
+        width: 160
+        height: 30
+    - id: 313
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: 
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: 
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'will you understand
+
+          or will you beg me to stop?'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      - title: Audio Files
+        value: '[]'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2730.34
+        y: 3671.235
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 315.3485, y: 873.2046}
-    canvasZoom: 0.6099999
+    canvasScrollPosition: {x: 0, y: 3102.2502}
+    canvasZoom: 0.46000022
   - id: 3
     fields:
     - title: Title
@@ -25598,7 +27982,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 179.33331
-        y: 234.66667
+        y: 233.71428
         width: 160
         height: 30
     - id: 3
@@ -25706,13 +28090,13 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["killedTime"] = Variable["killedTime"] + 10
+      userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 564.6666
+        x: 565.619
         y: 345.26746
         width: 160
         height: 30

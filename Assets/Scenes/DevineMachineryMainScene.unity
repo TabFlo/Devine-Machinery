@@ -1484,6 +1484,58 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - guid: ebdc8ef9-da93-4282-b356-dad9059acec7
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1529460689}
+          m_TargetAssemblyTypeName: NumberScript, Assembly-CSharp
+          m_MethodName: PlayNumber
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: de646b4f-e345-4ecf-b42d-2049aba18527
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1529460689}
+          m_TargetAssemblyTypeName: NumberScript, Assembly-CSharp
+          m_MethodName: PlayNumber
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: 44f88cbe-89f9-4884-95d7-c8f1ff767719
+    onExecute:
+      m_PersistentCalls:
+        m_Calls: []
+  - guid: aee0ebc4-0bb2-4733-a724-dd68da45c77b
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1529460689}
+          m_TargetAssemblyTypeName: NumberScript, Assembly-CSharp
+          m_MethodName: PlayNumber
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &721771247
 Transform:
   m_ObjectHideFlags: 0
@@ -3729,9 +3781,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1529460688}
-  audioFilePrefix: Numbers_Wildcard_Approval Pos_
-  hundredClip: {fileID: 8300000, guid: 880e3aabe5df14cc59e22154e7dc2984, type: 3}
-  thousandClip: {fileID: 8300000, guid: 0a732725480c74688a3ff32e6deb9299, type: 3}
+  positivePrefix: Numbers_Wildcard_Approval Pos_
+  negativePrefix: Numbers_Wildcard_Approval Neg_
+  hundredClip: {fileID: 8300000, guid: af129adfde0ab46339dcb01203c68656, type: 3}
+  thousandClip: {fileID: 8300000, guid: 2aeb49afba36740afa1d005697d5fc1b, type: 3}
   number: 0
   ConvID: 0
   entryID: 0
