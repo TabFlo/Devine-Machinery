@@ -8,16 +8,18 @@
 
 #define ToUCH_PIN_L 7
 
-#define ToUCH_PIN_L 8
+#define ToUCH_PIN_R 8
+
+unsigned long previousTime = 0; 
 
 //Adafruit_VL53L0X sensorL = Adafruit_VL53L0X();
 
-LED eyeLed(3, 12); 
+LED eyeLed(3, 8, 5000); 
   
 
 void setup() {
 
-  Serial.begin(115200);
+  Serial.begin(9600);
   Serial.println("Arduino Setup");
 
   pinMode(ToUCH_PIN_L, INPUT);
@@ -33,7 +35,7 @@ void setup() {
 
   //init Cap 
   //init LEDs
-  eyeLed.setColor(255, 255, 0);
+  eyeLed.setColor(255, 255, 255);
   eyeLed.on();
   delay(100);
   Serial.flush(); 
@@ -43,19 +45,23 @@ void setup() {
 
 
 void loop() {
+
+  //Time Handling
+  unsigned long currentTime = millis();
+  unsigned long deltaTime = currentTime - previousTime;
+
+  // get data from unity
+  // TODO: make this faster
   String data; 
   if (Serial.available()> 0){
     data = Serial.readStringUntil('\n');
    
   }
- //Serial.println("Data: " + data);
-  delay(500);
-  // put your main code here, to run repeatedly:
 
-  // get input enable flag from Unity
+  //Serial.println("Data: " + data);
 
-  /*
   // read tof data 
+  /*
   VL53L0X_RangingMeasurementData_t measure;
 
   sensorL.rangingTest(&measure, false);
@@ -67,39 +73,29 @@ void loop() {
   */
 
   // read cap data 
+  //ReadButtonState();
+  
 
-  int buttonState = digitalRead(ToUCH_PIN_L);
-  if (buttonState == LOW) {
-   Serial.println("TOUCH_L 1");
-  } 
-  else{
-   Serial.println("TOUCH_L 0");
-  }
-
-
- int buttonState = digitalRead(ToUCH_PIN_R);
-  if (buttonState == LOW) {
-   Serial.println("TOUCH_R 1");
-  } 
-  else{
-   Serial.println("TOUCH_R 0");
-  }
-
-
-
-  // sendLED data 
-  // eyes 
+  // LED DATA 
+  // EYES 
   
   int r, g, b;
   if(parseRGBA(data, r, g, b).equals("EYE")){
     eyeLed.setColor(r, g, b);
     eyeLed.on();
   } 
-    
+  eyeLed.blink(200);
+  
 
 
-  // Back 
-  // torsp
+  // BACK 
+  // TORSO 
+
+  // TIME HANDLING
+  previousTime = currentTime; 
+  eyeLed.UpdateTime(deltaTime); 
+
+  delay(100);
 }
 
 
@@ -129,4 +125,23 @@ String parseRGBA(String input, int &r, int &g, int &b) {
     Serial.println("color " + String(r) + " " + String(g) + " " + String(b) + " " + prefix);
 
     return prefix;
+}
+
+void ReadButtonState(){
+  int buttonState = digitalRead(ToUCH_PIN_L);
+  if (buttonState == LOW) {
+   Serial.println("TOUCH_L 1");
+  } 
+  else{
+   Serial.println("TOUCH_L 0");
+  }
+
+
+  buttonState = digitalRead(ToUCH_PIN_R);
+  if (buttonState == LOW) {
+   Serial.println("TOUCH_R 1");
+  } 
+  else{
+   Serial.println("TOUCH_R 0");
+  }
 }

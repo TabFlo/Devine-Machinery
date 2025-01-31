@@ -10,14 +10,18 @@ class LED {
     int pin; 
     uint32_t  currentColor; 
     int numLeds;
+    int deltaTime; 
+    int blinkThreshold; 
     WS2812FX leds;
 
   public: 
-    LED(int pinNumber, int numLeds);
+    LED(int pinNumber, int numLeds, int blinkThreshold);
 
     void setColor(int r, int g, int b);
     void on();
     void off(); 
+    void blink(int delayTime); 
+    void UpdateTime(int deltaTime);
 };
 
 #endif
