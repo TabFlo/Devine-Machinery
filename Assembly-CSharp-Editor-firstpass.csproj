@@ -71,8 +71,8 @@
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueDatabaseEditor.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\DialogueSystemMenuItems.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Importers\Articy\ArticySchemaEditorTools.cs" />
-    <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Importers\Articy\ArticyConverterWindowDisabled.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Renamer\DialogueSystemAssetRenamerUtility.cs" />
+    <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Importers\Articy\ArticyConverterWindowDisabled.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Importers\Celtx\CeltxConverterWindowDisabled.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\Save System\PlayerPrefsSavedGameDataStorerEditor.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Setup Wizards\PlayerSetupWizard.cs" />
@@ -240,10 +240,10 @@
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Importers\Arcweave\ArcweaveImporterWindowDisabled.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Localization Tool\LocalizationToolsWindow.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Dialogue Editor\DialogueEditorWindowTemplateSection.cs" />
-    <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\MVC\SequencerShortcutsEditor.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Triggers\ConversationPopupDrawer.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\Triggers\DialogueEntryPicker.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Utility\LuaConditionsWizardDrawer.cs" />
+    <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Inspectors\MVC\SequencerShortcutsEditor.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Tools\Unique ID Tool\UniqueIDWindow.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Common\Scripts\Editor\Misc\EditorGUIZoomArea.cs" />
     <Compile Include="Assets\Plugins\Pixel Crushers\Dialogue System\Scripts\Editor\Utility\DialogueDatabaseEditorTools.cs" />
@@ -537,6 +537,9 @@
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
       <HintPath>E:\Devine-Machinery\Library\PackageCache\com.unity.collections@2.2.1\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
     </Reference>
+    <Reference Include="TMPEffects.AutoParameters.Attributes">
+      <HintPath>E:\Devine-Machinery\Library\PackageCache\com.luca3317.tmpeffects@7babe75a31\TMPEffects.AutoParameters.Attributes.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.IonicZip">
       <HintPath>E:\Devine-Machinery\Library\PackageCache\com.unity.visualscripting@1.9.5\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
     </Reference>
@@ -548,9 +551,6 @@
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>E:\Devine-Machinery\Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll</HintPath>
-    </Reference>
-    <Reference Include="TMPEffects.AutoParameters.Attributes">
-      <HintPath>E:\Devine-Machinery\Library\PackageCache\com.luca3317.tmpeffects@7babe75a31\TMPEffects.AutoParameters.Attributes.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>E:\Devine-Machinery\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>

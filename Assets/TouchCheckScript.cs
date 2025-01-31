@@ -18,6 +18,7 @@ public class TouchCheckScript : MonoBehaviour
     private IPEndPoint endPoint; // Target endpoint for vvvv
     
     public SerialManager serialManager;
+    private Coroutine touchHandlerCoroutine;
 
     private void Start()
     {
@@ -32,12 +33,16 @@ public class TouchCheckScript : MonoBehaviour
         SendApprovalToVVVV(appro);
     }
 
+    #region MouseInputOnly
+
+    
+
+   
     private void OnTriggerEnter(Collider other)
     {
         if (isUpdating) return; // Prevent multiple updates within the same frame
         Debug.Log("Ball has entered the trigger!");
-    
-        
+
         if (DialogueLua.GetVariable("touched").AsBool == false)
         {
             DialogueLua.SetVariable("touched", true);
@@ -58,10 +63,10 @@ public class TouchCheckScript : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         Debug.Log("Ball has exited the trigger!");
-        StopAllCoroutines(); // Stop any running coroutines related to the trigger
-        isUpdating = false; // Reset the update lock
+        StopAllCoroutines(); 
+        isUpdating = false; 
     }
-
+    #endregion 
     public IEnumerator SendAnswer()
     {
         if (isUpdating) yield break; // Prevent overlapping coroutines
@@ -148,7 +153,7 @@ public class TouchCheckScript : MonoBehaviour
         tag = touchTag; // Dynamically assign the tag
         if (DialogueLua.GetVariable("touched").AsBool == false)
         {
-            StartCoroutine(startTouchHandler());
+            StartTouchHandler();
         }
         else if (touchAllowed)
         {
@@ -159,7 +164,11 @@ public class TouchCheckScript : MonoBehaviour
     private void HandleTouchEnd()
     {
         Debug.Log("No touch detected. Stopping coroutines and resetting.");
-        StopAllCoroutines(); // Stop any running coroutines
+        if (touchHandlerCoroutine != null)
+        {
+            StopCoroutine(touchHandlerCoroutine);
+            touchHandlerCoroutine = null;
+        }
         isUpdating = false;
     }
 
@@ -176,20 +185,33 @@ public class TouchCheckScript : MonoBehaviour
         }
     }
 
-    public IEnumerator startTouchHandler()
+    private void StartTouchHandler()
     {
-        
-        if (isUpdating) yield break; // Prevent overlapping coroutines
+        if (isUpdating) return; // Prevent overlapping coroutines
 
         isUpdating = true; // Lock to prevent multiple updates
-        yield return new WaitForSeconds(2f); // Wait before updating
-        
+        touchHandlerCoroutine = StartCoroutine(TouchDelayCoroutine());
+    }
+
+    private IEnumerator TouchDelayCoroutine()
+    {
+        yield return new WaitForSeconds(2f); // Wait for 2 seconds
+
+        // Check if touch is still active before proceeding
+        if (!serialManager.GetTouchState(BODY_PART.TOUCH_L) && !serialManager.GetTouchState(BODY_PART.TOUCH_R))
+        {
+            Debug.Log("Touch removed before execution. Cancelling.");
+            isUpdating = false;
+            yield break; // Stop execution
+        }
+
+        // Execute dialogue logic
         DialogueLua.SetVariable("touched", true);
         (DialogueManager.dialogueUI as StandardDialogueUI).OnContinue();
         var entry = DialogueManager.masterDatabase.GetDialogueEntry(2, 261);
         var state = DialogueManager.conversationModel.GetState(entry);
         DialogueManager.conversationController.GotoState(state);
-        
+
         isUpdating = false; // Unlock after completion
     }
 
