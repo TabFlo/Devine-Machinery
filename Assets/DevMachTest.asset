@@ -16506,8 +16506,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1518.0787
-        y: 3791.872
+        x: 1503.1127
+        y: 3718.4026
         width: 160
         height: 30
     - id: 144
@@ -27270,7 +27270,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 274.35767, y: 3131.2202}
+    canvasScrollPosition: {x: 315.61972, y: 3119.5105}
     canvasZoom: 0.30999997
   - id: 3
     fields:
