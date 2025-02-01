@@ -30,8 +30,10 @@ public class GlitchManager : MonoBehaviour
         // Gradually reset parameters to zero
         if (glitchEffect != null)
         {
-            glitchEffect.scanLineJitter = Mathf.Lerp(glitchEffect.scanLineJitter, 0f, Time.deltaTime * lerpSpeed);
+            glitchEffect.scanLineJitter = Mathf.Lerp(glitchEffect.scanLineJitter, 0f, Time.deltaTime * lerpSpeed*Random.Range(0.1f, 2f));
             glitchEffect.colorDrift = Mathf.Lerp(glitchEffect.colorDrift, 0f, Time.deltaTime * lerpSpeed);
+            glitchEffect.horizontalShake = Mathf.Lerp(glitchEffect.horizontalShake, 0f, Time.deltaTime * lerpSpeed);
+            glitchEffect.verticalJump = Mathf.Lerp(glitchEffect.verticalJump, 0f, Time.deltaTime * lerpSpeed*Random.Range(0.3f, 2f));
         }
 
         // Update LED colors based on the approval value
@@ -64,12 +66,38 @@ public class GlitchManager : MonoBehaviour
                 glitchEffect.scanLineJitter = Random.Range(0.7f, 1f);
                 glitchEffect.colorDrift = Random.Range(0.8f, 1f);
                 break;
+            case "crazy":
+                glitchEffect.scanLineJitter = Random.Range(0.8f, 1f);
+                glitchEffect.colorDrift = Random.Range(0.9f, 1f);
+                glitchEffect.horizontalShake = Random.Range(0.7f, 1f);
+                glitchEffect.verticalJump = Random.Range(0.8f, 1f);
+
+                //StartCoroutine(ResetGlitchAfterDuration(2f));
+                break;
 
             default:
                 Debug.LogWarning($"Unknown glitch parameter: {parameter}");
                 break;
         }
     }
+    
+    private IEnumerator ResetGlitchAfterDuration(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+    
+        while (glitchEffect.scanLineJitter > 0.1f || 
+               glitchEffect.colorDrift > 0.1f || 
+               glitchEffect.horizontalShake > 0.1f || 
+               glitchEffect.verticalJump > 0.1f)
+        {
+            glitchEffect.scanLineJitter = Mathf.Lerp(glitchEffect.scanLineJitter, 0f, Time.deltaTime * 3f);
+            glitchEffect.colorDrift = Mathf.Lerp(glitchEffect.colorDrift, 0f, Time.deltaTime * 3f);
+            glitchEffect.horizontalShake = Mathf.Lerp(glitchEffect.horizontalShake, 0f, Time.deltaTime * 3f);
+            glitchEffect.verticalJump = Mathf.Lerp(glitchEffect.verticalJump, 0f, Time.deltaTime * 3f);
+            yield return null;
+        }
+    }
+
 
     // Method to send color data based on the appro value
     private void SendColorAccordingToAppro(int appro)

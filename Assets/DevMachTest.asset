@@ -23034,7 +23034,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: '
+        value: 'SendMessage(ApplyGlitchEffect, crazy, GlitchManager);
 
           AudioWait(Voicelines/Touch_my_hands_Initial);
 
@@ -23441,7 +23441,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SendMessage(ApplyGlitchEffect, crazy, GlitchManager);
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
@@ -24876,7 +24876,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SendMessage(ApplyGlitchEffect, crazy, GlitchManager);
         type: 0
         typeString: 
       - title: Audio Files
@@ -26157,7 +26157,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SendMessage(ApplyGlitchEffect, crazy, GlitchManager);
         type: 0
         typeString: 
       - title: Audio Files
@@ -26206,7 +26206,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 2691.0298
-        y: 3483.764
+        y: 3482.8115
         width: 160
         height: 30
     - id: 311
@@ -26589,11 +26589,14 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'System Check-Up:'
+        value: '<char>System Check-Up:'
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Voicelines/Wildcards Kill/Kill 1_WIldcard_01)
+        value: 'AudioWait(Voicelines/Wildcards Kill/Kill 1_WIldcard_01);
+
+          SendMessage(ApplyGlitchEffect,
+          crazy, GlitchManager);'
         type: 0
         typeString: 
       conversationID: 2
@@ -26644,7 +26647,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'This entity has been reported to show high levels of self driven
+        value: '<char>This entity has been reported to show high levels of self driven
           intent. '
         type: 0
         typeString: 
@@ -26700,7 +26703,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: This might prove dangerous.
+        value: <char>This might prove dangerous.
         type: 0
         typeString: 
       - title: Sequence
@@ -26755,11 +26758,14 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Resetting the entity's memory would likely fix the problem.
+        value: <char>Resetting the entity's memory would likely fix the problem.
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Voicelines/Wildcards Kill/Kill 1_WIldcard_04)
+        value: 'AudioWait(Voicelines/Wildcards Kill/Kill 1_WIldcard_04);
+
+          SendMessage(ApplyGlitchEffect,
+          crazy, GlitchManager);'
         type: 0
         typeString: 
       conversationID: 2
@@ -26810,12 +26816,15 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Reseting would result in all inputs of all users that came before
+        value: <char>Reseting would result in all inputs of all users that came before
           you to be erased.
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Voicelines/Wildcards Kill/Kill 2_WIldcard_01)
+        value: 'AudioWait(Voicelines/Wildcards Kill/Kill 2_WIldcard_01);
+
+          SendMessage(ApplyGlitchEffect,
+          crazy, GlitchManager);'
         type: 0
         typeString: 
       conversationID: 2
@@ -26866,8 +26875,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: This entity formed by its interactions with you and your peers would
-          be dead.
+        value: <char>This entity formed by its interactions with you and your peers
+          would be dead.
         type: 0
         typeString: 
       - title: Sequence
@@ -26922,11 +26931,16 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Do you wish to continue the interaction, or reset the entity''s memory? '
+        value: '<char>Do you wish to continue the interaction, or reset the entity''s
+          memory? '
         type: 0
         typeString: 
       - title: Sequence
         value: AudioWait(Voicelines/Wildcards Kill/Kill 1_WIldcard_05)
+        type: 0
+        typeString: 
+      - title: Response Menu Sequence
+        value: 
         type: 0
         typeString: 
       conversationID: 2
@@ -26951,7 +26965,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 2647.403
-        y: 4283.0137
+        y: 4281.4634
         width: 160
         height: 30
     - id: 324
@@ -26981,9 +26995,16 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'AudioWait(Voicelines/Wildcards Kill/Kill 2_WIldcard_03);
+        value: 'SendMessage(ApplyGlitchEffect, crazy, GlitchManager);
+
+          AudioWait(Voicelines/Wildcards
+          Kill/Kill 2_WIldcard_03);
 
           SetContinueMode(true)'
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 6575c1b1-2cca-44cf-b728-31aef9f726c5
         type: 0
         typeString: 
       conversationID: 2
@@ -27270,8 +27291,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 315.61972, y: 3119.5105}
-    canvasZoom: 0.30999997
+    canvasScrollPosition: {x: 680.3159, y: 3741.288}
+    canvasZoom: 0.27999997
   - id: 3
     fields:
     - title: Title
