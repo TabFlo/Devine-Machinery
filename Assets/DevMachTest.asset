@@ -11643,7 +11643,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1962.172
-        y: 1982.4009
+        y: 1981.4058
         width: 160
         height: 30
     - id: 55
@@ -23445,7 +23445,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SendMessage(ApplyGlitchEffect, crazy, GlitchManager);
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
@@ -24880,7 +24880,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: SendMessage(ApplyGlitchEffect, crazy, GlitchManager);
+        value: 
         type: 0
         typeString: 
       - title: Audio Files
@@ -26161,7 +26161,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: SendMessage(ApplyGlitchEffect, crazy, GlitchManager);
+        value: 
         type: 0
         typeString: 
       - title: Audio Files
@@ -27267,6 +27267,10 @@ MonoBehaviour:
         value: AudioWait(UI & SFX/UI_Select)
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 27f8885b-8c78-4d9b-8450-a2acaf986d14
+        type: 0
+        typeString: 
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -27319,7 +27323,13 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(UI & SFX/UI_ResetMachine)
+        value: 'AudioWait(UI & SFX/ShutdownLang);
+
+          ClearSubtitleText()'
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: d12678aa-c18c-44a2-9624-b0b26dcf8291
         type: 0
         typeString: 
       conversationID: 2
@@ -27333,7 +27343,7 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 330
         destinationConversationID: 2
-        destinationDialogueID: 331
+        destinationDialogueID: 333
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -27345,120 +27355,6 @@ MonoBehaviour:
         serializedVersion: 2
         x: 2863.166
         y: 4555.254
-        width: 160
-        height: 30
-    - id: 331
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: AudioWait(UI & SFX/SFX_Alarm)
-        type: 0
-        typeString: 
-      conversationID: 2
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 2
-        originDialogueID: 331
-        destinationConversationID: 2
-        destinationDialogueID: 332
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 2783.173
-        y: 4655.6494
-        width: 160
-        height: 30
-    - id: 332
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 0
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 0
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: AudioWait(UI & SFX/SFX_Morse SOS)
-        type: 0
-        typeString: 
-      - title: Response Menu Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 2
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 2
-        originDialogueID: 332
-        destinationConversationID: 2
-        destinationDialogueID: 333
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 2780.048
-        y: 4762.89
         width: 160
         height: 30
     - id: 333
@@ -27512,8 +27408,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2552.9648
-        y: 4887.9414
+        x: 2607.3867
+        y: 4810.3906
         width: 160
         height: 30
     - id: 334
@@ -27572,8 +27468,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 788.38025, y: 4183.9487}
-    canvasZoom: 0.54999995
+    canvasScrollPosition: {x: 0, y: 4386.269}
+    canvasZoom: 0.33999997
   - id: 3
     fields:
     - title: Title

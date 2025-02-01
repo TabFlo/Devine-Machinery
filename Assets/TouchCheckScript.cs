@@ -8,7 +8,7 @@ using PixelCrushers.DialogueSystem;
 
 public class TouchCheckScript : MonoBehaviour
 {
-    public static int appro = -3; // Initialize approval value
+    public static int appro = 3; // Initialize approval value
     private bool isUpdating = false; // Prevent multiple updates within the same frame
     public static bool touchAllowed = false;
 
@@ -32,6 +32,7 @@ public class TouchCheckScript : MonoBehaviour
 
         // Send the current appro value to vvvv on start
         SendApprovalToVVVV(appro);
+        SoundManager.Instance.UpdateApprovalSound(appro);
     }
 
     #region MouseInputOnly
@@ -133,6 +134,7 @@ public class TouchCheckScript : MonoBehaviour
     appro = Mathf.Clamp(appro, -3, 3); // Clamp approval value
     UpdateApprovalVariable(); // Update Lua variable
     SendApprovalToVVVV(appro); // Send updated approval to vvvv
+    SoundManager.Instance.UpdateApprovalSound(appro);
 
     // Continue dialogue after handling approval updates
     (DialogueManager.dialogueUI as StandardDialogueUI).OnContinue();
