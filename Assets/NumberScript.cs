@@ -12,6 +12,8 @@ public class NumberScript : MonoBehaviour
     public AudioClip hundredClip;
     public AudioClip thousandClip;
     
+    
+    
     public int number;
 
     public int ConvID;
@@ -141,5 +143,14 @@ public class NumberScript : MonoBehaviour
             Debug.Log(number);
         }
         number = DialogueLua.GetVariable("killedTime").AsInt;
+    }
+
+
+    public void killSequence()
+    {
+        
+        
+        
+        
     }
 }

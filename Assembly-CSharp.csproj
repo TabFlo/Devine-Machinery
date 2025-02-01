@@ -59,6 +59,7 @@
     <Compile Include="Assets\GlitchManager.cs" />
     <Compile Include="Assets\OnStartScript.cs" />
     <Compile Include="Assets\stringManager.cs" />
+    <Compile Include="Assets\killMechanicScript.cs" />
     <Compile Include="Assets\Kino\Glitch\AnalogGlitch.cs" />
     <Compile Include="Assets\Kino\Glitch\DigitalGlitch.cs" />
     <Compile Include="Assets\NumberScript.cs" />

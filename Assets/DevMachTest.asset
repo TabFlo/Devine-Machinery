@@ -16561,7 +16561,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["ThirdDCount"] == 2
-      userScript: if (Variable["killedTime"]>0) then Variable["x"] = math.random(1000);
+      userScript: if (Variable["killedTime"]>0) then Variable["x"] = math.random(10);
         end
       onExecute:
         m_PersistentCalls:
@@ -23159,6 +23159,10 @@ MonoBehaviour:
         value: Continue()
         type: 0
         typeString: 
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: 
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -23181,7 +23185,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1730.8347
-        y: 223.44388
+        y: 222.08334
         width: 160
         height: 30
     - id: 261
@@ -27073,7 +27077,7 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 325
         destinationConversationID: 2
-        destinationDialogueID: 328
+        destinationDialogueID: 330
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -27083,8 +27087,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2456.2334
-        y: 4490.276
+        x: 2795.817
+        y: 4437.151
         width: 160
         height: 30
     - id: 326
@@ -27114,9 +27118,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: '
-
-          SetContinueMode(false)'
+        value: SetContinueMode(false)
         type: 0
         typeString: 
       conversationID: 2
@@ -27130,18 +27132,18 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 326
         destinationConversationID: 2
-        destinationDialogueID: 328
+        destinationDialogueID: 334
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["x"] = 1000
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2421.4663
-        y: 4344.5703
+        x: 2512.027
+        y: 4442.904
         width: 160
         height: 30
     - id: 327
@@ -27262,7 +27264,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Delay(5)
+        value: AudioWait(UI & SFX/UI_Select)
         type: 0
         typeString: 
       conversationID: 2
@@ -27276,7 +27278,7 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 328
         destinationConversationID: 2
-        destinationDialogueID: 226
+        destinationDialogueID: 222
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -27286,13 +27288,292 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2269.5667
-        y: 4394.8213
+        x: 2334.4011
+        y: 4638.2837
+        width: 160
+        height: 30
+    - id: 330
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(UI & SFX/UI_ResetMachine)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 330
+        destinationConversationID: 2
+        destinationDialogueID: 331
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2863.166
+        y: 4555.254
+        width: 160
+        height: 30
+    - id: 331
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(UI & SFX/SFX_Alarm)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 331
+        destinationConversationID: 2
+        destinationDialogueID: 332
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2783.173
+        y: 4655.6494
+        width: 160
+        height: 30
+    - id: 332
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(UI & SFX/SFX_Morse SOS)
+        type: 0
+        typeString: 
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 332
+        destinationConversationID: 2
+        destinationDialogueID: 333
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2780.048
+        y: 4762.89
+        width: 160
+        height: 30
+    - id: 333
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(UI & SFX/UI_Startup)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 333
+        destinationConversationID: 2
+        destinationDialogueID: 328
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2552.9648
+        y: 4887.9414
+        width: 160
+        height: 30
+    - id: 334
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(UI & SFX/UI_Select)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 334
+        destinationConversationID: 2
+        destinationDialogueID: 327
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2386.3442
+        y: 4380.3354
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 680.3159, y: 3741.288}
-    canvasZoom: 0.27999997
+    canvasScrollPosition: {x: 788.38025, y: 4183.9487}
+    canvasZoom: 0.54999995
   - id: 3
     fields:
     - title: Title

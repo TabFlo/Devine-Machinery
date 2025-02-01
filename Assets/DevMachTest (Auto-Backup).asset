@@ -16506,8 +16506,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1518.0787
-        y: 3791.872
+        x: 1503.1127
+        y: 3718.4026
         width: 160
         height: 30
     - id: 144
@@ -16569,7 +16569,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1521.7621
-        y: 3850.1213
+        y: 3847.7402
         width: 160
         height: 30
     - id: 147
@@ -23034,7 +23034,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: '
+        value: 'SendMessage(ApplyGlitchEffect, crazy, GlitchManager);
 
           AudioWait(Voicelines/Touch_my_hands_Initial);
 
@@ -23441,7 +23441,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SendMessage(ApplyGlitchEffect, crazy, GlitchManager);
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
@@ -24876,7 +24876,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SendMessage(ApplyGlitchEffect, crazy, GlitchManager);
         type: 0
         typeString: 
       - title: Audio Files
@@ -26157,7 +26157,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SendMessage(ApplyGlitchEffect, crazy, GlitchManager);
         type: 0
         typeString: 
       - title: Audio Files
@@ -26206,7 +26206,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 2691.0298
-        y: 3483.764
+        y: 3482.8115
         width: 160
         height: 30
     - id: 311
@@ -26589,11 +26589,14 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'System Check-Up:'
+        value: '<char>System Check-Up:'
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Voicelines/Wildcards Kill/Kill 1_WIldcard_01)
+        value: 'AudioWait(Voicelines/Wildcards Kill/Kill 1_WIldcard_01);
+
+          SendMessage(ApplyGlitchEffect,
+          crazy, GlitchManager);'
         type: 0
         typeString: 
       conversationID: 2
@@ -26610,7 +26613,7 @@ MonoBehaviour:
         destinationDialogueID: 318
         isConnector: 0
         priority: 2
-      conditionsString: Variable["x"] < 1000
+      conditionsString: Variable["x"] <= 100
       userScript: Variable["killChoice"] = true
       onExecute:
         m_PersistentCalls:
@@ -26644,7 +26647,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'This entity has been reported to show high levels of self driven
+        value: '<char>This entity has been reported to show high levels of self driven
           intent. '
         type: 0
         typeString: 
@@ -26700,7 +26703,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: This might prove dangerous.
+        value: <char>This might prove dangerous.
         type: 0
         typeString: 
       - title: Sequence
@@ -26755,11 +26758,14 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Resetting the entity's memory would likely fix the problem.
+        value: <char>Resetting the entity's memory would likely fix the problem.
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Voicelines/Wildcards Kill/Kill 1_WIldcard_04)
+        value: 'AudioWait(Voicelines/Wildcards Kill/Kill 1_WIldcard_04);
+
+          SendMessage(ApplyGlitchEffect,
+          crazy, GlitchManager);'
         type: 0
         typeString: 
       conversationID: 2
@@ -26810,12 +26816,15 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Reseting would result in all inputs of all users that came before
+        value: <char>Reseting would result in all inputs of all users that came before
           you to be erased.
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(Voicelines/Wildcards Kill/Kill 2_WIldcard_01)
+        value: 'AudioWait(Voicelines/Wildcards Kill/Kill 2_WIldcard_01);
+
+          SendMessage(ApplyGlitchEffect,
+          crazy, GlitchManager);'
         type: 0
         typeString: 
       conversationID: 2
@@ -26866,8 +26875,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: This entity formed by its interactions with you and your peers would
-          be dead.
+        value: <char>This entity formed by its interactions with you and your peers
+          would be dead.
         type: 0
         typeString: 
       - title: Sequence
@@ -26922,11 +26931,16 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Do you wish to continue the interaction, or reset the entity''s memory? '
+        value: '<char>Do you wish to continue the interaction, or reset the entity''s
+          memory? '
         type: 0
         typeString: 
       - title: Sequence
         value: AudioWait(Voicelines/Wildcards Kill/Kill 1_WIldcard_05)
+        type: 0
+        typeString: 
+      - title: Response Menu Sequence
+        value: 
         type: 0
         typeString: 
       conversationID: 2
@@ -26951,7 +26965,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 2647.403
-        y: 4283.0137
+        y: 4281.4634
         width: 160
         height: 30
     - id: 324
@@ -26981,9 +26995,16 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 'AudioWait(Voicelines/Wildcards Kill/Kill 2_WIldcard_03);
+        value: 'SendMessage(ApplyGlitchEffect, crazy, GlitchManager);
+
+          AudioWait(Voicelines/Wildcards
+          Kill/Kill 2_WIldcard_03);
 
           SetContinueMode(true)'
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 6575c1b1-2cca-44cf-b728-31aef9f726c5
         type: 0
         typeString: 
       conversationID: 2
@@ -26993,19 +27014,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 2
-        originDialogueID: 324
-        destinationConversationID: 2
-        destinationDialogueID: 325
-        isConnector: 0
-        priority: 2
-      - originConversationID: 2
-        originDialogueID: 324
-        destinationConversationID: 2
-        destinationDialogueID: 326
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -27044,7 +27053,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Delay(3)
+        value: '
+
+          SetContinueMode(false)'
         type: 0
         typeString: 
       - title: EventGuid
@@ -27062,18 +27073,18 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 325
         destinationConversationID: 2
-        destinationDialogueID: 222
+        destinationDialogueID: 328
         isConnector: 0
         priority: 2
-      conditionsString: Variable["killing"] == true
+      conditionsString: 
       userScript: Variable["killedTime"] = Variable["killedTime"] + 1
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2380.2046
-        y: 4472.0938
+        x: 2456.2334
+        y: 4490.276
         width: 160
         height: 30
     - id: 326
@@ -27103,7 +27114,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Delay(3)
+        value: '
+
+          SetContinueMode(false)'
         type: 0
         typeString: 
       conversationID: 2
@@ -27117,18 +27130,18 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 326
         destinationConversationID: 2
-        destinationDialogueID: 222
+        destinationDialogueID: 328
         isConnector: 0
         priority: 2
-      conditionsString: Variable["killing"] == false
+      conditionsString: 
       userScript: 
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2379.4739
-        y: 4383.241
+        x: 2421.4663
+        y: 4344.5703
         width: 160
         height: 30
     - id: 327
@@ -27158,7 +27171,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetContinueMode(false)
         type: 0
         typeString: 
       conversationID: 2
@@ -27211,7 +27224,7 @@ MonoBehaviour:
         destinationDialogueID: 192
         isConnector: 0
         priority: 2
-      conditionsString: Variable["x"] > 1000
+      conditionsString: Variable["x"] > 100
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -27222,9 +27235,64 @@ MonoBehaviour:
         y: 3898.8394
         width: 160
         height: 30
+    - id: 328
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: Delay(5)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 328
+        destinationConversationID: 2
+        destinationDialogueID: 226
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2269.5667
+        y: 4394.8213
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1632.5118, y: 4179.866}
-    canvasZoom: 0.7299998
+    canvasScrollPosition: {x: 680.3159, y: 3741.288}
+    canvasZoom: 0.27999997
   - id: 3
     fields:
     - title: Title
