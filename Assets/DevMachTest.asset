@@ -26610,7 +26610,7 @@ MonoBehaviour:
         destinationDialogueID: 318
         isConnector: 0
         priority: 2
-      conditionsString: Variable["x"] < 1000
+      conditionsString: Variable["x"] <= 100
       userScript: Variable["killChoice"] = true
       onExecute:
         m_PersistentCalls:
@@ -27150,7 +27150,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: SetContinueMode(false)
         type: 0
         typeString: 
       conversationID: 2
@@ -27203,7 +27203,7 @@ MonoBehaviour:
         destinationDialogueID: 192
         isConnector: 0
         priority: 2
-      conditionsString: Variable["x"] > 1000
+      conditionsString: Variable["x"] > 100
       userScript: 
       onExecute:
         m_PersistentCalls:
@@ -27270,8 +27270,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1115.0609, y: 3913.6592}
-    canvasZoom: 0.42999998
+    canvasScrollPosition: {x: 274.35767, y: 3131.2202}
+    canvasZoom: 0.30999997
   - id: 3
     fields:
     - title: Title
