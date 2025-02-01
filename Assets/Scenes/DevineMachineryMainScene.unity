@@ -1568,6 +1568,10 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - guid: 4c314662-e484-4902-90b8-1081e8e30abb
+    onExecute:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!4 &721771247
 Transform:
   m_ObjectHideFlags: 0
@@ -4913,8 +4917,12 @@ PrefabInstance:
       value: -180.456
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 30ab17a8eeb560448a9da881efa94620, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 919132149155446097, guid: 30ab17a8eeb560448a9da881efa94620, type: 3}
       propertyPath: m_Name
-      value: LeftHand
+      value: PLZ_DONT_DISABLE_ANYTHING_HERE!!!!!_LeftHand
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 30ab17a8eeb560448a9da881efa94620, type: 3}
       propertyPath: m_TagString

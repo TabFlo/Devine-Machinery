@@ -19,6 +19,7 @@ public class TouchCheckScript : MonoBehaviour
     
     public SerialManager serialManager;
     private Coroutine touchHandlerCoroutine;
+    private bool killChoice = false;
 
     private void Start()
     {
@@ -68,12 +69,48 @@ public class TouchCheckScript : MonoBehaviour
     }
     #endregion 
     public IEnumerator SendAnswer()
+{
+    if (isUpdating) yield break; // Prevent overlapping coroutines
+
+    isUpdating = true; // Lock to prevent multiple updates
+    yield return new WaitForSeconds(2f); // Wait before updating
+
+    // Check if killChoice is true and handle special behavior
+    if (killChoice)
     {
-        if (isUpdating) yield break; // Prevent overlapping coroutines
+        // Special behavior when killChoice is true
+        Debug.Log("killChoice is true. Entering special behavior.");
 
-        isUpdating = true; // Lock to prevent multiple updates
-        yield return new WaitForSeconds(2f); // Wait before updating
+        // Use switch-case to handle different tags
+        switch (tag)
+        {
+            case "Trim":
+               
+                Debug.Log("Trim touched. Setting 'killing' to true.");
+                var entry = DialogueManager.masterDatabase.GetDialogueEntry(2, 325);
+                var state = DialogueManager.conversationModel.GetState(entry);
+                DialogueManager.conversationController.GotoState(state);
+                appro = 0;  // Reset approval as part of the special behavior
+                break;
 
+            case "Fasz":
+               
+                Debug.Log("Fasz touched. Setting 'killing' to true.");
+                var entry2 = DialogueManager.masterDatabase.GetDialogueEntry(2, 326);
+                var state2 = DialogueManager.conversationModel.GetState(entry2);
+                DialogueManager.conversationController.GotoState(state2);
+                break;
+
+            default:
+                DialogueLua.SetVariable("killing", false);  // Set 'killing' to false for all other tags
+                Debug.Log("Not 'Trim' or 'Fasz'. Setting 'killing' to false.");
+                break;
+        }
+    }
+
+    else
+    {
+        // Normal behavior (if killChoice is false)
         switch (tag)
         {
             case "Trim":
@@ -90,14 +127,19 @@ public class TouchCheckScript : MonoBehaviour
                 Debug.Log("Unhandled tag. No approval change.");
                 break;
         }
-
-        appro = Mathf.Clamp(appro, -3, 3); // Clamp approval value
-        UpdateApprovalVariable(); // Update Lua variable
-        SendApprovalToVVVV(appro); // Send updated approval to vvvv
-
-        (DialogueManager.dialogueUI as StandardDialogueUI).OnContinue();
-        isUpdating = false; // Unlock after completion
     }
+
+    // Always execute the approval logic after special or normal behavior
+    appro = Mathf.Clamp(appro, -3, 3); // Clamp approval value
+    UpdateApprovalVariable(); // Update Lua variable
+    SendApprovalToVVVV(appro); // Send updated approval to vvvv
+
+    // Continue dialogue after handling approval updates
+    (DialogueManager.dialogueUI as StandardDialogueUI).OnContinue();
+    isUpdating = false; // Unlock after completion
+}
+
+
 
     private void UpdateApprovalVariable()
     {
@@ -183,6 +225,7 @@ public class TouchCheckScript : MonoBehaviour
         {
             (DialogueManager.dialogueUI as StandardDialogueUI).OnContinue(); // Debug advancing dialogue
         }
+        killChoice = DialogueLua.GetVariable("killChoice").AsBool;
     }
 
     private void StartTouchHandler()
@@ -215,6 +258,19 @@ public class TouchCheckScript : MonoBehaviour
         isUpdating = false; // Unlock after completion
     }
 
+    public void resetAppro()
+    {
+        appro = 0;
+        DialogueLua.SetVariable("Approval", appro);
+    }
+
+    private void HandleKillChoice()
+    {
+        // Special logic when killChoice is true
+        Debug.Log("killChoice is true. Executing special behavior.");
+
+        
+    }
     private void OnApplicationQuit()
     {
         if (udpClient != null)

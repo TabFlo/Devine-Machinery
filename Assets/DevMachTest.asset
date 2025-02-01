@@ -271,7 +271,7 @@ MonoBehaviour:
       type: 0
       typeString: 
     - title: Initial Value
-      value: 1552
+      value: 1
       type: 1
       typeString: CustomFieldType_Number
     - title: Description
@@ -310,6 +310,34 @@ MonoBehaviour:
     fields:
     - title: Name
       value: playedWildcard
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
+  - id: 18
+    fields:
+    - title: Name
+      value: killing
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
+  - id: 19
+    fields:
+    - title: Name
+      value: killChoice
       type: 0
       typeString: 
     - title: Initial Value
@@ -9224,7 +9252,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: if (Variable["killedTime"]>0) then Variable["x"] = math.random(10);
+      userScript: if (Variable["killedTime"]>0) then Variable["x"] = math.random(1000);
         end
       onExecute:
         m_PersistentCalls:
@@ -11607,7 +11635,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: if (Variable["killedTime"]>0) then Variable["x"] = math.random(10);
+      userScript: if (Variable["killedTime"]>0) then Variable["x"] = math.random(1000);
         end
       onExecute:
         m_PersistentCalls:
@@ -16408,7 +16436,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: if (Variable["killedTime"]>0) then Variable["x"] = math.random(10);
+      userScript: if (Variable["killedTime"]>0) then Variable["x"] = math.random(1000);
         end
       onExecute:
         m_PersistentCalls:
@@ -16470,7 +16498,9 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["ThirdDCount"] = Variable["ThirdDCount"] + 1
+      userScript: 'Variable["ThirdDCount"] = Variable["ThirdDCount"] + 1;
+
+'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -16521,54 +16551,25 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 144
         destinationConversationID: 2
-        destinationDialogueID: 186
+        destinationDialogueID: 327
         isConnector: 0
         priority: 2
       - originConversationID: 2
         originDialogueID: 144
         destinationConversationID: 2
-        destinationDialogueID: 187
-        isConnector: 0
-        priority: 2
-      - originConversationID: 2
-        originDialogueID: 144
-        destinationConversationID: 2
-        destinationDialogueID: 188
-        isConnector: 0
-        priority: 2
-      - originConversationID: 2
-        originDialogueID: 144
-        destinationConversationID: 2
-        destinationDialogueID: 189
-        isConnector: 0
-        priority: 2
-      - originConversationID: 2
-        originDialogueID: 144
-        destinationConversationID: 2
-        destinationDialogueID: 190
-        isConnector: 0
-        priority: 2
-      - originConversationID: 2
-        originDialogueID: 144
-        destinationConversationID: 2
-        destinationDialogueID: 191
-        isConnector: 0
-        priority: 2
-      - originConversationID: 2
-        originDialogueID: 144
-        destinationConversationID: 2
-        destinationDialogueID: 192
+        destinationDialogueID: 317
         isConnector: 0
         priority: 2
       conditionsString: Variable["ThirdDCount"] == 2
-      userScript: 
+      userScript: if (Variable["killedTime"]>0) then Variable["x"] = math.random(1000);
+        end
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1519.198
-        y: 3868.1487
+        x: 1521.7621
+        y: 3850.1213
         width: 160
         height: 30
     - id: 147
@@ -21110,7 +21111,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2068.3938
+        x: 2069.1265
         y: 4202.121
         width: 160
         height: 30
@@ -22362,8 +22363,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1537.3696
-        y: 4755.3916
+        x: 1542.0208
+        y: 4758.492
         width: 160
         height: 30
     - id: 244
@@ -22444,14 +22445,16 @@ MonoBehaviour:
         Variable["playedWildcard"] = false;
 
         Variable["x"]
-        = 1000'
+        = 1000;
+
+        Variable["killChoice"] = false'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1537.3696
-        y: 4805.392
+        x: 1534.2688
+        y: 4992.9893
         width: 160
         height: 30
     - id: 245
@@ -22505,8 +22508,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1816.4392
-        y: 4947.9062
+        x: 1828.8423
+        y: 5016.1235
         width: 160
         height: 30
     - id: 246
@@ -26563,9 +26566,712 @@ MonoBehaviour:
         y: 3851.6624
         width: 160
         height: 30
+    - id: 317
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'System Check-Up:'
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Wildcards Kill/Kill 1_WIldcard_01)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 317
+        destinationConversationID: 2
+        destinationDialogueID: 318
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["x"] < 1000
+      userScript: Variable["killChoice"] = true
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2648.685
+        y: 3984.1062
+        width: 160
+        height: 30
+    - id: 318
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'This entity has been reported to show high levels of self driven
+          intent. '
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Wildcards Kill/Kill 1_WIldcard_02)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 318
+        destinationConversationID: 2
+        destinationDialogueID: 319
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2647.403
+        y: 4034.8154
+        width: 160
+        height: 30
+    - id: 319
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: This might prove dangerous.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Wildcards Kill/Kill 1_WIldcard_03)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 319
+        destinationConversationID: 2
+        destinationDialogueID: 320
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2647.403
+        y: 4084.8154
+        width: 160
+        height: 30
+    - id: 320
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Resetting the entity's memory would likely fix the problem.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Wildcards Kill/Kill 1_WIldcard_04)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 320
+        destinationConversationID: 2
+        destinationDialogueID: 321
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2647.403
+        y: 4134.8154
+        width: 160
+        height: 30
+    - id: 321
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Reseting would result in all inputs of all users that came before
+          you to be erased.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Wildcards Kill/Kill 2_WIldcard_01)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 321
+        destinationConversationID: 2
+        destinationDialogueID: 322
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2647.403
+        y: 4184.8154
+        width: 160
+        height: 30
+    - id: 322
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: This entity formed by its interactions with you and your peers would
+          be dead.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Wildcards Kill/Kill 2_WIldcard_02)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 322
+        destinationConversationID: 2
+        destinationDialogueID: 323
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2647.403
+        y: 4234.8154
+        width: 160
+        height: 30
+    - id: 323
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 'Do you wish to continue the interaction, or reset the entity''s memory? '
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: AudioWait(Voicelines/Wildcards Kill/Kill 1_WIldcard_05)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 323
+        destinationConversationID: 2
+        destinationDialogueID: 324
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2647.403
+        y: 4283.0137
+        width: 160
+        height: 30
+    - id: 324
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: Continue. - Erase.
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 'AudioWait(Voicelines/Wildcards Kill/Kill 2_WIldcard_03);
+
+          SetContinueMode(true)'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2649.3079
+        y: 4340.53
+        width: 160
+        height: 30
+    - id: 325
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: '
+
+          SetContinueMode(false)'
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 4c314662-e484-4902-90b8-1081e8e30abb
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 325
+        destinationConversationID: 2
+        destinationDialogueID: 328
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: Variable["killedTime"] = Variable["killedTime"] + 1
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2456.2334
+        y: 4490.276
+        width: 160
+        height: 30
+    - id: 326
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 0
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: '
+
+          SetContinueMode(false)'
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 326
+        destinationConversationID: 2
+        destinationDialogueID: 328
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2421.4663
+        y: 4344.5703
+        width: 160
+        height: 30
+    - id: 327
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 327
+        destinationConversationID: 2
+        destinationDialogueID: 186
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 327
+        destinationConversationID: 2
+        destinationDialogueID: 187
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 327
+        destinationConversationID: 2
+        destinationDialogueID: 188
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 327
+        destinationConversationID: 2
+        destinationDialogueID: 189
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 327
+        destinationConversationID: 2
+        destinationDialogueID: 190
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 327
+        destinationConversationID: 2
+        destinationDialogueID: 191
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 327
+        destinationConversationID: 2
+        destinationDialogueID: 192
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["x"] > 1000
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1523.0442
+        y: 3898.8394
+        width: 160
+        height: 30
+    - id: 328
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: Delay(5)
+        type: 0
+        typeString: 
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 2
+        originDialogueID: 328
+        destinationConversationID: 2
+        destinationDialogueID: 226
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 2269.5667
+        y: 4394.8213
+        width: 160
+        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 64.285645, y: 948.8318}
-    canvasZoom: 0.27999997
+    canvasScrollPosition: {x: 1115.0609, y: 3913.6592}
+    canvasZoom: 0.42999998
   - id: 3
     fields:
     - title: Title
