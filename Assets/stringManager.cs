@@ -76,7 +76,7 @@ public class stringManager : MonoBehaviour
     private void ExecuteDialogueAction()
     {
         DialogueLua.SetVariable("touched", false);  
-        var entry = DialogueManager.masterDatabase.GetDialogueEntry(2, 257);
+        var entry = DialogueManager.masterDatabase.GetDialogueEntry(2, 244);
         var state = DialogueManager.conversationModel.GetState(entry);
         DialogueManager.conversationController.GotoState(state);
 

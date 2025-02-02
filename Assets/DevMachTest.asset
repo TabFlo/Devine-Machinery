@@ -22394,7 +22394,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Continue()
+        value: 'Continue();
+
+          SetContinueMode(false)'
         type: 0
         typeString: 
       conversationID: 2
@@ -22454,7 +22456,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1534.2688
-        y: 4992.9893
+        y: 4989.959
         width: 160
         height: 30
     - id: 245
@@ -23117,7 +23119,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Delay(8)
+        value: 'Delay(8);
+
+'
         type: 0
         typeString: 
       conversationID: 2
@@ -27508,8 +27512,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 577.6481}
-    canvasZoom: 0.18999997
+    canvasScrollPosition: {x: 1072.1711, y: 0}
+    canvasZoom: 0.28
   - id: 3
     fields:
     - title: Title
