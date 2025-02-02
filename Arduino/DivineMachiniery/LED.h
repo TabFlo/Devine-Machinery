@@ -12,6 +12,7 @@ class LED {
     int numLeds;
     int deltaTime; 
     int blinkThreshold; 
+    int currentBlinkTresh; 
     WS2812FX leds;
 
   public: 
@@ -22,6 +23,7 @@ class LED {
     void off(); 
     void blink(int delayTime); 
     void UpdateTime(int deltaTime);
+    void Update();
 };
 
 #endif

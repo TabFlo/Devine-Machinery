@@ -6,6 +6,7 @@ LED::LED(int pinNumber, int numLeds,  int blinkThreshold): leds(numLeds, pinNumb
   pinMode(pin, OUTPUT); 
   this->numLeds = numLeds;
   this->blinkThreshold = blinkThreshold; 
+  this->currentBlinkTresh = blinkThreshold; 
   leds.init();  // Initialize the LED strip
 }
 
@@ -17,12 +18,17 @@ void LED::setColor(int r, int g, int b){
 // Led Methods
 void LED::on(){
   leds.fill(currentColor, 0, numLeds);
-  leds.show();
+  this->Update();
 }
 
 void LED::off(){
     leds.fill(leds.Color(0, 0, 0), 0, numLeds); //TODO: Make this a parameter
-    leds.show();
+    this->Update();
+}
+
+void LED::Update(){
+  //Serial.println(currentColor);
+  leds.show(); 
 }
 
 void LED::blink(int delayTime){
@@ -35,9 +41,12 @@ void LED::blink(int delayTime){
     delay(delayTime);
     this->on();
     deltaTime = 0; 
+    currentBlinkTresh = blinkThreshold + 1000 * (rand() / (float)RAND_MAX) * 2.0 - 1.0;
 }
 
 void LED::UpdateTime(int deltaTime){
   this->deltaTime += deltaTime; 
 }
+
+//void LED::Flash(int )
 

@@ -14,7 +14,7 @@ public enum DATA_TYPE {
 
 public enum BODY_PART {
     EYE, 
-    TORSO, 
+    BACK, 
     CHEST, 
     HAND_L, 
     HAND_R, 
@@ -97,7 +97,7 @@ public class SerialManager : MonoBehaviour
         
         if(Input.GetKeyDown(KeyCode.P))
         {
-            SetLEDColor(color, BODY_PART.EYE);
+            SetLEDColor(color);
             foreach (KeyValuePair<BODY_PART, float> entry in sensorData)
             {
                 Debug.Log($"Body Part: {entry.Key}, Value: {entry.Value}");
@@ -120,18 +120,26 @@ public class SerialManager : MonoBehaviour
         {
             return data;
         }
-
         return -1; 
     }
 
     /// <summary>
-    /// Changes color of leds on a specific body part
+    /// Changes color of leds on a specific body part, specify no body part to change all the led colors
     /// </summary>
     /// <param name="c">Led color, alpha g</param>
     /// <param name="bodyPart"></param>
-    public void SetLEDColor(Color c, BODY_PART bodyPart)
+    public void SetLEDColor(Color c, BODY_PART? bodyPart)
     {
         sendColorData(c,bodyPart.ToString());
+    }
+
+    public void SetLEDColor(Color c)
+    {
+        BODY_PART[] parts = { BODY_PART.EYE, BODY_PART.CHEST, BODY_PART.BACK};
+        foreach (BODY_PART part in parts)
+        {
+            sendColorData(c, part.ToString());
+        }
     }
 
     public void SetLedState()
