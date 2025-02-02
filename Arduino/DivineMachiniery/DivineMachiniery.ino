@@ -5,6 +5,7 @@
 
 #define NUM_EYELEDS 12
 #define EYELED_PIN 3
+#define CHEST_PIN 4
 
 #define ToUCH_PIN_L 7
 
@@ -14,8 +15,8 @@ unsigned long previousTime = 0;
 
 //Adafruit_VL53L0X sensorL = Adafruit_VL53L0X();
 
-LED eyeLed(3, 8, 3000); 
-  
+LED eyeLed(EYELED_PIN, 8, 3000); 
+LED chestLed(CHEST_PIN, 10, 3000); 
 
 void setup() {
 
@@ -35,8 +36,14 @@ void setup() {
 
   //init Cap 
   //init LEDs
+  //EYE
   eyeLed.setColor(255, 255, 255);
   eyeLed.on();
+
+  //CHEST 
+  chestLed.setColor(255, 255, 255);
+  chestLed.on(); 
+
   delay(100);
   Serial.flush(); 
   // put your setup code here, to run once:
@@ -57,20 +64,8 @@ void loop() {
     data = Serial.readStringUntil('\n');
    
   }
-
-  //Serial.println("Data: " + data);
-
   // read tof data 
-  /*
-  VL53L0X_RangingMeasurementData_t measure;
-
-  sensorL.rangingTest(&measure, false);
-    if (measure.RangeStatus != 4) {
-      Serial.print("HAND_L "); Serial.println(measure.RangeMilliMeter);
-    } else {
-      Serial.print("HAND_L "); Serial.println(-1);
-    }
-  */
+  //readTofData();
 
   // read cap data 
   //ReadButtonState();
@@ -78,7 +73,7 @@ void loop() {
 
   // LED DATA 
   // EYES 
-  
+
   int r, g, b;
   if(parseRGBA(data, r, g, b).equals("EYE")){
     eyeLed.setColor(r, g, b);
@@ -87,9 +82,12 @@ void loop() {
   eyeLed.blink(200);
   
 
-
   // BACK 
   // TORSO 
+  if(parseRGBA(data, r, g, b).equals("CHEST")){
+    chestLed.setColor(r, g, b);
+    chestLed.on(); 
+  }
 
   // TIME HANDLING
   previousTime = currentTime; 
@@ -144,4 +142,17 @@ void ReadButtonState(){
   else{
    Serial.println("TOUCH_R 0");
   }
+}
+
+void readTofData(){
+  
+//VL53L0X_RangingMeasurementData_t measure;
+
+  /*sensorL.rangingTest(&measure, false);
+    if (measure.RangeStatus != 4) {
+      Serial.print("HAND_L "); Serial.println(measure.RangeMilliMeter);
+    } else {
+      Serial.print("HAND_L "); Serial.println(-1);
+    }
+  */
 }
