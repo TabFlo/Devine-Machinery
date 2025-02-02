@@ -8,7 +8,7 @@ using PixelCrushers.DialogueSystem;
 
 public class TouchCheckScript : MonoBehaviour
 {
-    public static int appro = 3; // Initialize approval value
+    public static int appro = 0; // Initialize approval value
     private bool isUpdating = false; // Prevent multiple updates within the same frame
     public static bool touchAllowed = false;
 
@@ -16,6 +16,8 @@ public class TouchCheckScript : MonoBehaviour
 
     private UdpClient udpClient; // UDP client for sending data
     private IPEndPoint endPoint; // Target endpoint for vvvv
+    private IPEndPoint glitchMessageEndPoint;
+    private IPEndPoint StopMessageEndPoint;
     
     public SerialManager serialManager;
     private Coroutine touchHandlerCoroutine;
@@ -26,6 +28,9 @@ public class TouchCheckScript : MonoBehaviour
         // Initialize UDP communication
         udpClient = new UdpClient();
         endPoint = new IPEndPoint(IPAddress.Loopback, 5555); // vvvv listens on port 5555
+        glitchMessageEndPoint = new IPEndPoint(IPAddress.Loopback, 5556);
+        StopMessageEndPoint = new IPEndPoint(IPAddress.Loopback, 5557);
+        
 
         // Initialize the approval variable for the Dialogue System
         DialogueLua.SetVariable("Approval", appro);
@@ -273,6 +278,45 @@ public class TouchCheckScript : MonoBehaviour
 
         
     }
+
+    public void SendGlitchToVVVV(int glitchState)
+    {
+        if (udpClient != null && glitchMessageEndPoint != null)
+        {
+            
+            // Convert the integer to a string before encoding it
+            
+            byte[] messageBytes = BitConverter.GetBytes(glitchState);
+
+            // Send the integer as a UTF-8 string message to vvvv on port 5556
+            udpClient.Send(messageBytes, messageBytes.Length, glitchMessageEndPoint);
+            Debug.Log($"Sent glitch state to vvvv: {glitchState}");
+        }
+        else
+        {
+            Debug.LogError("UDP client or glitch endpoint is not initialized.");
+        }
+    }
+    
+    public void stopMessageToVVVV(int messageState)
+    {
+        if (udpClient != null && StopMessageEndPoint != null)
+        {
+            
+            // Convert the integer to a string before encoding it
+            
+            byte[] messageBytes = BitConverter.GetBytes(messageState);
+
+            // Send the integer as a UTF-8 string message to vvvv on port 5557
+            udpClient.Send(messageBytes, messageBytes.Length, StopMessageEndPoint);
+            Debug.Log($"Sent message state to vvvv: {messageState}");
+        }
+        else
+        {
+            Debug.LogError("UDP client or glitch endpoint is not initialized.");
+        }
+    }
+
     private void OnApplicationQuit()
     {
         if (udpClient != null)
