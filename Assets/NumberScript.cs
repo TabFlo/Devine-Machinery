@@ -6,57 +6,65 @@ using UnityEngine.Serialization;
 
 public class NumberScript : MonoBehaviour
 {
-    public AudioSource audioSource; // Reference to the AudioSource component
-    public string audioFilePrefix = "Number_Wildcard_Approval Pos_"; // Prefix for the audio files
-    public AudioClip hundredClip; // Clip for "hundred"
-    public AudioClip thousandClip; // Clip for "thousand"
+    public AudioSource audioSource;
+    public string positivePrefix = "Numbers_Wildcard_Approval Pos_";
+    public string negativePrefix = "Numbers_Wildcard_Approval Neg_";
+    public AudioClip hundredClip;
+    public AudioClip thousandClip;
+    
+    
+    
+    public int number;
 
     public int ConvID;
     public int entryID;
 
-    // Dictionary to preload the audio clips
     private Dictionary<string, AudioClip> audioClips = new Dictionary<string, AudioClip>();
 
     [FormerlySerializedAs("playNumber")] public int killedXTimes;
 
     private void Start()
     {
+        LoadAudioClips("Positive");
+        LoadAudioClips("Negative");
         
-        // Preload only valid audio clips into the dictionary
-        for (int i = 1; i <= 19; i++)
-        {
-            string fileName = $"Voicelines/Wildcards Positive/{audioFilePrefix}{i:D2}"; // Format as two digits
-            AudioClip clip = Resources.Load<AudioClip>(fileName);
-            if (clip != null)
-            {
-                audioClips[fileName] = clip;
-            }
-        }
-
-        // Preload multiples of 10 (20, 30, ..., 90)
-        for (int i = 20; i <= 90; i += 10)
-        {
-            string fileName = $"Voicelines/Wildcards Positive/{audioFilePrefix}{i}";
-            AudioClip clip = Resources.Load<AudioClip>(fileName);
-            if (clip != null)
-            {
-                audioClips[fileName] = clip;
-            }
-        }
-
-        // Load clips for 100 and 1000
-        audioClips[$"Voicelines/Wildcards Positive/{audioFilePrefix}1000"] = thousandClip;
-        audioClips[$"Voicelines/Wildcards Positive/{audioFilePrefix}100"] = hundredClip;
+        audioClips[$"Voicelines/Wildcards Positive/{positivePrefix}1000"] = thousandClip;
+        audioClips[$"Voicelines/Wildcards Positive/{positivePrefix}100"] = hundredClip;
+        
+        audioClips[$"Voicelines/Wildcards Negative/{negativePrefix}1000"] = thousandClip;
+        audioClips[$"Voicelines/Wildcards Negative/{negativePrefix}100"] = hundredClip;
     }
 
-    public void PlayNumber(int number)
+    private void LoadAudioClips(string category)
+    {
+        string prefix = category == "Positive" ? positivePrefix : negativePrefix;
+        string path = $"Voicelines/Wildcards {category}/";
+        
+        for (int i = 1; i <= 19; i++)
+        {
+            LoadClip(path, prefix, i);
+        }
+        
+        for (int i = 20; i <= 90; i += 10)
+        {
+            LoadClip(path, prefix, i);
+        }
+    }
+
+    private void LoadClip(string path, string prefix, int number)
+    {
+        string fileName = $"{path}{prefix}{number:D2}";
+        AudioClip clip = Resources.Load<AudioClip>(fileName);
+        if (clip != null)
+        {
+            audioClips[fileName] = clip;
+        }
+    }
+
+    public void PlayNumber()
     {
         if (number <= 0) return;
-
-        // Break down the number and get the sequence
         List<string> audioSequence = GetAudioSequence(number);
-
-        // Play the audio sequence
         StartCoroutine(PlayAudioSequence(audioSequence));
     }
 
@@ -64,43 +72,49 @@ public class NumberScript : MonoBehaviour
     {
         List<string> sequence = new List<string>();
 
-        int thousands = number / 1000; // Get the thousands place
+        int thousands = number / 1000;
         if (thousands > 0)
         {
-            sequence.Add($"Voicelines/Wildcards Positive/{audioFilePrefix}{thousands:D2}"); // Format as two digits
-            sequence.Add($"Voicelines/Wildcards Positive/{audioFilePrefix}1000");          
-            number %= 1000; // Remove the thousands part
+            sequence.Add(GetRandomPath(thousands));
+            sequence.Add(GetRandomPath(1000));
+            number %= 1000;
         }
 
-        int hundreds = number / 100; // Get the hundreds place
+        int hundreds = number / 100;
         if (hundreds > 0)
         {
-            sequence.Add($"Voicelines/Wildcards Positive/{audioFilePrefix}{hundreds:D2}"); // Format as two digits
-            sequence.Add($"Voicelines/Wildcards Positive/{audioFilePrefix}100");          
-            number %= 100; // Remove the hundreds part
+            sequence.Add(GetRandomPath(hundreds));
+            sequence.Add(GetRandomPath(100));
+            number %= 100;
         }
 
-        int tens = number / 10 * 10; // Get the tens place
-        int ones = number % 10;     // Get the ones place
+        int tens = number / 10 * 10;
+        int ones = number % 10;
 
         if (tens > 0 && tens < 20)
         {
-            // Handle numbers from 10 to 19 as single words (e.g., "13" -> "thirteen")
-            sequence.Add($"Voicelines/Wildcards Positive/{audioFilePrefix}{tens + ones:D2}");
+            sequence.Add(GetRandomPath(tens + ones));
         }
         else
         {
             if (tens > 0)
             {
-                sequence.Add($"Voicelines/Wildcards Positive/{audioFilePrefix}{tens:D2}"); // Format as two digits
+                sequence.Add(GetRandomPath(tens));
             }
             if (ones > 0)
             {
-                sequence.Add($"Voicelines/Wildcards Positive/{audioFilePrefix}{ones:D2}"); // Format as two digits
+                sequence.Add(GetRandomPath(ones));
             }
         }
 
         return sequence;
+    }
+
+    private string GetRandomPath(int value)
+    {
+        string category = Random.value > 0.5f ? "Positive" : "Negative";
+        string prefix = category == "Positive" ? positivePrefix : negativePrefix;
+        return $"Voicelines/Wildcards {category}/{prefix}{value:D2}";
     }
 
     private IEnumerator PlayAudioSequence(List<string> audioSequence)
@@ -112,37 +126,31 @@ public class NumberScript : MonoBehaviour
                 audioSource.clip = clip;
                 audioSource.Play();
                 yield return new WaitForSeconds(clip.length);
-                
             }
             else
             {
                 Debug.LogWarning("Audio clip not found: " + audioFileName);
             }
         }
-        (DialogueManager.dialogueUI as StandardDialogueUI).OnContinue();
+        (DialogueManager.dialogueUI as StandardDialogueUI)?.OnContinue();
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            PlayNumber(killedXTimes);
+            PlayNumber();
+            Debug.Log(number);
         }
+        number = DialogueLua.GetVariable("killedTime").AsInt;
     }
 
-    public void PlaySoundAncContinue()
-    {
-        DialogueLua.SetVariable("killedTime", killedXTimes);
-        PlayNumber(killedXTimes);
-        
-    }
 
-    public void setKill(int killedTimes)
+    public void killSequence()
     {
-        //TODO: handle kill, for now its just to test
-       
-         killedXTimes = killedTimes;
         
-
+        
+        
+        
     }
 }

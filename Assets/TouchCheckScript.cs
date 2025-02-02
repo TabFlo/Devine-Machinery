@@ -8,7 +8,7 @@ using PixelCrushers.DialogueSystem;
 
 public class TouchCheckScript : MonoBehaviour
 {
-    public static int appro = 0; // Initialize approval value
+    public static int appro = 3; // Initialize approval value
     private bool isUpdating = false; // Prevent multiple updates within the same frame
     public static bool touchAllowed = false;
 
@@ -18,6 +18,8 @@ public class TouchCheckScript : MonoBehaviour
     private IPEndPoint endPoint; // Target endpoint for vvvv
     
     public SerialManager serialManager;
+    private Coroutine touchHandlerCoroutine;
+    private bool killChoice = false;
 
     private void Start()
     {
@@ -30,14 +32,19 @@ public class TouchCheckScript : MonoBehaviour
 
         // Send the current appro value to vvvv on start
         SendApprovalToVVVV(appro);
+        SoundManager.Instance.UpdateApprovalSound(appro);
     }
 
+    #region MouseInputOnly
+
+    
+
+   
     private void OnTriggerEnter(Collider other)
     {
         if (isUpdating) return; // Prevent multiple updates within the same frame
         Debug.Log("Ball has entered the trigger!");
-    
-        
+
         if (DialogueLua.GetVariable("touched").AsBool == false)
         {
             DialogueLua.SetVariable("touched", true);
@@ -58,17 +65,53 @@ public class TouchCheckScript : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         Debug.Log("Ball has exited the trigger!");
-        StopAllCoroutines(); // Stop any running coroutines related to the trigger
-        isUpdating = false; // Reset the update lock
+        StopAllCoroutines(); 
+        isUpdating = false; 
+    }
+    #endregion 
+    public IEnumerator SendAnswer()
+{
+    if (isUpdating) yield break; // Prevent overlapping coroutines
+
+    isUpdating = true; // Lock to prevent multiple updates
+    yield return new WaitForSeconds(2f); // Wait before updating
+
+    // Check if killChoice is true and handle special behavior
+    if (killChoice)
+    {
+        // Special behavior when killChoice is true
+        Debug.Log("killChoice is true. Entering special behavior.");
+
+        // Use switch-case to handle different tags
+        switch (tag)
+        {
+            case "Trim":
+               
+                Debug.Log("Trim touched. Setting 'killing' to true.");
+                var entry = DialogueManager.masterDatabase.GetDialogueEntry(2, 325);
+                var state = DialogueManager.conversationModel.GetState(entry);
+                DialogueManager.conversationController.GotoState(state);
+                appro = 0;  // Reset approval as part of the special behavior
+                break;
+
+            case "Fasz":
+               
+                Debug.Log("Fasz touched. Setting 'killing' to true.");
+                var entry2 = DialogueManager.masterDatabase.GetDialogueEntry(2, 326);
+                var state2 = DialogueManager.conversationModel.GetState(entry2);
+                DialogueManager.conversationController.GotoState(state2);
+                break;
+
+            default:
+                DialogueLua.SetVariable("killing", false);  // Set 'killing' to false for all other tags
+                Debug.Log("Not 'Trim' or 'Fasz'. Setting 'killing' to false.");
+                break;
+        }
     }
 
-    public IEnumerator SendAnswer()
+    else
     {
-        if (isUpdating) yield break; // Prevent overlapping coroutines
-
-        isUpdating = true; // Lock to prevent multiple updates
-        yield return new WaitForSeconds(2f); // Wait before updating
-
+        // Normal behavior (if killChoice is false)
         switch (tag)
         {
             case "Trim":
@@ -85,14 +128,20 @@ public class TouchCheckScript : MonoBehaviour
                 Debug.Log("Unhandled tag. No approval change.");
                 break;
         }
-
-        appro = Mathf.Clamp(appro, -3, 3); // Clamp approval value
-        UpdateApprovalVariable(); // Update Lua variable
-        SendApprovalToVVVV(appro); // Send updated approval to vvvv
-
-        (DialogueManager.dialogueUI as StandardDialogueUI).OnContinue();
-        isUpdating = false; // Unlock after completion
     }
+
+    // Always execute the approval logic after special or normal behavior
+    appro = Mathf.Clamp(appro, -3, 3); // Clamp approval value
+    UpdateApprovalVariable(); // Update Lua variable
+    SendApprovalToVVVV(appro); // Send updated approval to vvvv
+    SoundManager.Instance.UpdateApprovalSound(appro);
+
+    // Continue dialogue after handling approval updates
+    (DialogueManager.dialogueUI as StandardDialogueUI).OnContinue();
+    isUpdating = false; // Unlock after completion
+}
+
+
 
     private void UpdateApprovalVariable()
     {
@@ -148,7 +197,7 @@ public class TouchCheckScript : MonoBehaviour
         tag = touchTag; // Dynamically assign the tag
         if (DialogueLua.GetVariable("touched").AsBool == false)
         {
-            StartCoroutine(startTouchHandler());
+            StartTouchHandler();
         }
         else if (touchAllowed)
         {
@@ -159,7 +208,11 @@ public class TouchCheckScript : MonoBehaviour
     private void HandleTouchEnd()
     {
         Debug.Log("No touch detected. Stopping coroutines and resetting.");
-        StopAllCoroutines(); // Stop any running coroutines
+        if (touchHandlerCoroutine != null)
+        {
+            StopCoroutine(touchHandlerCoroutine);
+            touchHandlerCoroutine = null;
+        }
         isUpdating = false;
     }
 
@@ -174,25 +227,52 @@ public class TouchCheckScript : MonoBehaviour
         {
             (DialogueManager.dialogueUI as StandardDialogueUI).OnContinue(); // Debug advancing dialogue
         }
+        killChoice = DialogueLua.GetVariable("killChoice").AsBool;
     }
 
-    public IEnumerator startTouchHandler()
+    private void StartTouchHandler()
     {
-        
-        if (isUpdating) yield break; // Prevent overlapping coroutines
+        if (isUpdating) return; // Prevent overlapping coroutines
 
         isUpdating = true; // Lock to prevent multiple updates
-        yield return new WaitForSeconds(2f); // Wait before updating
-        
+        touchHandlerCoroutine = StartCoroutine(TouchDelayCoroutine());
+    }
+
+    private IEnumerator TouchDelayCoroutine()
+    {
+        yield return new WaitForSeconds(2f); // Wait for 2 seconds
+
+        // Check if touch is still active before proceeding
+        if (!serialManager.GetTouchState(BODY_PART.TOUCH_L) && !serialManager.GetTouchState(BODY_PART.TOUCH_R))
+        {
+            Debug.Log("Touch removed before execution. Cancelling.");
+            isUpdating = false;
+            yield break; // Stop execution
+        }
+
+        // Execute dialogue logic
         DialogueLua.SetVariable("touched", true);
         (DialogueManager.dialogueUI as StandardDialogueUI).OnContinue();
         var entry = DialogueManager.masterDatabase.GetDialogueEntry(2, 261);
         var state = DialogueManager.conversationModel.GetState(entry);
         DialogueManager.conversationController.GotoState(state);
-        
+
         isUpdating = false; // Unlock after completion
     }
 
+    public void resetAppro()
+    {
+        appro = 0;
+        DialogueLua.SetVariable("Approval", appro);
+    }
+
+    private void HandleKillChoice()
+    {
+        // Special logic when killChoice is true
+        Debug.Log("killChoice is true. Executing special behavior.");
+
+        
+    }
     private void OnApplicationQuit()
     {
         if (udpClient != null)
