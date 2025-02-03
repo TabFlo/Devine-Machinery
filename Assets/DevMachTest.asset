@@ -22394,7 +22394,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Continue()
+        value: 'Continue();
+
+          SetContinueMode(false)'
         type: 0
         typeString: 
       conversationID: 2
@@ -22454,7 +22456,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1534.2688
-        y: 4992.9893
+        y: 4989.959
         width: 160
         height: 30
     - id: 245
@@ -23049,6 +23051,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: e2b30c64-1410-4b08-8f5d-4b98a9df63df
+        type: 0
+        typeString: 
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -23067,7 +23073,19 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: 
+            m_MethodName: 
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 1743.1056
@@ -23101,7 +23119,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Delay(8)
+        value: 'Delay(8);
+
+'
         type: 0
         typeString: 
       conversationID: 2
@@ -26603,6 +26623,10 @@ MonoBehaviour:
           crazy, GlitchManager);'
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 711bb541-ea8b-4067-baa0-e9b0663c64e5
+        type: 0
+        typeString: 
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -27353,7 +27377,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2863.166
+        x: 2860.7854
         y: 4555.254
         width: 160
         height: 30
@@ -27387,6 +27411,10 @@ MonoBehaviour:
         value: AudioWait(UI & SFX/UI_Startup)
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 13e45c75-2038-4673-a3fa-5519cfb8b0ed
+        type: 0
+        typeString: 
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -27405,7 +27433,19 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: 
+            m_MethodName: 
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 2607.3867
@@ -27442,6 +27482,10 @@ MonoBehaviour:
         value: AudioWait(UI & SFX/UI_Select)
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 45308869-62f7-40f9-880a-87cd8e0843ee
+        type: 0
+        typeString: 
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -27468,8 +27512,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 4386.269}
-    canvasZoom: 0.33999997
+    canvasScrollPosition: {x: 1072.1711, y: 0}
+    canvasZoom: 0.28
   - id: 3
     fields:
     - title: Title
