@@ -26,19 +26,21 @@ public enum LED_STATE //These NEED to be the same as on the Arduino sonnst bin i
 {
     ON, 
     OFF,
-    FADE, 
-    FLASH, 
+    BLINK, 
+    FLASH,
+    WAVE, 
 }
 
 public class SerialManager : MonoBehaviour
 {
     // Setup
-    SerialPort stream = new ("COM15", 115200);
+    SerialPort stream = new ("COM15", 9600);
     [SerializeField] private float readRate = 0.5f;
     
-    // Testing
+    // Debugging
     [SerializeField] private Color color;
     [SerializeField] private float distL;
+    [SerializeField] private float touchR;
     [SerializeField] private float touchL; 
 
     // Serial Read/Write
@@ -70,6 +72,7 @@ public class SerialManager : MonoBehaviour
     {
         if (timeSinceLastRead >= (1 / readRate) && stream.IsOpen)
         {
+            Debug.Log("in loop");
             TryReadData(stream, ref buffer);
 
             foreach (string line in buffer)
@@ -80,6 +83,7 @@ public class SerialManager : MonoBehaviour
             }
 
             touchL = GetSensorData(BODY_PART.TOUCH_L);
+            touchR = GetSensorData(BODY_PART.TOUCH_R);
             if (sensorData.ContainsKey(BODY_PART.TOUCH_L) && sensorData.ContainsKey(BODY_PART.HAND_L))
             {
                 distL = GetSensorData(BODY_PART.HAND_L);
@@ -113,7 +117,7 @@ public class SerialManager : MonoBehaviour
     /// Returns sensor Data from various body Parts, funktioniert jetzt mal nur für hände und distanz
     /// </summary>
     /// <param name="bodyPart"></param>
-    /// <returns>Value is always a float, needs to be parsed to other data types if needed, returns -1 if ot found</returns>
+    /// <returns>Value is always a float, needs to be parsed to other data types if needed, returns -1 if not found</returns>
     public float GetSensorData(BODY_PART bodyPart)
     {
         if(sensorData.TryGetValue(bodyPart, out var data))
@@ -142,10 +146,13 @@ public class SerialManager : MonoBehaviour
         }
     }
 
-    public void SetLedState()
+    public void SetLEDState(LED_STATE ledState)
     {
-        Debug.LogWarning("not implemented yet, set color to black to turn them off");
-        //TODO: Implement this.
+        BODY_PART[] parts = { BODY_PART.EYE, BODY_PART.CHEST, BODY_PART.BACK};
+        foreach (BODY_PART part in parts)
+        {
+            sendStateData(ledState, part.ToString());
+        }
     }
     
     /// <summary>
@@ -180,6 +187,7 @@ public class SerialManager : MonoBehaviour
 
     private void ReadSensorData(string line)
     {
+        Debug.Log("current string " + line);
         BODY_PART[] parts = { BODY_PART.HAND_L, BODY_PART.HAND_R,  BODY_PART.TOUCH_L ,  BODY_PART.TOUCH_R  };
         var output = -1;
         
@@ -195,14 +203,12 @@ public class SerialManager : MonoBehaviour
         }
     }
 
-
     void SendData(String msg)
     {
-        
         if(timeSinceLastRead > 1/readRate && stream != null && stream.IsOpen)
         {
             stream.WriteLine(msg + "\n");
-            Debug.Log("Sent Message: " + msg);
+            //Debug.Log("Sent Message: " + msg);
         }
     }
     
@@ -221,6 +227,17 @@ public class SerialManager : MonoBehaviour
         SendData(msg);
     }
 
+    void sendStateData(LED_STATE ledState, string prefix)
+    {
+        string msg = ledState.ToString();
+
+        if (!String.IsNullOrEmpty(prefix))
+        {
+            msg = prefix + " " + msg;
+            msg = "STATE " + msg;
+        }
+        SendData(msg);
+    }
 
     bool TryReadData(SerialPort stream, ref List<string> currentReadLine)
     {

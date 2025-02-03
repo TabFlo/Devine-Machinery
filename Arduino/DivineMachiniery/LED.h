@@ -13,6 +13,7 @@ class LED {
     int deltaTime; 
     int blinkThreshold; 
     int currentBlinkTresh; 
+    int state; 
     WS2812FX leds;
 
   public: 
@@ -21,9 +22,13 @@ class LED {
     void setColor(int r, int g, int b);
     void on();
     void off(); 
-    void blink(int delayTime); 
-    void UpdateTime(int deltaTime);
-    void Update();
+    void blink(); 
+    void Update(int deltaTime);
+    void SetState(String state); 
+
+  private: 
+    void flash(); 
+    void wave(); 
 };
 
 #endif

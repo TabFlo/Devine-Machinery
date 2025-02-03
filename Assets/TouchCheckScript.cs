@@ -8,6 +8,7 @@ using PixelCrushers.DialogueSystem;
 
 public class TouchCheckScript : MonoBehaviour
 {
+    private float touchTime = 1; 
     public static int appro = 3; // Initialize approval value
     private bool isUpdating = false; // Prevent multiple updates within the same frame
     public static bool touchAllowed = false;
@@ -74,7 +75,7 @@ public class TouchCheckScript : MonoBehaviour
     if (isUpdating) yield break; // Prevent overlapping coroutines
 
     isUpdating = true; // Lock to prevent multiple updates
-    yield return new WaitForSeconds(2f); // Wait before updating
+    yield return new WaitForSeconds(touchTime); // Wait before updating
 
     // Check if killChoice is true and handle special behavior
     if (killChoice)

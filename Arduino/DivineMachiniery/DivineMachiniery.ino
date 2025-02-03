@@ -7,9 +7,9 @@
 #define EYELED_PIN 3
 #define CHEST_PIN 4
 
-#define ToUCH_PIN_L 7
+#define TOUCH_PIN_L 9
 
-#define ToUCH_PIN_R 8
+#define TOUCH_PIN_R 8
 
 unsigned long previousTime = 0; 
 
@@ -23,7 +23,7 @@ void setup() {
   Serial.begin(9600);
   Serial.println("Arduino Setup");
 
-  pinMode(ToUCH_PIN_L, INPUT);
+  pinMode(TOUCH_PIN_L, INPUT);
 
   /*
   //init Tof 
@@ -68,7 +68,7 @@ void loop() {
   //readTofData();
 
   // read cap data 
-  //ReadButtonState();
+  ReadButtonState();
   
 
   // LED DATA 
@@ -79,7 +79,7 @@ void loop() {
     eyeLed.setColor(r, g, b);
     eyeLed.on();
   } 
-  eyeLed.blink(200);
+  eyeLed.blink();
   
 
   // BACK 
@@ -91,8 +91,7 @@ void loop() {
 
   // TIME HANDLING
   previousTime = currentTime; 
-  eyeLed.UpdateTime(deltaTime); 
-  eyeLed.Update();
+  eyeLed.Update(deltaTime);
   delay(100);
 }
 
@@ -125,8 +124,10 @@ String parseRGBA(String input, int &r, int &g, int &b) {
     return prefix;
 }
 
+String
+
 void ReadButtonState(){
-  int buttonState = digitalRead(ToUCH_PIN_L);
+  int buttonState = digitalRead(TOUCH_PIN_L);
   if (buttonState == LOW) {
    Serial.println("TOUCH_L 1");
   } 
@@ -135,7 +136,7 @@ void ReadButtonState(){
   }
 
 
-  buttonState = digitalRead(ToUCH_PIN_R);
+  buttonState = digitalRead(TOUCH_PIN_R);
   if (buttonState == LOW) {
    Serial.println("TOUCH_R 1");
   } 
