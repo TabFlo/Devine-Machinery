@@ -1952,6 +1952,198 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - guid: 991f91cb-2213-4fe1-bcac-11e1aa52381f
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1639566071}
+          m_TargetAssemblyTypeName: TouchCheckScript, Assembly-CSharp
+          m_MethodName: SendGlitchToVVVV
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: a90507a2-7a1e-4029-bd36-92ff158fe618
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1639566071}
+          m_TargetAssemblyTypeName: TouchCheckScript, Assembly-CSharp
+          m_MethodName: SendGlitchToVVVV
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: 705d54eb-3cf9-4639-82f6-4f2f0b069fb9
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1639566071}
+          m_TargetAssemblyTypeName: TouchCheckScript, Assembly-CSharp
+          m_MethodName: SendGlitchToVVVV
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: 285ceef9-bc6f-419c-8924-450d4c32f716
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1639566071}
+          m_TargetAssemblyTypeName: TouchCheckScript, Assembly-CSharp
+          m_MethodName: SendGlitchToVVVV
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: 167424ea-8649-48c2-a66f-22b55961a445
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1639566071}
+          m_TargetAssemblyTypeName: TouchCheckScript, Assembly-CSharp
+          m_MethodName: SendGlitchToVVVV
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: b7e11f72-30a0-4111-9a83-73d2e3c97403
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1639566071}
+          m_TargetAssemblyTypeName: TouchCheckScript, Assembly-CSharp
+          m_MethodName: SendGlitchToVVVV
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: 1f66c530-1f04-4c6e-9be6-a628d5521ce3
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1639566071}
+          m_TargetAssemblyTypeName: TouchCheckScript, Assembly-CSharp
+          m_MethodName: SendGlitchToVVVV
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: 5e0a86cd-3902-40a5-92cf-ae6513b7841c
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1639566071}
+          m_TargetAssemblyTypeName: TouchCheckScript, Assembly-CSharp
+          m_MethodName: SendGlitchToVVVV
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: d431ab83-38c2-4898-a4df-04b451b0d323
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1639566071}
+          m_TargetAssemblyTypeName: TouchCheckScript, Assembly-CSharp
+          m_MethodName: SendGlitchToVVVV
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: 3013373c-ff69-4b0a-a188-d9bd920fb4f0
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1639566071}
+          m_TargetAssemblyTypeName: TouchCheckScript, Assembly-CSharp
+          m_MethodName: SendGlitchToVVVV
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: 13c45319-cfa8-4a80-b6d8-7c44751efdc0
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1639566071}
+          m_TargetAssemblyTypeName: TouchCheckScript, Assembly-CSharp
+          m_MethodName: SendGlitchToVVVV
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: d3b50891-bec5-4c9c-8505-57b4e3ba2dc4
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1639566071}
+          m_TargetAssemblyTypeName: TouchCheckScript, Assembly-CSharp
+          m_MethodName: SendGlitchToVVVV
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &721771247
 Transform:
   m_ObjectHideFlags: 0
