@@ -8,8 +8,9 @@ using PixelCrushers.DialogueSystem;
 
 public class TouchCheckScript : MonoBehaviour
 {
+
     private float touchTime = 1; 
-    public static int appro = 3; // Initialize approval value
+    public static int appro = 0; // Initialize approval value
     private bool isUpdating = false; // Prevent multiple updates within the same frame
     public static bool touchAllowed = false;
 
@@ -28,9 +29,10 @@ public class TouchCheckScript : MonoBehaviour
     {
         // Initialize UDP communication
         udpClient = new UdpClient();
-        endPoint = new IPEndPoint(IPAddress.Loopback, 5555); // vvvv listens on port 5555
-        glitchMessageEndPoint = new IPEndPoint(IPAddress.Loopback, 5556);
-        StopMessageEndPoint = new IPEndPoint(IPAddress.Loopback, 5557);
+        endPoint = new IPEndPoint(IPAddress.Broadcast, 5555); // vvvv listens on port 5555
+
+        glitchMessageEndPoint = new IPEndPoint(IPAddress.Broadcast, 5556);
+        StopMessageEndPoint = new IPEndPoint(IPAddress.Broadcast, 5557);
         
 
         // Initialize the approval variable for the Dialogue System
@@ -159,21 +161,25 @@ public class TouchCheckScript : MonoBehaviour
     {
         if (udpClient != null && endPoint != null)
         {
-            // Transform the Unity `appro` value to vvvv's format
             int vvvvValue = 3 - value;
-
-            // Convert the transformed value to a byte array
             byte[] messageBytes = BitConverter.GetBytes(vvvvValue);
 
-            // Send the transformed value to vvvv
-            udpClient.Send(messageBytes, messageBytes.Length, endPoint);
-            Debug.Log($"Sent approval value to vvvv: {vvvvValue}");
+            try
+            {
+                udpClient.Send(messageBytes, messageBytes.Length, endPoint);
+                Debug.Log($"Sent approval value to vvvv: {vvvvValue}");
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Failed to send UDP message: {e.Message}");
+            }
         }
         else
         {
             Debug.LogError("UDP client or endpoint is not initialized.");
         }
     }
+
 
     private void UpdateTouchState()
     {
