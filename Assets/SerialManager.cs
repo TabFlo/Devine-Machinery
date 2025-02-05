@@ -79,7 +79,6 @@ public class SerialManager : MonoBehaviour
             {
                 ReadSensorData(line);
                 currentLines.Add(line);
-
             }
 
             touchL = GetSensorData(BODY_PART.TOUCH_L);
@@ -108,6 +107,11 @@ public class SerialManager : MonoBehaviour
                 
             }
         }
+    }
+
+    public bool canSend()
+    {
+        return (timeSinceLastRead > 1 / readRate);
     }
 
    
@@ -187,7 +191,6 @@ public class SerialManager : MonoBehaviour
 
     private void ReadSensorData(string line)
     {
-        Debug.Log("current string " + line);
         BODY_PART[] parts = { BODY_PART.HAND_L, BODY_PART.HAND_R,  BODY_PART.TOUCH_L ,  BODY_PART.TOUCH_R  };
         var output = -1;
         
@@ -208,7 +211,11 @@ public class SerialManager : MonoBehaviour
         if(timeSinceLastRead > 1/readRate && stream != null && stream.IsOpen)
         {
             stream.WriteLine(msg + "\n");
-            //Debug.Log("Sent Message: " + msg);
+            Debug.Log("Sent Message: " + msg);
+        }
+        else
+        {
+            Debug.LogWarning("could not set text " + msg + "because sendtime is too short");
         }
     }
     
@@ -260,7 +267,7 @@ public class SerialManager : MonoBehaviour
                     Debug.Log("Messages " + currentReadLine.Count);
                 }
             }
-
+            
             return true; 
         }
         return false; 

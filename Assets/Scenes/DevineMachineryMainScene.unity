@@ -1320,13 +1320,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691155619}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bce255c9c2ee63146b68446b76d88292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   usePhysicalTouch: 0
   serialManager: {fileID: 1346082585}
+  glitchManager: {fileID: 0}
 --- !u!65 &691155623
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2781,6 +2782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerDuration: 120
+  textSender: {fileID: 1346082584}
 --- !u!1 &1213289822
 GameObject:
   m_ObjectHideFlags: 0
@@ -2829,13 +2831,13 @@ MonoBehaviour:
   touchCheckScript: {fileID: 691155622}
   serialManager: {fileID: 1346082585}
   eyeColors:
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 1, g: 0, b: 0.07738876, a: 0}
+  - {r: 0.9150943, g: 0.3617466, b: 0.12517802, a: 0}
+  - {r: 0.8962264, g: 0.56019574, b: 0.24096651, a: 0}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0.49803922, g: 0.85882354, b: 0.8232485, a: 0}
+  - {r: 0.17221434, g: 0.49226156, b: 0.8113208, a: 0}
+  - {r: 0.048089504, g: 0, b: 1, a: 0}
 --- !u!1001 &1239071273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3249,9 +3251,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1346082581}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff9cf2703a4bd6346b35ceba5852760e, type: 3}
+  m_Script: {fileID: 11500000, guid: e3fe073e1bc5a7f49945b0db1f54d686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectionText: uwu-owo
+  rate: 10
 --- !u!114 &1346082585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3737,8 +3741,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce255c9c2ee63146b68446b76d88292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usePhysicalTouch: 0
+  usePhysicalTouch: 1
   serialManager: {fileID: 1346082585}
+  glitchManager: {fileID: 1213289824}
 --- !u!65 &1639566072
 BoxCollider:
   m_ObjectHideFlags: 0

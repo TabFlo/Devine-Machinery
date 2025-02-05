@@ -9,6 +9,7 @@ public class GlitchManager : MonoBehaviour
     public TouchCheckScript touchCheckScript; // Reference to TouchCheckScript
     public SerialManager serialManager;
 
+    public bool ledUpdateDue;
     [SerializeField] private Color[] eyeColors = new Color[7];
     // Reference to SerialManager
 
@@ -37,10 +38,20 @@ public class GlitchManager : MonoBehaviour
         }
 
         // Update LED colors based on the approval value
-        if (touchCheckScript != null)
+        if (ledUpdateDue)
+        {
+            UpdateLEDColor();
+            
+        }
+    }
+
+    void UpdateLEDColor()
+    {
+        if (touchCheckScript != null && serialManager.canSend())
         {
             int appro = TouchCheckScript.appro; // Get approval value
             SendColorAccordingToAppro(appro); // Update LED colors
+            ledUpdateDue = false;
         }
     }
 
@@ -124,7 +135,7 @@ public class GlitchManager : MonoBehaviour
         // Send the color to SerialManager
         if (serialManager != null)
         {
-            serialManager.SetLEDColor(color, BODY_PART.EYE); // Update the LEDs for the "EYE"
+            serialManager.SetLEDColor(color); // Update the LEDs for the
         }
 
         //Debug.Log($"Approval: {appro}, Color Sent: {color}");

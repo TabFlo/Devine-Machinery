@@ -22,6 +22,7 @@ public class TouchCheckScript : MonoBehaviour
     private IPEndPoint StopMessageEndPoint;
     
     public SerialManager serialManager;
+    public GlitchManager glitchManager;
     private Coroutine touchHandlerCoroutine;
     private bool killChoice = false;
 
@@ -130,6 +131,7 @@ public class TouchCheckScript : MonoBehaviour
             case "Fasz":
                 appro += 1; // Increase approval
                 Debug.Log("Fasz touched. Increasing approval.");
+                
                 break;
 
             default:
@@ -137,6 +139,8 @@ public class TouchCheckScript : MonoBehaviour
                 break;
         }
     }
+
+    glitchManager.ledUpdateDue = true;
 
     // Always execute the approval logic after special or normal behavior
     appro = Mathf.Clamp(appro, -3, 3); // Clamp approval value
@@ -219,7 +223,7 @@ public class TouchCheckScript : MonoBehaviour
 
     private void HandleTouchEnd()
     {
-        Debug.Log("No touch detected. Stopping coroutines and resetting.");
+        //Debug.Log("No touch detected. Stopping coroutines and resetting.");
         if (touchHandlerCoroutine != null)
         {
             StopCoroutine(touchHandlerCoroutine);

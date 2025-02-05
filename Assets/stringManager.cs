@@ -8,7 +8,7 @@ public class stringManager : MonoBehaviour
    [SerializeField] private float timerDuration = 180f; // Timer duration in seconds (default: 3 minutes)
     private Coroutine timerCoroutine; // Reference to the running timer coroutine
     private bool isTimerRunning = false;
-
+    public TextSender textSender;
 
     void Start()
     {
@@ -24,7 +24,7 @@ public class stringManager : MonoBehaviour
             Debug.Log(entryString);
             TouchCheckScript.touchAllowed = true;
             string trimmedEntry = entryString.Replace(".", "");
-         
+            textSender.SetProjectionText(trimmedEntry);
             
             if (!isTimerRunning)
             {
@@ -34,7 +34,7 @@ public class stringManager : MonoBehaviour
         else
         {
             TouchCheckScript.touchAllowed = false;
-            //textSender.SetProjectionText(" ");
+
            
             if (isTimerRunning)
             {
@@ -76,7 +76,7 @@ public class stringManager : MonoBehaviour
     private void ExecuteDialogueAction()
     {
         DialogueLua.SetVariable("touched", false);  
-        var entry = DialogueManager.masterDatabase.GetDialogueEntry(2, 244);
+        var entry = DialogueManager.masterDatabase.GetDialogueEntry(2, 257);
         var state = DialogueManager.conversationModel.GetState(entry);
         DialogueManager.conversationController.GotoState(state);
 

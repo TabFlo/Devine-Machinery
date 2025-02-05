@@ -26,6 +26,7 @@ public class TextSender : MonoBehaviour
         textEndPoint = new IPEndPoint(IPAddress.Broadcast, 5558);
     }
 
+    /*
     private void Update()
     {
         if (timeSinceLastWrite > 1 / rate)
@@ -36,7 +37,7 @@ public class TextSender : MonoBehaviour
 
         timeSinceLastWrite += Time.deltaTime;
     }
-
+    */
     /// <summary>
     /// sets the text on the arm projection in vvvv 
     /// </summary>
@@ -47,7 +48,7 @@ public class TextSender : MonoBehaviour
         if (SendTextToVVVV(text))
         {
             projectionText = text; 
-            Debug.Log("Text Set successfully");
+            Debug.Log("Text Set successfully" + text);
             return; 
         }
         Debug.LogError("Could not set projection text: " + text);

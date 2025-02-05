@@ -47,7 +47,7 @@ void setup() {
   delay(100);
   Serial.flush(); 
   // put your setup code here, to run once:
-
+  eyeLed.SetState("BLINK");
 }
 
 
@@ -75,11 +75,17 @@ void loop() {
   // EYES 
 
   int r, g, b;
+  String state;
   if(parseRGBA(data, r, g, b).equals("EYE")){
     eyeLed.setColor(r, g, b);
     eyeLed.on();
+    Serial.println("Set Eye color to " + r);
   } 
-  eyeLed.blink();
+  else if(parseStateData(data, state).equals("EYE")){ //no vieryfing if state is acutally valid because im tired
+    eyeLed.SetState(state);
+  }
+  
+  
   
 
   // BACK 
@@ -87,12 +93,16 @@ void loop() {
   if(parseRGBA(data, r, g, b).equals("CHEST")){
     chestLed.setColor(r, g, b);
     chestLed.on(); 
+    Serial.println("Set Chest color to " + r);
+  }
+  else if(parseStateData(data, state).equals("CHEST")){ //no vieryfing if state is acutally valid because im tired
+    eyeLed.SetState(state);
   }
 
   // TIME HANDLING
   previousTime = currentTime; 
   eyeLed.Update(deltaTime);
-  delay(100);
+  delay(10);
 }
 
 
@@ -124,7 +134,23 @@ String parseRGBA(String input, int &r, int &g, int &b) {
     return prefix;
 }
 
-String
+String parseStateData(String input, String &state){
+  int i = input.indexOf(' ');
+  if (i == -1) return "-1"; // No space found, invalid input
+
+  String prefix = input.substring(0, i);
+  if(!prefix.equals("STATE")) return "-1"; 
+
+  input = input.substring(i+1); 
+
+  i = input.indexOf(' '); 
+  prefix = input.substring(0, i);
+
+  state = input.substring(i+1);
+
+  Serial.println("State: " + prefix + " " + state);
+  return prefix; 
+}
 
 void ReadButtonState(){
   int buttonState = digitalRead(TOUCH_PIN_L);
