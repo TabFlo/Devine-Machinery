@@ -271,7 +271,7 @@ MonoBehaviour:
       type: 0
       typeString: 
     - title: Initial Value
-      value: 1
+      value: 8
       type: 1
       typeString: CustomFieldType_Number
     - title: Description
@@ -9252,15 +9252,15 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: if (Variable["killedTime"]>0) then Variable["x"] = math.random(1000);
+      userScript: if (Variable["killedTime"]>0) then Variable["x"] = math.random(2000);
         end
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1326.7489
-        y: 1178.4067
+        x: 1328.8994
+        y: 1180.5573
         width: 160
         height: 30
     - id: 17
@@ -11635,7 +11635,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: if (Variable["killedTime"]>0) then Variable["x"] = math.random(1000);
+      userScript: if (Variable["killedTime"]>0) then Variable["x"] = math.random(2000);
         end
       onExecute:
         m_PersistentCalls:
@@ -11643,7 +11643,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1962.172
-        y: 1982.4009
+        y: 1981.4058
         width: 160
         height: 30
     - id: 55
@@ -16436,7 +16436,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: if (Variable["killedTime"]>0) then Variable["x"] = math.random(1000);
+      userScript: if (Variable["killedTime"]>0) then Variable["x"] = math.random(2000);
         end
       onExecute:
         m_PersistentCalls:
@@ -16561,7 +16561,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: Variable["ThirdDCount"] == 2
-      userScript: if (Variable["killedTime"]>0) then Variable["x"] = math.random(10);
+      userScript: if (Variable["killedTime"]>0) then Variable["x"] = math.random(2000);
         end
       onExecute:
         m_PersistentCalls:
@@ -16569,7 +16569,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1521.7621
-        y: 3847.7402
+        y: 3841.5657
         width: 160
         height: 30
     - id: 147
@@ -16628,7 +16628,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1478.4354
-        y: 3166.5864
+        y: 3164.4358
         width: 160
         height: 30
     - id: 148
@@ -22394,7 +22394,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Continue()
+        value: 'Continue();
+
+          SetContinueMode(false)'
         type: 0
         typeString: 
       conversationID: 2
@@ -22454,7 +22456,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1534.2688
-        y: 4992.9893
+        y: 4989.959
         width: 160
         height: 30
     - id: 245
@@ -23049,6 +23051,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: 
+      - title: EventGuid
+        value: e2b30c64-1410-4b08-8f5d-4b98a9df63df
+        type: 0
+        typeString: 
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -23067,7 +23073,19 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: 
+            m_MethodName: 
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 1743.1056
@@ -23101,7 +23119,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Delay(8)
+        value: 'Delay(8);
+
+'
         type: 0
         typeString: 
       conversationID: 2
@@ -23329,6 +23349,10 @@ MonoBehaviour:
           Pos_01)
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 705d54eb-3cf9-4639-82f6-4f2f0b069fb9
+        type: 0
+        typeString: 
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -23351,7 +23375,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 206.74878
+        x: 204.94696
         y: 1272.7916
         width: 160
         height: 30
@@ -23390,6 +23414,10 @@ MonoBehaviour:
         typeString: 
       - title: Audio Files
         value: '[]'
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 991f91cb-2213-4fe1-bcac-11e1aa52381f
         type: 0
         typeString: 
       conversationID: 2
@@ -23445,7 +23473,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SendMessage(ApplyGlitchEffect, crazy, GlitchManager);
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       - title: EventGuid
@@ -23732,6 +23760,10 @@ MonoBehaviour:
         value: Delay(1)
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 285ceef9-bc6f-419c-8924-450d4c32f716
+        type: 0
+        typeString: 
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -23974,6 +24006,10 @@ MonoBehaviour:
         value: Delay(1)
         type: 0
         typeString: 
+      - title: EventGuid
+        value: a90507a2-7a1e-4029-bd36-92ff158fe618
+        type: 0
+        typeString: 
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -24027,6 +24063,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: RandomizeNextEntry(true)
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 1f66c530-1f04-4c6e-9be6-a628d5521ce3
         type: 0
         typeString: 
       conversationID: 2
@@ -24089,6 +24129,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: RandomizeNextEntry(true)
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 167424ea-8649-48c2-a66f-22b55961a445
         type: 0
         typeString: 
       conversationID: 2
@@ -24703,6 +24747,10 @@ MonoBehaviour:
         value: Delay(1)
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 5e0a86cd-3902-40a5-92cf-ae6513b7841c
+        type: 0
+        typeString: 
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -24880,7 +24928,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: SendMessage(ApplyGlitchEffect, crazy, GlitchManager);
+        value: 
         type: 0
         typeString: 
       - title: Audio Files
@@ -25253,6 +25301,10 @@ MonoBehaviour:
         value: Delay(1)
         type: 0
         typeString: 
+      - title: EventGuid
+        value: b7e11f72-30a0-4111-9a83-73d2e3c97403
+        type: 0
+        typeString: 
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -25306,6 +25358,10 @@ MonoBehaviour:
         typeString: 
       - title: Sequence
         value: RandomizeNextEntry(true)
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 13c45319-cfa8-4a80-b6d8-7c44751efdc0
         type: 0
         typeString: 
       conversationID: 2
@@ -25370,6 +25426,10 @@ MonoBehaviour:
         value: RandomizeNextEntry(true)
         type: 0
         typeString: 
+      - title: EventGuid
+        value: d431ab83-38c2-4898-a4df-04b451b0d323
+        type: 0
+        typeString: 
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -25398,7 +25458,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2518.3066
+        x: 2516.346
         y: 3339.1562
         width: 160
         height: 30
@@ -26161,7 +26221,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: SendMessage(ApplyGlitchEffect, crazy, GlitchManager);
+        value: 
         type: 0
         typeString: 
       - title: Audio Files
@@ -26430,6 +26490,10 @@ MonoBehaviour:
         value: Delay(1)
         type: 0
         typeString: 
+      - title: EventGuid
+        value: d3b50891-bec5-4c9c-8505-57b4e3ba2dc4
+        type: 0
+        typeString: 
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -26545,6 +26609,10 @@ MonoBehaviour:
         value: Delay(1)
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 3013373c-ff69-4b0a-a188-d9bd920fb4f0
+        type: 0
+        typeString: 
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -26593,7 +26661,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: '<char>System Check-Up:'
+        value: '<char>System Check Up:'
         type: 0
         typeString: 
       - title: Sequence
@@ -26601,6 +26669,10 @@ MonoBehaviour:
 
           SendMessage(ApplyGlitchEffect,
           crazy, GlitchManager);'
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: 711bb541-ea8b-4067-baa0-e9b0663c64e5
         type: 0
         typeString: 
       conversationID: 2
@@ -26624,7 +26696,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2648.685
+        x: 2652.7092
         y: 3984.1062
         width: 160
         height: 30
@@ -27267,6 +27339,10 @@ MonoBehaviour:
         value: AudioWait(UI & SFX/UI_Select)
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 27f8885b-8c78-4d9b-8450-a2acaf986d14
+        type: 0
+        typeString: 
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -27319,7 +27395,13 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: AudioWait(UI & SFX/UI_ResetMachine)
+        value: 'AudioWait(UI & SFX/ShutdownLang);
+
+          ClearSubtitleText()'
+        type: 0
+        typeString: 
+      - title: EventGuid
+        value: d12678aa-c18c-44a2-9624-b0b26dcf8291
         type: 0
         typeString: 
       conversationID: 2
@@ -27333,120 +27415,6 @@ MonoBehaviour:
       - originConversationID: 2
         originDialogueID: 330
         destinationConversationID: 2
-        destinationDialogueID: 331
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 2863.166
-        y: 4555.254
-        width: 160
-        height: 30
-    - id: 331
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: AudioWait(UI & SFX/SFX_Alarm)
-        type: 0
-        typeString: 
-      conversationID: 2
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 2
-        originDialogueID: 331
-        destinationConversationID: 2
-        destinationDialogueID: 332
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 2783.173
-        y: 4655.6494
-        width: 160
-        height: 30
-    - id: 332
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: 
-      - title: Description
-        value: 
-        type: 0
-        typeString: 
-      - title: Actor
-        value: 2
-        type: 0
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 0
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Dialogue Text
-        value: 
-        type: 0
-        typeString: 
-      - title: Sequence
-        value: AudioWait(UI & SFX/SFX_Morse SOS)
-        type: 0
-        typeString: 
-      - title: Response Menu Sequence
-        value: 
-        type: 0
-        typeString: 
-      conversationID: 2
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 2
-        originDialogueID: 332
-        destinationConversationID: 2
         destinationDialogueID: 333
         isConnector: 0
         priority: 2
@@ -27457,8 +27425,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2780.048
-        y: 4762.89
+        x: 2858.9836
+        y: 4555.254
         width: 160
         height: 30
     - id: 333
@@ -27491,6 +27459,10 @@ MonoBehaviour:
         value: AudioWait(UI & SFX/UI_Startup)
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 13e45c75-2038-4673-a3fa-5519cfb8b0ed
+        type: 0
+        typeString: 
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -27509,11 +27481,23 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: 
+            m_MethodName: 
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
-        x: 2552.9648
-        y: 4887.9414
+        x: 2607.3867
+        y: 4810.3906
         width: 160
         height: 30
     - id: 334
@@ -27546,6 +27530,10 @@ MonoBehaviour:
         value: AudioWait(UI & SFX/UI_Select)
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 45308869-62f7-40f9-880a-87cd8e0843ee
+        type: 0
+        typeString: 
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -27572,8 +27560,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 788.38025, y: 4183.9487}
-    canvasZoom: 0.54999995
+    canvasScrollPosition: {x: 9.222315, y: 3155.0298}
+    canvasZoom: 0.16374987
   - id: 3
     fields:
     - title: Title

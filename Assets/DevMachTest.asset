@@ -271,7 +271,7 @@ MonoBehaviour:
       type: 0
       typeString: 
     - title: Initial Value
-      value: 1
+      value: 8
       type: 1
       typeString: CustomFieldType_Number
     - title: Description
@@ -16569,7 +16569,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 1521.7621
-        y: 3845.5898
+        y: 3841.5657
         width: 160
         height: 30
     - id: 147
@@ -26661,7 +26661,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: '<char>System Check-Up:'
+        value: '<char>System Check Up:'
         type: 0
         typeString: 
       - title: Sequence
@@ -26696,7 +26696,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 2648.685
+        x: 2652.7092
         y: 3984.1062
         width: 160
         height: 30
@@ -27560,8 +27560,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 3645.7395}
-    canvasZoom: 0.31
+    canvasScrollPosition: {x: 9.222315, y: 3155.0298}
+    canvasZoom: 0.16374987
   - id: 3
     fields:
     - title: Title

@@ -41,10 +41,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="E:\Devine-Machinery\Library\PackageCache\com.luca3317.tmpeffects@7babe75a31\TMPEffects.AutoParameters.dll" />
-    <Analyzer Include="E:\Devine-Machinery\Library\PackageCache\com.luca3317.tmpeffects@7babe75a31\TMPEffects.StringLibrary.dll" />
-    <Analyzer Include="E:\Devine-Machinery\Library\PackageCache\com.unity.transport@2.4.0\Analyzers\Unity.Transport.Analyzers.dll" />
-    <Analyzer Include="E:\Devine-Machinery\Library\PackageCache\com.luca3317.tmpeffects@7babe75a31\TMPEffects.ParameterUtilityGenerator.dll" />
+    <Analyzer Include="D:\DivineMachinery\Devine-Machinery\Library\PackageCache\com.luca3317.tmpeffects@bc982953c6\TMPEffects.AutoParameters.dll" />
+    <Analyzer Include="D:\DivineMachinery\Devine-Machinery\Library\PackageCache\com.luca3317.tmpeffects@bc982953c6\TMPEffects.StringLibrary.dll" />
+    <Analyzer Include="D:\DivineMachinery\Devine-Machinery\Library\PackageCache\com.luca3317.tmpeffects@bc982953c6\TMPEffects.ParameterUtilityGenerator.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.55f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.55f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -61,34 +60,96 @@
     <Compile Include="Assets\stringManager.cs" />
     <Compile Include="Assets\killMechanicScript.cs" />
     <Compile Include="Assets\Kino\Glitch\AnalogGlitch.cs" />
+    <Compile Include="Assets\TextSender.cs" />
     <Compile Include="Assets\Kino\Glitch\DigitalGlitch.cs" />
     <Compile Include="Assets\NumberScript.cs" />
     <Compile Include="Assets\mouseFollowForTest.cs" />
     <Compile Include="Assets\SoundManager.cs" />
+    <None Include="Library\PackageCache\com.unity.settings-manager@2.0.1\package.json" />
+    <None Include="Library\PackageCache\com.unity.modules.subsystems@1.0.0\package.json" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Library\PackageCache\com.unity.modules.jsonserialize@1.0.0\package.json" />
+    <None Include="Library\PackageCache\com.unity.modules.screencapture@1.0.0\package.json" />
+    <None Include="Library\PackageCache\com.unity.modules.cloth@1.0.0\package.json" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Library\PackageCache\com.unity.modules.unitywebrequesttexture@1.0.0\package.json" />
+    <None Include="Library\PackageCache\com.unity.modules.ai@1.0.0\package.json" />
+    <None Include="Library\PackageCache\com.unity.ugui@1.0.0\package.json" />
+    <None Include="Library\PackageCache\com.unity.ext.nunit@1.0.6\package.json" />
+    <None Include="Library\PackageCache\com.unity.modules.assetbundle@1.0.0\package.json" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.7\package.json" />
+    <None Include="Library\PackageCache\com.unity.modules.imgui@1.0.0\package.json" />
+    <None Include="Library\PackageCache\com.unity.modules.tilemap@1.0.0\package.json" />
+    <None Include="Library\PackageCache\com.unity.timeline@1.7.6\package.json" />
+    <None Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.22\ValidationConfig.json" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Library\PackageCache\com.unity.modules.terrainphysics@1.0.0\package.json" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Library\PackageCache\com.unity.visualscripting@1.9.4\package.json" />
+    <None Include="Library\PackageCache\com.unity.editorcoroutines@1.0.0\package.json" />
+    <None Include="Library\PackageCache\com.unity.timeline@1.7.6\ValidationExceptions.json" />
+    <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\package.json" />
+    <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.7\PackageConversionData.json" />
+    <None Include="Library\PackageCache\com.unity.modules.unitywebrequestassetbundle@1.0.0\package.json" />
+    <None Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.22\package.json" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Library\PackageCache\com.unity.modules.imageconversion@1.0.0\package.json" />
+    <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.7\ValidationExceptions.json" />
+    <None Include="Library\PackageCache\com.unity.feature.development@1.0.1\package.json" />
+    <None Include="Library\PackageCache\com.unity.modules.unityanalytics@1.0.0\package.json" />
+    <None Include="Library\PackageCache\com.unity.ide.rider@3.0.34\package.json" />
+    <None Include="Library\PackageCache\com.unity.modules.video@1.0.0\package.json" />
+    <None Include="Library\PackageCache\com.unity.ide.rider@3.0.34\ValidationExceptions.json" />
+    <None Include="Library\PackageCache\com.unity.test-framework@1.1.33\package.json" />
+    <None Include="Library\PackageCache\com.unity.performance.profile-analyzer@1.2.2\package.json" />
+    <None Include="Library\PackageCache\com.unity.modules.particlesystem@1.0.0\package.json" />
+    <None Include="Library\PackageCache\com.unity.modules.physics2d@1.0.0\package.json" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Library\PackageCache\com.unity.modules.vr@1.0.0\package.json" />
+    <None Include="Library\PackageCache\com.unity.visualscripting@1.9.4\ValidationExceptions.json" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.22\ValidationExceptions.json" />
+    <None Include="Library\PackageCache\com.unity.modules.wind@1.0.0\package.json" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Library\PackageCache\com.unity.modules.umbra@1.0.0\package.json" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Library\PackageCache\com.unity.modules.audio@1.0.0\package.json" />
+    <None Include="Library\PackageCache\com.unity.modules.physics@1.0.0\package.json" />
+    <None Include="Library\PackageCache\com.unity.modules.vehicles@1.0.0\package.json" />
     <None Include="Assets\Kino\Glitch\Shader\DigitalGlitch.shader" />
+    <None Include="Library\PackageCache\com.unity.testtools.codecoverage@1.2.6\package.json" />
     <None Include="Assets\Kino\Glitch\Shader\AnalogGlitch.shader" />
+    <None Include="Library\PackageCache\com.unity.modules.unitywebrequestwww@1.0.0\package.json" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Library\PackageCache\com.unity.modules.unitywebrequestaudio@1.0.0\package.json" />
+    <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.7\Editor Resources\Shaders\TMP_SDF_SSD.cginc" />
+    <None Include="Library\PackageCache\com.unity.collab-proxy@2.6.0\ValidationConfig.json" />
+    <None Include="Library\PackageCache\com.unity.modules.xr@1.0.0\package.json" />
+    <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.7\Editor Resources\Shaders\TMP_Properties.cginc" />
+    <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.7\Editor Resources\Shaders\TMP_SDF Internal Editor.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Library\PackageCache\com.unity.modules.director@1.0.0\package.json" />
+    <None Include="Library\PackageCache\com.unity.ide.vscode@1.2.5\ValidationExceptions.json" />
+    <None Include="Library\PackageCache\com.unity.visualscripting@1.9.4\ValidationConfig.json" />
+    <None Include="Library\PackageCache\com.unity.modules.terrain@1.0.0\package.json" />
+    <None Include="Library\PackageCache\com.unity.modules.androidjni@1.0.0\package.json" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Library\PackageCache\com.unity.textmeshpro@3.0.7\PackageConversionData_Assets.json" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Library\PackageCache\com.unity.modules.animation@1.0.0\package.json" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Library\PackageCache\com.unity.modules.unitywebrequest@1.0.0\package.json" />
+    <None Include="Library\PackageCache\com.unity.modules.uielements@1.0.0\package.json" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
+    <None Include="Library\PackageCache\com.unity.modules.ui@1.0.0\package.json" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+    <None Include="Library\PackageCache\com.unity.ide.vscode@1.2.5\package.json" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.55f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -338,17 +399,14 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.55f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Collections.LowLevel.ILSupport">
-      <HintPath>E:\Devine-Machinery\Library\PackageCache\com.unity.collections@2.2.1\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
-    </Reference>
     <Reference Include="TMPEffects.AutoParameters.Attributes">
-      <HintPath>E:\Devine-Machinery\Library\PackageCache\com.luca3317.tmpeffects@7babe75a31\TMPEffects.AutoParameters.Attributes.dll</HintPath>
+      <HintPath>D:\DivineMachinery\Devine-Machinery\Library\PackageCache\com.luca3317.tmpeffects@bc982953c6\TMPEffects.AutoParameters.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="ReportGeneratorMerged">
+      <HintPath>D:\DivineMachinery\Devine-Machinery\Library\PackageCache\com.unity.testtools.codecoverage@1.2.6\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>E:\Devine-Machinery\Library\PackageCache\com.unity.visualscripting@1.9.5\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Cecil">
-      <HintPath>E:\Devine-Machinery\Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll</HintPath>
+      <HintPath>D:\DivineMachinery\Devine-Machinery\Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.55f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\mscorlib.dll</HintPath>
@@ -725,83 +783,23 @@
     <Reference Include="System.Xml.XPath.XDocument">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.55f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst.Editor">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Burst">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+    <Reference Include="TMPEffects.NotifyObjectChanged">
+      <HintPath>D:\DivineMachinery\Devine-Machinery\Library\ScriptAssemblies\TMPEffects.NotifyObjectChanged.dll</HintPath>
     </Reference>
     <Reference Include="TMPEffects">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\TMPEffects.dll</HintPath>
+      <HintPath>D:\DivineMachinery\Devine-Machinery\Library\ScriptAssemblies\TMPEffects.dll</HintPath>
     </Reference>
-    <Reference Include="TMPEffects.NotifyObjectChanged">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\TMPEffects.NotifyObjectChanged.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Shared.Editor">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualStudio.Editor">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Core">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Core.Editor">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Networking.Transport">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.Networking.Transport.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    <Reference Include="TMPEffects.Timeline.Editor">
+      <HintPath>D:\DivineMachinery\Devine-Machinery\Library\ScriptAssemblies\TMPEffects.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="TMPEffects.SerializedCollections.Editor">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\TMPEffects.SerializedCollections.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Flow.Editor">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+      <HintPath>D:\DivineMachinery\Devine-Machinery\Library\ScriptAssemblies\TMPEffects.SerializedCollections.Editor.dll</HintPath>
     </Reference>
     <Reference Include="TMPEffects.SerializedCollections">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\TMPEffects.SerializedCollections.dll</HintPath>
+      <HintPath>D:\DivineMachinery\Devine-Machinery\Library\ScriptAssemblies\TMPEffects.SerializedCollections.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Collections">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.State.Editor">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Collections.Editor">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.Collections.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Networking.Editor">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.Networking.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.State">
-      <HintPath>E:\Devine-Machinery\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+    <Reference Include="TMPEffects.Timeline">
+      <HintPath>D:\DivineMachinery\Devine-Machinery\Library\ScriptAssemblies\TMPEffects.Timeline.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -813,17 +811,109 @@
       <Project>{23ffde85-6e28-cd7a-4206-a8badf2e8bee}</Project>
       <Name>FMODUnityEditor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.EditorCoroutines.Editor.csproj">
+      <Project>{14e58f49-9e6f-36ac-d8a3-c4547454ff4e}</Project>
+      <Name>Unity.EditorCoroutines.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Timeline.Editor.csproj">
+      <Project>{324d3f15-2cb4-64d0-e5ae-61f1c9920dca}</Project>
+      <Name>Unity.Timeline.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Shared.Editor.csproj">
+      <Project>{7cc3a148-0b28-ea82-1903-76638e86d594}</Project>
+      <Name>Unity.VisualScripting.Shared.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualStudio.Editor.csproj">
+      <Project>{33b04458-b66a-eb72-7176-82b0c28e431a}</Project>
+      <Name>Unity.VisualStudio.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.UI.csproj">
+      <Project>{2efd34af-eac9-1a56-21b5-23a3e57cb3c2}</Project>
+      <Name>UnityEditor.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Core.csproj">
+      <Project>{63c281f0-1d64-fe50-e2fb-598ea1b3ba31}</Project>
+      <Name>Unity.VisualScripting.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.csproj">
+      <Project>{97326ca8-c186-04a1-54e3-76d33ad26c22}</Project>
+      <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Core.Editor.csproj">
+      <Project>{4e796390-1219-6723-45ea-e059d043d591}</Project>
+      <Name>Unity.VisualScripting.Core.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Rider.Editor.csproj">
+      <Project>{f3b08099-8290-127e-07d7-17a648d40ba4}</Project>
+      <Name>Unity.Rider.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="FMODUnityResonance.csproj">
       <Project>{44632b45-b338-97be-b252-3e905f120e44}</Project>
       <Name>FMODUnityResonance</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Flow.csproj">
+      <Project>{9337eb5c-b270-94c1-be5e-8d5a7bbe7e93}</Project>
+      <Name>Unity.VisualScripting.Flow</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Flow.Editor.csproj">
+      <Project>{c5582853-cfe3-0e6f-b2b4-75d26d55b7e3}</Project>
+      <Name>Unity.VisualScripting.Flow.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Timeline.csproj">
+      <Project>{fd4c7897-2cea-1c1a-8fb5-fac86cb3e57b}</Project>
+      <Name>Unity.Timeline</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.csproj">
+      <Project>{fc0294da-11a6-1cee-ff04-ef0e082feb0f}</Project>
+      <Name>Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.SettingsProvider.Editor.csproj">
+      <Project>{94491e9c-9ed1-8b09-46db-d263461e2f35}</Project>
+      <Name>Unity.VisualScripting.SettingsProvider.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Performance.Profile-Analyzer.Editor.csproj">
+      <Project>{f3f06f7b-e26e-f733-175b-1cae5b0a7147}</Project>
+      <Name>Unity.Performance.Profile-Analyzer.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TestTools.CodeCoverage.Editor.csproj">
+      <Project>{b56c9093-e059-706b-4ce4-d8819a022b43}</Project>
+      <Name>Unity.TestTools.CodeCoverage.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.csproj">
+      <Project>{479287b3-8959-085a-3493-7ee57ac16790}</Project>
+      <Name>Unity.TestTools.CodeCoverage.Editor.OpenCover.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
+      <Project>{de4a35ed-675b-9a5f-3789-10961a927b34}</Project>
+      <Name>Unity.PlasticSCM.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="FMODUnity.csproj">
       <Project>{72349459-c116-ffa2-23ee-471bea4c20c3}</Project>
       <Name>FMODUnity</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.State.Editor.csproj">
+      <Project>{8d2a3666-fa01-a16e-ebec-b60da1ee09b7}</Project>
+      <Name>Unity.VisualScripting.State.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="FMODUnityResonanceEditor.csproj">
       <Project>{1b22a4ee-fdeb-1943-e07e-beed3b747b47}</Project>
       <Name>FMODUnityResonanceEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TextMeshPro.csproj">
+      <Project>{e1c46079-c6ba-6076-999e-f4aaadb34ac6}</Project>
+      <Name>Unity.TextMeshPro</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
+      <Project>{e4b622f7-e6d8-393f-6c35-0dccea825fc5}</Project>
+      <Name>Unity.TextMeshPro.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.State.csproj">
+      <Project>{0fb85f00-c406-b5f1-d2c6-8718ae05c03b}</Project>
+      <Name>Unity.VisualScripting.State</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VSCode.Editor.csproj">
+      <Project>{9b9216b1-a3ab-05e6-d26a-89de1f89487e}</Project>
+      <Name>Unity.VSCode.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

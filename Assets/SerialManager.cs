@@ -34,7 +34,7 @@ public enum LED_STATE //These NEED to be the same as on the Arduino sonnst bin i
 public class SerialManager : MonoBehaviour
 {
     // Setup
-    SerialPort stream = new ("COM15", 9600);
+    SerialPort stream = new ("COM3", 9600);
     [SerializeField] private float readRate = 0.5f;
     
     // Debugging
