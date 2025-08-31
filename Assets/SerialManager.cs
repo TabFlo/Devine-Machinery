@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO.Ports;
 using JetBrains.Annotations;
+using UnityEngine.Serialization;
 
 
 public enum DATA_TYPE {
@@ -31,10 +32,12 @@ public enum LED_STATE //These NEED to be the same as on the Arduino sonnst bin i
     WAVE, 
 }
 
+
 public class SerialManager : MonoBehaviour
 {
+    public string PortName = "COM15"; 
     // Setup
-    SerialPort stream = new ("COM3", 9600);
+    public SerialPort stream; 
     [SerializeField] private float readRate = 0.5f;
     
     // Debugging
@@ -54,8 +57,15 @@ public class SerialManager : MonoBehaviour
     // Unity Functions
     void Start()
     {
-        stream.ReadTimeout = 50; 
-        if (!stream.IsOpen){
+        SetupSerialPort();
+    }
+
+    public void SetupSerialPort()
+    {
+        stream = new(PortName, 9600);
+        stream.ReadTimeout = 50;
+        if (!stream.IsOpen)
+        {
             try
             {
                 stream.Open();
