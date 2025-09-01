@@ -23176,7 +23176,9 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: Continue()
+        value: '
+
+          AudioWait(Voicelines/silenceDM)'
         type: 0
         typeString: 
       - title: Response Menu Sequence
@@ -23204,8 +23206,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1730.8347
-        y: 222.08334
+        x: 1720.9987
+        y: 296.40033
         width: 160
         height: 30
     - id: 261
@@ -27560,8 +27562,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.1
+    canvasScrollPosition: {x: 1240.5352, y: 48.790398}
+    canvasZoom: 0.6099999
   - id: 3
     fields:
     - title: Title
