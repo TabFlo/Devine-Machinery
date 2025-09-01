@@ -25,6 +25,7 @@ public class NumberScript : MonoBehaviour
 
     private void Start()
     {
+        applyKill();
         LoadAudioClips("Positive");
         LoadAudioClips("Negative");
         
@@ -146,11 +147,20 @@ public class NumberScript : MonoBehaviour
     }
 
 
-    public void killSequence()
+    public void saveKill()
+    {
+        PlayerPrefs.SetInt("kill", number);
+        PlayerPrefs.Save();
+        
+        
+        
+    }
+
+    public void applyKill()
     {
         
-        
-        
-        
+        number = PlayerPrefs.GetInt("kill", number);
+        number = DialogueLua.GetVariable("killedTime").AsInt;
+        Debug.LogWarning(number);
     }
 }

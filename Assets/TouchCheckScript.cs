@@ -26,6 +26,28 @@ public class TouchCheckScript : MonoBehaviour
     private Coroutine touchHandlerCoroutine;
     private bool killChoice = false;
 
+    private const string ApprovalKey = "Approval";  
+    public void saveApproval()
+    {
+        PlayerPrefs.SetInt(ApprovalKey, appro);
+        PlayerPrefs.Save();
+    }
+
+    public void applyApproval()
+    {
+        
+        
+        appro = PlayerPrefs.GetInt(ApprovalKey, appro);
+        
+        DialogueLua.SetVariable("Approval", appro);
+
+        
+        SendApprovalToVVVV(appro);
+        SoundManager.Instance.UpdateApprovalSound(appro);
+        
+        Debug.LogWarning(appro);
+    }
+
     private void Start()
     {
         // Initialize UDP communication
@@ -35,13 +57,9 @@ public class TouchCheckScript : MonoBehaviour
         glitchMessageEndPoint = new IPEndPoint(IPAddress.Broadcast, 5556);
         StopMessageEndPoint = new IPEndPoint(IPAddress.Broadcast, 5557);
         
+        applyApproval();
 
-        // Initialize the approval variable for the Dialogue System
-        DialogueLua.SetVariable("Approval", appro);
-
-        // Send the current appro value to vvvv on start
-        SendApprovalToVVVV(appro);
-        SoundManager.Instance.UpdateApprovalSound(appro);
+        
     }
 
     #region MouseInputOnly

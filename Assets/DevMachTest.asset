@@ -22399,6 +22399,10 @@ MonoBehaviour:
           SetContinueMode(false)'
         type: 0
         typeString: 
+      - title: EventGuid
+        value: 187248da-b58d-4a72-a8b3-550556442f60
+        type: 0
+        typeString: 
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -27562,8 +27566,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1240.5352, y: 48.790398}
-    canvasZoom: 0.6099999
+    canvasScrollPosition: {x: 1490.8063, y: 3624.6438}
+    canvasZoom: 0.15399921
   - id: 3
     fields:
     - title: Title
@@ -29332,8 +29336,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 48.57144}
-    canvasZoom: 0.7000003
+    canvasScrollPosition: {x: 0, y: 33.03575}
+    canvasZoom: 0.6400002
   syncInfo:
     syncActors: 0
     syncItems: 0
